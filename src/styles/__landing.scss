@@ -1,0 +1,30 @@
+$mainHeight: 88vh;
+
+.landing {
+  .mainJumbotron {
+    position: relative;
+    #content {
+      background-color: red;
+      position: relative;
+      top: $mainHeight/2;
+      transform: translateY(-50%);
+    }
+  }
+
+  .mainJumbotron::before {
+    height: $mainHeight;
+    position: absolute;
+    background: url('https://i.imgur.com/YWabzcb.jpg') no-repeat center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.7;
+    z-index: -1;
+    content: '';
+  }
+}
