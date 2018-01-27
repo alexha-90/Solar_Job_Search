@@ -49,21 +49,46 @@
   .landing #additionalContent h1 {
     margin: 10px 0;
     text-align: center; }
-  .landing #additionalContent #learnMore {
-    min-height: 400px;
+  .landing #additionalContent .learnMore {
+    min-height: 575px;
     font-size: 1.2em;
     text-align: center;
     background-color: #404040;
     border-top: 8px solid green;
     border-right: 8px solid orange; }
-    .landing #additionalContent #learnMore p {
+    .landing #additionalContent .learnMore p {
       margin: 0 auto;
       width: 80%; }
-  .landing #additionalContent #rssFeed {
-    min-height: 400px;
-    background-color: blue;
+    .landing #additionalContent .learnMore Button {
+      margin: 10px 0;
+      width: 200px; }
+  .landing #additionalContent .rssFeed {
+    min-height: 575px;
+    background-color: #9494b8;
     border-top: 8px solid navy;
     border-left: 8px solid orange; }
+
+.rssFeed #newsAPICredit {
+  background-color: green;
+  margin-top: -5px;
+  right: 0; }
+
+.rssFeed #articleContainer {
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0;
+  min-height: 50px; }
+  .rssFeed #articleContainer #articleImage {
+    position: absolute;
+    width: 10%;
+    height: 50px;
+    margin: 0 2%; }
+    .rssFeed #articleContainer #articleImage img {
+      display: block;
+      margin: 0 auto;
+      height: 100%; }
+  .rssFeed #articleContainer #articleContents {
+    margin-left: 14%; }
 
 * {
   margin: 0;

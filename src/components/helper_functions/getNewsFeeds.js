@@ -10,7 +10,8 @@ export default function getNewsFeeds() {
         domains: 'http://www.nytimes.com, http://abcnews.go.com, https://news.google.com',
         language: 'en',
         sortBy: 'publishedAt',
-        page: 5
+        pageSize: 7,
+        page: 10
     }).then(response => {
         console.log(response);
         return response;

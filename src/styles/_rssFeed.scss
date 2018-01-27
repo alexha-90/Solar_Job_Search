@@ -1,0 +1,36 @@
+// more general styling is in _rssFeed.scss file
+.rssFeed {
+  #newsAPICredit {
+    background-color: green;
+    margin-top: -5px;
+    right: 0;
+  }
+
+
+  #articleContainer {
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0;
+    min-height: 50px;
+
+    #articleImage{
+      position: absolute;
+      width: 10%;
+      height: 50px;
+      margin: 0 2%;
+
+      img {
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+      }
+    }
+
+    #articleContents {
+      margin-left: 14%;
+      a {
+      }
+    }
+  }
+
+}

@@ -59,8 +59,9 @@ $mainHeight: 88vh;
       text-align: center;
     }
 
-    #learnMore {
-      min-height: 400px;
+    // more specific styling is in TBD
+    .learnMore {
+      min-height: 575px; //match
       font-size: 1.2em;
       text-align: center;
       background-color: #404040;
@@ -70,11 +71,18 @@ $mainHeight: 88vh;
         margin: 0 auto;
         width: 80%;
       }
+
+      Button {
+        margin: 10px 0;
+        width: 200px;
+      }
+
     }
 
-    #rssFeed {
-      min-height: 400px;
-      background-color: blue;
+    // more specific styling is in _rssFeed.scss file
+    .rssFeed {
+      min-height: 575px; //match
+      background-color: #9494b8;
       border-top: 8px solid navy;
       border-left: 8px solid orange;
     }
