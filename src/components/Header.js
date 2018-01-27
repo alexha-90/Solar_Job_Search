@@ -18,7 +18,7 @@ class Header extends Component {
                             <NavItem eventKey={1} href="#">
                                 Find Jobs
                             </NavItem>
-                            <NavItem divider />
+                            <NavItem divider="true" />
                             <NavItem eventKey={2} href="#">
                                 Get Training
                             </NavItem>

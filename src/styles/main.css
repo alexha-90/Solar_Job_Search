@@ -3,12 +3,23 @@
   margin-bottom: 0; }
 
 .landing .mainJumbotron {
+  height: 88vh;
   position: relative; }
-  .landing .mainJumbotron #content {
+  .landing .mainJumbotron #searchContainer {
+    margin: 0 25%;
+    width: 50%;
+    height: 300px;
     background-color: red;
-    position: relative;
+    position: absolute;
     top: 44vh;
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    border-radius: 20px; }
+    .landing .mainJumbotron #searchContainer #search {
+      height: 50px;
+      background-color: green;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); }
 
 .landing .mainJumbotron::before {
   height: 88vh;
@@ -25,6 +36,34 @@
   opacity: 0.7;
   z-index: -1;
   content: ''; }
+
+.landing #additionalContent {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  color: #f2f2f2; }
+  .landing #additionalContent div.row {
+    padding: 0;
+    margin: 0; }
+  .landing #additionalContent h1 {
+    margin: 10px 0;
+    text-align: center; }
+  .landing #additionalContent #learnMore {
+    min-height: 400px;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #404040;
+    border-top: 8px solid green;
+    border-right: 8px solid orange; }
+    .landing #additionalContent #learnMore p {
+      margin: 0 auto;
+      width: 80%; }
+  .landing #additionalContent #rssFeed {
+    min-height: 400px;
+    background-color: blue;
+    border-top: 8px solid navy;
+    border-left: 8px solid orange; }
 
 * {
   margin: 0;
