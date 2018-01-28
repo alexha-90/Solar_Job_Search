@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Button } from 'react-bootstrap';
+import { Grid, Row, Col, Button, Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 // import ScrollToTop from 'react-scroll-up';
 import getNewsFeeds from './helper_functions/getNewsFeeds';
 import populateNewsFeed from './helper_functions/populateNewsFeed';
@@ -8,7 +8,10 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 //TO-DO:
 // can't get getNewsFeed catch statement to trigger properly
 // remove duplicate entries if present
+// redundant articles
+// error handling for location
 // get local time based on client location
+// custom styling for auto complete: https://www.npmjs.com/package/react-places-autocomplete#geocode-by-place-id
 
 //===============================================================================================//
 
@@ -18,26 +21,50 @@ class Landing extends Component {
         this.state = {
             loadingFeed: true,
             articlesArr: [],
-            address: 'San Francisco, CA'
+            location: '',
+            maxDistance: ''
         };
-        this.onChange = (address) => this.setState({ address })
-
+        this.onUpdateLocation = this.onUpdateLocation.bind(this);
+        this.onGetGeolocation = this.onGetGeolocation.bind(this);
+        this.onUpdateMaxDistance = this.onUpdateMaxDistance.bind(this);
     }
 
     componentWillMount() {
         getNewsFeeds()
-        .then(res => {
-            if (!res) {
-                return <div>Something went wrong... unable to retrieve solar related news feed.</div>
-            }
-            return this.setState({loadingFeed: false, articlesArr: res.articles});
+            .then(res => {
+                if (!res) {
+                    return <div>Something went wrong... unable to retrieve solar related news feed.</div>
+                }
+                return this.setState({ loadingFeed: false, articlesArr: res.articles });
         })
     }
 
-    handleFormSubmit = (event) => {
-        event.preventDefault();
 
-        geocodeByAddress(this.state.address)
+    onUpdateLocation(location) {
+        this.setState({ location: location });
+    }
+
+    onGetGeolocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                setTimeout(() => {
+                    let latitude = position.coords.latitude.toString().slice(0,7);
+                    let longitude = position.coords.longitude.toString().slice(0,9);
+                    this.setState({ location: latitude + ', ' + longitude });
+                }, 500)
+            });
+        } else {
+            return alert('You must allow geolocation permission for us to retrieve your location.');
+        }
+    }
+
+    onUpdateMaxDistance(event) {
+        this.setState({ maxDistance: event.target.value });
+    }
+
+    handleInputSubmit = (event) => {
+        event.preventDefault();
+        geocodeByAddress(this.state.location)
             .then(results => getLatLng(results[0]))
             .then(latLng => console.log('Success', latLng))
             .catch(error => console.error('Error', error))
@@ -45,25 +72,45 @@ class Landing extends Component {
 
 
     render() {
-        const inputProps = {
-            value: this.state.address,
-            onChange: this.onChange,
-        };
-
-        const options = {
-            types: ['(cities)']
-        };
-
+        console.log(this.state);
 
         return (
             <section className="landing">
+
                 <div className="mainJumbotron">
                     <div id="searchContainer">
                         <div id="search">
-                            <form onSubmit={this.handleFormSubmit}>
-                                <PlacesAutocomplete inputProps={inputProps} options={options}/>
-                                <button type="submit">Submit</button>
-                            </form>
+
+                            <Form onSubmit={this.handleInputSubmit}>
+                                <FormGroup>
+                                    <ControlLabel>Location:</ControlLabel>
+                                    <PlacesAutocomplete
+                                        inputProps={{ value: this.state.location, onChange: this.onUpdateLocation, autoFocus: true, placeholder: 'Enter city or leave blank to see all results' }}
+                                        options={{types: ['(cities)']}}/>
+                                    <Button type="submit" bsStyle="success">Search for jobs!</Button>
+                                </FormGroup>
+
+                                <Button onClick={this.onGetGeolocation} bsStyle="warning">Get my location</Button>
+
+                                <FormGroup>
+                                    <ControlLabel>Max distance</ControlLabel>
+                                    <FormControl
+                                        componentClass="select"
+                                        name="maxDistance"
+                                        onChange={this.onUpdateMaxDistance}
+                                        value={this.state.maxDistance}
+                                        >
+                                        <option value="3000">-</option>
+                                        <option value="25">25 miles</option>
+                                        <option value="50">50 miles</option>
+                                        <option value="75">75 miles</option>
+                                        <option value="100">100 miles</option>
+                                        <option value="500">500 miles</option>
+                                        <option value="1000">1000 miles</option>
+                                    </FormControl>
+                                </FormGroup>
+
+                            </Form>
 
 
                         </div>

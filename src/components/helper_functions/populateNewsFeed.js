@@ -4,18 +4,18 @@ export default function populateNewsFeed(data, loading) {
     if (loading) {
         return 'Loading...';
     }
-    console.log(data);
-    const top10 = data.splice(1, 11); // first result was erroneous sometimes
 
-    for (let i = 0; i < top10.length; i++) {
-        if (!top10[i].urlToImage) {
-            top10[i].urlToImage = 'http://clipartix.com/wp-content/uploads/2016/04/Clipart-light-bulb-lit-clipartbold.png'
+    console.log(data);
+
+    for (let i = 0; i < data.length; i++) {
+        if (!data[i].urlToImage) {
+            data[i].urlToImage = 'http://clipartix.com/wp-content/uploads/2016/04/Clipart-light-bulb-lit-clipartbold.png'
         }
     }
 
     return (
         <div>
-            {top10.map((article) => {
+            {data.map((article) => {
                 return (
                     <div className='' key={article.url}>
                         <div id='articleContainer'>
