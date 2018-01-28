@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Button, Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 // import ScrollToTop from 'react-scroll-up';
+import { connect } from 'react-redux';
 import getNewsFeeds from './helper_functions/getNewsFeeds';
 import populateNewsFeed from './helper_functions/populateNewsFeed';
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
+import PlacesAutocomplete from 'react-places-autocomplete'
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
-// import indeed from 'indeed-scraper';
+import store from '../index';
 
 
 //TO-DO:
 // can't get getNewsFeed catch statement to trigger properly
+// integrate redux so entirety of Landing is not passed into result
 // remove duplicate entries if present
 // redundant articles
 // error handling for location
@@ -23,10 +26,11 @@ class Landing extends Component {
         super(props);
         this.state = {
             loadingFeed: true,
-            articlesArr: [],
+            redirectToJobResults: false,
             location: '',
-            maxDistance: ''
+            maxDistance: '',
         };
+        this.articlesArr = null;
         this.onUpdateLocation = this.onUpdateLocation.bind(this);
         this.onGetGeolocation = this.onGetGeolocation.bind(this);
         this.onUpdateMaxDistance = this.onUpdateMaxDistance.bind(this);
@@ -39,33 +43,10 @@ class Landing extends Component {
                 if (!res) {
                     return <div>Something went wrong... unable to retrieve solar related news feed.</div>
                 }
-                return this.setState({ loadingFeed: false, articlesArr: res.articles });
+                this.articlesArr = res.articles;
+                return this.setState({ loadingFeed: false });
         });
-
-
-        // const queryOptions = {
-        //     query: 'Software',
-        //     city: 'Seattle, WA',
-        //     radius: '25',
-        //     level: 'entry_level',
-        //     jobType: 'fulltime',
-        //     maxAge: '7',
-        //     sort: 'date',
-        //     limit: '100'
-        // };
-        //
-        // console.log('success');
-        //
-        // indeed.query(queryOptions).then(res => {
-        //     console.log(res); // An array of Job objects
-        // });
-
-
-
-
-
     }
-
 
     onUpdateLocation(location) {
         this.setState({ location: location });
@@ -90,38 +71,34 @@ class Landing extends Component {
     }
 
     onHandleInputSubmit = () => {
-        console.log('submitting attempt');
+        // return all USA results if no location selected
+        let submittedDistance = this.state.maxDistance || '3000';
 
-        axios.post('/api/fetchJobs', [this.state.location, this.state.maxDistance])
+        axios.post('/api/fetchJobs', [this.state.location, submittedDistance])
             .then(res => {
                 console.log(res);
+                if (res.data === 'error') {
+                    return alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
+                }
+                // dispatch results to redux store
+                this.props.dispatch(() => {
+                    store.dispatch({
+                        type: 'JOB_LIST_TO_PROPS',
+                        payload: res.data
+                    });
+                })
             })
-
-
-
-
-        // event.preventDefault();
-        // geocodeByAddress(this.state.location)
-        //     .then(results => getLatLng(results[0]))
-        //     .then(latLng => console.log('Success', latLng))
-        //     .catch(error => console.error('Error', error);
-
-        // export const loginUser = (emailAddress, password) => async () => {
-        //     try {
-        //         const res = await axios.post('/api/loginUser', [emailAddress, password]);
-        //         console.log(res.data);
-        //         return res.data;
-        //     } catch(res) {
-        //         alert('Error: Something went wrong on the server-side. Please try again and let us know if this problem persists.' + res.err)
-        //     }
-        // };
-
-
+            .then(() => {
+                this.setState({ redirectToJobResults: true });
+            });
     };
 
-
     render() {
-        console.log(this.state);
+        // console.log(this.state);
+        if (this.state.redirectToJobResults) {
+            return <Redirect push to='/jobs'/>;
+        }
+
 
         return (
             <section className="landing">
@@ -182,7 +159,7 @@ class Landing extends Component {
                         </Col>
                         <Col md={12} lg={6} className="rssFeed">
                             <h1>Solar News</h1>
-                            {populateNewsFeed(this.state.articlesArr, this.state.loadingFeed)}
+                            {populateNewsFeed(this.articlesArr, this.state.loadingFeed)}
                             <hr/>
                             <span id="newsAPICredit">
                                 RSS feed courtesy of <a href="https://newsapi.org">News API</a>.
@@ -190,7 +167,7 @@ class Landing extends Component {
                         </Col>
                     </Row>
                 </Grid>
-                test
+
                 <br/>
 
 
@@ -200,6 +177,7 @@ class Landing extends Component {
 
 
                 <div className="infoJumbotron">
+                    <h1>info goes here later</h1>
 
                 </div>
             </section>
@@ -207,4 +185,10 @@ class Landing extends Component {
     }
 }
 
-export default Landing;
+export default connect(mapStateToProps)(Landing);
+
+function mapStateToProps(state) {
+    return {
+        jobList: state.jobList,
+    };
+}
