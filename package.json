@@ -1,0 +1,19 @@
+{
+  "name": "solar_job_search",
+  "version": "1.0.0",
+  "description": "Solar job search tool",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexha-90/Solar_Job_Search.git"
+  },
+  "author": "Alex Ha",
+  "license": "SEE LICENSE IN <license.txt>",
+}
