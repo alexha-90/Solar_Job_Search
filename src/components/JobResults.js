@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Table } from 'react-bootstrap';
 import fetchJobs from './helper_functions/fetchJobs';
 import populateJobList from './helper_functions/populateJobList';
+import adblockDetect from 'adblock-detect';
 
 /*
 TO:DO:
@@ -16,7 +17,7 @@ class JobResults extends Component {
         this.state = {
             loadingComponent: true
         }
-        this.openMultiple = this.openMultiple.bind(this)
+        this.onOpenMultipleURLs = this.onOpenMultipleURLs.bind(this)
     }
 
 
@@ -39,14 +40,19 @@ class JobResults extends Component {
     }
 
 
-    openMultiple(event) {
+    onOpenMultipleURLs(event) {
         event.preventDefault();
-        window.open('http://google.com');
-        window.open('http://bing.com');
+        adblockDetect(blocker => {
+            if (blocker) {
+                return alert('Note: for the open multiple links feature to work, you must disable ad blocker by browser AND any addons. Then refresh page. We do not spam you.');
+            } else {
+                const urlOpenList = this.props.urlOpenList;
+                for (let i = 0; i < urlOpenList.length; i++) {
+                    window.open(urlOpenList[i]);
+                }
+            }
+        });
     }
-
-
-
 
 
     render() {
@@ -58,16 +64,14 @@ class JobResults extends Component {
             <div>
                 <div className="">
                     <h1>Job results:</h1>
-                    Note: for the open multiple links feature to work, you must disable ad blocker by browser AND any addons. We do not spam you.
-                    {populateJobList(this.props.jobList)}
                 </div>
 
-                <button onClick={this.openMultiple}>Test open multiple links</button>
+                <button onClick={this.onOpenMultipleURLs}>Test open multiple links</button>
 
                 <Table responsive>
                     <thead>
                     <tr>
-                        <th>(gather)</th>
+                        <th> </th>
                         <th>Date Posted</th>
                         <th>Company</th>
                         <th>Job Title</th>
@@ -75,20 +79,7 @@ class JobResults extends Component {
                         <th>Summary</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <input id="checkBox" type="checkbox"/>
-                        </td>
-                        <td>Just posted</td>
-                        <td>LG Electronics USA very long title</td>
-                        <td>Field Applications engineering at LG Consulting. Early!</td>
-                        <td>Big Valley in the small town, CA</td>
-                        <td>
-                            Put simply, we offer the latest innovations to make "Life Good"
-                        </td>
-                    </tr>
-                    </tbody>
+                    {populateJobList(this.props.jobList)}
                 </Table>
 
             </div>
@@ -101,17 +92,7 @@ export default connect(mapStateToProps)(JobResults);
 
 function mapStateToProps(state) {
     return {
-        jobList: state.jobList,
+        jobList: state.jobList.jobsList,
+        urlOpenList: state.jobList.urlOpenList
     };
 }
-
-
-
-/*
-                        <td>Just posted</td>
-                        <td>LG Electronics USA very long title</td>
-                        <td>Field Applications engineering at LG Consulting. Early!</td>
-                        <td>Big Valley in the small town, CA</td>
-                        <td>Put simply, we offer the latest innovations to make "Life Good" – from home appliances, consumer electronics, vehicle components and mobile communications to.</td>
-
- */

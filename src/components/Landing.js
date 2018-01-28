@@ -71,7 +71,7 @@ class Landing extends Component {
         this.setState({ maxDistance: event.target.value });
     }
 
-    onHandleInputSubmit = () => {
+    onHandleInputSubmit() {
         fetchJobs(this.state.location, this.state.maxDistance, this.props)
             .then((res) => {
                 if (res === 'error') {
@@ -84,8 +84,15 @@ class Landing extends Component {
 
     render() {
         // console.log(this.state);
+        let submittedLocation;
+        if (this.state.location.includes('United States')) {
+            submittedLocation = this.state.location.replace(/United States/i, 'USA');
+        } else {
+            submittedLocation = this.state.location;
+        }
+
         if (this.state.redirectToJobResults) {
-            return <Redirect push to='/jobs'/>;
+            return <Redirect push to={'/jobs/maxDistance=' + this.state.maxDistance + '_location=' + submittedLocation}/>;
         }
 
 
@@ -178,6 +185,6 @@ export default connect(mapStateToProps)(Landing);
 
 function mapStateToProps(state) {
     return {
-        jobList: state.jobList,
+        jobList: state.jobList.jobsList,
     };
 }

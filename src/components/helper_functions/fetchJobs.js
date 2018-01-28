@@ -1,6 +1,5 @@
 import axios from 'axios';
 import store from '../../index';
-
 //===============================================================================================//
 
 export default function fetchJobs(location, maxDistance, props) {
