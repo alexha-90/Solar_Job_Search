@@ -11,6 +11,7 @@ import { Link, Redirect } from 'react-router-dom';
 
 
 //TO-DO:
+// add note that all links go through indeed portal first. they are getting affiliate and aggregate links
 // can't get getNewsFeed catch statement to trigger properly
 // integrate redux so entirety of Landing is not passed into result
 // remove duplicate entries if present
