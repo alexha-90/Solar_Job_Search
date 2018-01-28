@@ -4,16 +4,24 @@
   "description": "Solar job search tool",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.16.2"
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "indeed-scraper": "^2.0.2",
+    "morgan": "^1.9.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexha-90/Solar_Job_Search.git"
   },
   "author": "Alex Ha",
-  "license": "SEE LICENSE IN <license.txt>",
+  "license": "SEE LICENSE IN <license.txt>"
 }
