@@ -4,6 +4,9 @@ import { Grid, Row, Col, Button, Form, FormGroup, FormControl, ControlLabel } fr
 import getNewsFeeds from './helper_functions/getNewsFeeds';
 import populateNewsFeed from './helper_functions/populateNewsFeed';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
+import axios from 'axios';
+// import indeed from 'indeed-scraper';
+
 
 //TO-DO:
 // can't get getNewsFeed catch statement to trigger properly
@@ -27,6 +30,7 @@ class Landing extends Component {
         this.onUpdateLocation = this.onUpdateLocation.bind(this);
         this.onGetGeolocation = this.onGetGeolocation.bind(this);
         this.onUpdateMaxDistance = this.onUpdateMaxDistance.bind(this);
+        this.onHandleInputSubmit = this.onHandleInputSubmit.bind(this);
     }
 
     componentWillMount() {
@@ -36,7 +40,30 @@ class Landing extends Component {
                     return <div>Something went wrong... unable to retrieve solar related news feed.</div>
                 }
                 return this.setState({ loadingFeed: false, articlesArr: res.articles });
-        })
+        });
+
+
+        // const queryOptions = {
+        //     query: 'Software',
+        //     city: 'Seattle, WA',
+        //     radius: '25',
+        //     level: 'entry_level',
+        //     jobType: 'fulltime',
+        //     maxAge: '7',
+        //     sort: 'date',
+        //     limit: '100'
+        // };
+        //
+        // console.log('success');
+        //
+        // indeed.query(queryOptions).then(res => {
+        //     console.log(res); // An array of Job objects
+        // });
+
+
+
+
+
     }
 
 
@@ -62,12 +89,34 @@ class Landing extends Component {
         this.setState({ maxDistance: event.target.value });
     }
 
-    handleInputSubmit = (event) => {
-        event.preventDefault();
-        geocodeByAddress(this.state.location)
-            .then(results => getLatLng(results[0]))
-            .then(latLng => console.log('Success', latLng))
-            .catch(error => console.error('Error', error))
+    onHandleInputSubmit = () => {
+        console.log('submitting attempt');
+
+        axios.post('/api/fetchJobs', [this.state.location, this.state.maxDistance])
+            .then(res => {
+                console.log(res);
+            })
+
+
+
+
+        // event.preventDefault();
+        // geocodeByAddress(this.state.location)
+        //     .then(results => getLatLng(results[0]))
+        //     .then(latLng => console.log('Success', latLng))
+        //     .catch(error => console.error('Error', error);
+
+        // export const loginUser = (emailAddress, password) => async () => {
+        //     try {
+        //         const res = await axios.post('/api/loginUser', [emailAddress, password]);
+        //         console.log(res.data);
+        //         return res.data;
+        //     } catch(res) {
+        //         alert('Error: Something went wrong on the server-side. Please try again and let us know if this problem persists.' + res.err)
+        //     }
+        // };
+
+
     };
 
 
@@ -81,13 +130,13 @@ class Landing extends Component {
                     <div id="searchContainer">
                         <div id="search">
 
-                            <Form onSubmit={this.handleInputSubmit}>
+                            {/*<Form onSubmit={this.handleInputSubmit}>*/}
+                            <Form>
                                 <FormGroup>
                                     <ControlLabel>Location:</ControlLabel>
                                     <PlacesAutocomplete
                                         inputProps={{ value: this.state.location, onChange: this.onUpdateLocation, autoFocus: true, placeholder: 'Enter city or leave blank to see all results' }}
                                         options={{types: ['(cities)']}}/>
-                                    <Button type="submit" bsStyle="success">Search for jobs!</Button>
                                 </FormGroup>
 
                                 <Button onClick={this.onGetGeolocation} bsStyle="warning">Get my location</Button>
@@ -109,7 +158,8 @@ class Landing extends Component {
                                         <option value="1000">1000 miles</option>
                                     </FormControl>
                                 </FormGroup>
-
+                                <Button onClick={this.onHandleInputSubmit} bsStyle="success">Search for jobs!</Button>
+                                {/*<Button type="submit" bsStyle="success">Search for jobs!</Button>*/}
                             </Form>
 
 
