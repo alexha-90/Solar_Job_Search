@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// need to import action
 
 // Page imports
 import Header from './components/Header';

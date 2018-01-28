@@ -1,7 +1,7 @@
 import NewsAPI from 'newsapi';
 //===============================================================================================//
 
-export default function getNewsFeeds() {
+export default function fetchNewsFeeds() {
     const newsAPI = new NewsAPI('54951ead39004d56aedc7ad8fd43affa'); //temporary key. not for production
 
     return newsAPI.v2.everything({

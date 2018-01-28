@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Grid, Row, Col, Button, Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 // import ScrollToTop from 'react-scroll-up';
 import { connect } from 'react-redux';
-import getNewsFeeds from './helper_functions/getNewsFeeds';
+import fetchNewsFeed from './helper_functions/fetchNewsFeed'
+import fetchJobs from './helper_functions/fetchJobs';
 import populateNewsFeed from './helper_functions/populateNewsFeed';
 import PlacesAutocomplete from 'react-places-autocomplete'
 import { Link, Redirect } from 'react-router-dom';
-import axios from 'axios';
-import store from '../index';
+
 
 
 //TO-DO:
@@ -38,7 +38,7 @@ class Landing extends Component {
     }
 
     componentWillMount() {
-        getNewsFeeds()
+        fetchNewsFeed()
             .then(res => {
                 if (!res) {
                     return <div>Something went wrong... unable to retrieve solar related news feed.</div>
@@ -71,27 +71,15 @@ class Landing extends Component {
     }
 
     onHandleInputSubmit = () => {
-        // return all USA results if no location selected
-        let submittedDistance = this.state.maxDistance || '3000';
-
-        axios.post('/api/fetchJobs', [this.state.location, submittedDistance])
-            .then(res => {
-                console.log(res);
-                if (res.data === 'error') {
+        fetchJobs(this.state.location, this.state.maxDistance, this.props)
+            .then((res) => {
+                if (res === 'error') {
                     return alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
                 }
-                // dispatch results to redux store
-                this.props.dispatch(() => {
-                    store.dispatch({
-                        type: 'JOB_LIST_TO_PROPS',
-                        payload: res.data
-                    });
-                })
-            })
-            .then(() => {
                 this.setState({ redirectToJobResults: true });
-            });
+            })
     };
+
 
     render() {
         // console.log(this.state);
