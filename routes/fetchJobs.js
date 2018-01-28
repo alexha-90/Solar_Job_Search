@@ -20,7 +20,7 @@ module.exports = app => {
                     return res.send('error');
                 }
                 return res.send(jobList);
-            }, 500);
+            }, 2000);
         } catch (err) {
             console.log('Error occurred. Unable to obtain list of jobs. Reason: ' + err);
             res.send('error'); // status code return breaks client flow
@@ -39,7 +39,7 @@ function fetchJobs(location, radius) {
         // jobType: 'fulltime',
         maxAge: '30',
         sort: 'date',
-        limit: '2'
+        limit: '25'
     };
     return indeed.query(queryOptions);
 }
