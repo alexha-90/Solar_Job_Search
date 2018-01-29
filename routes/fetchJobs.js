@@ -31,6 +31,7 @@ module.exports = app => {
 
 
 function fetchJobs(location, radius) {
+    // search format reference: http://blog.indeed.com/2016/05/25/how-to-use-advanced-resume-search-features-to-find-the-right-candidates/
     const queryOptions = {
         query: 'solar',
         city: location,
@@ -39,7 +40,7 @@ function fetchJobs(location, radius) {
         // jobType: 'fulltime',
         maxAge: '30',
         sort: 'date',
-        limit: '25'
+        limit: '10'
     };
     return indeed.query(queryOptions);
 }
