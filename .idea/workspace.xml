@@ -24,11 +24,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="580">
+                <caret line="29" column="57" lean-forward="false" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="jobList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/reducers/jobList.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+              <caret line="0" column="10" lean-forward="true" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -37,21 +50,9 @@
       <file leaf-file-name="fetchJobs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/fetchJobs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="523">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JobResults.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/components/JobResults.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -59,10 +60,22 @@
       <file leaf-file-name="fetchJobs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/helper_functions/fetchJobs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="61" column="93" lean-forward="false" selection-start-line="61" selection-start-column="86" selection-end-line="61" selection-end-column="93" />
+            <state relative-caret-position="472">
+              <caret line="63" column="23" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JobResults.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/JobResults.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,8 +84,8 @@
       <file leaf-file-name="populateJobList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/helper_functions/populateJobList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+            <state relative-caret-position="160">
+              <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -83,8 +96,8 @@
       <file leaf-file-name="Landing.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Landing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-209">
-              <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="507">
+              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="e#190#228#0" expanded="true" />
@@ -119,12 +132,14 @@
       <find>item</find>
       <find>this.props</find>
       <find>openMultiple</find>
+      <find>onFilterJobType</find>
     </findStrings>
     <replaceStrings>
       <replace>article</replace>
       <replace>fetchNewsFeed</replace>
       <replace>job</replace>
       <replace>onOpenMultipleURLs</replace>
+      <replace>onFilterJobRole</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -172,11 +187,12 @@
         <option value="$PROJECT_DIR$/client/src/components/Landing.js" />
         <option value="$PROJECT_DIR$/client/src/components/helper_functions/fetchJobs.js" />
         <option value="$PROJECT_DIR$/client/src/actions/index.js" />
-        <option value="$PROJECT_DIR$/client/src/helper_functions/populateJobList.js" />
         <option value="$PROJECT_DIR$/client/src/reducers/jobList.js" />
-        <option value="$PROJECT_DIR$/routes/fetchJobs.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/client/src/helper_functions/populateJobList.js" />
         <option value="$PROJECT_DIR$/client/src/helper_functions/fetchJobs.js" />
         <option value="$PROJECT_DIR$/client/src/components/JobResults.js" />
+        <option value="$PROJECT_DIR$/routes/fetchJobs.js" />
       </list>
     </option>
   </component>
@@ -313,12 +329,12 @@
       <option name="presentableId" value="Default" />
       <updated>1517014559308</updated>
       <workItem from="1517014563289" duration="34859000" />
-      <workItem from="1517110594134" duration="48148000" />
+      <workItem from="1517110594134" duration="53595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83007000" />
+    <option name="totallyTimeSpent" value="88454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1837" y="-390" width="1724" height="935" extended-state="0" />
@@ -626,14 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -642,10 +650,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="580">
+            <caret line="29" column="57" lean-forward="false" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Landing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-209">
-          <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="507">
+          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
             <element signature="e#190#228#0" expanded="true" />
@@ -653,36 +691,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/jobList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/fetchJobs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/helper_functions/populateJobList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+        <state relative-caret-position="160">
+          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/fetchJobs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/jobList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="10" lean-forward="true" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/helper_functions/fetchJobs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="61" column="93" lean-forward="false" selection-start-line="61" selection-start-column="86" selection-end-line="61" selection-end-column="93" />
+        <state relative-caret-position="472">
+          <caret line="63" column="23" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -691,8 +729,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/JobResults.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
