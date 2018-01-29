@@ -4,12 +4,15 @@ const indeed = require('indeed-scraper');
 module.exports = app => {
     app.post('/api/fetchJobs', async (req, res) => {
         try {
+            console.log(req.body);
             const location = req.body[0];
             const radius = req.body[1];
+            const query = req.body[2];
+            const jobType = req.body[3];
 
             let jobList = {};
 
-            fetchJobs(location, radius)
+            fetchJobs(location, radius, query, jobType)
                 .then(res => {
                     jobList = res;
                 });
@@ -30,17 +33,18 @@ module.exports = app => {
 
 
 
-function fetchJobs(location, radius) {
+function fetchJobs(location, radius, query, jobType) {
     // search format reference: http://blog.indeed.com/2016/05/25/how-to-use-advanced-resume-search-features-to-find-the-right-candidates/
+    // fulltime, contract, parttime, temporary, internship, commission
+
     const queryOptions = {
-        query: 'solar',
+        query: query,
         city: location,
         radius: radius,
-        // level: 'entry_level',
-        // jobType: 'fulltime',
+        jobType: jobType,
         maxAge: '30',
         sort: 'date',
-        limit: '10'
+        limit: '20'
     };
     return indeed.query(queryOptions);
 }
