@@ -14,78 +14,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="infoSpace.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/helper_functions/infoSpace.js">
+      <file leaf-file-name="jobList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/reducers/jobList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoogleMapsModal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/GoogleMapsModal.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="20">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fetchNewsFeed.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/helper_functions/fetchNewsFeed.js">
+      <file leaf-file-name="PopulateJobList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/PopulateJobList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fetchJobs.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/helper_functions/fetchJobs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="populateJobList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/helper_functions/populateJobList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="84" column="7" lean-forward="true" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Landing.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Landing.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="-1182">
+              <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <element signature="e#190#228#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__modifyJobRole.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__modifyJobRole.scss">
+      <file leaf-file-name="BACKUPJobResults.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/BACKUPJobResults.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="-565">
+              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="102" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JobResults.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JobResults.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/JobResults.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="87" column="37" lean-forward="false" selection-start-line="87" selection-start-column="37" selection-end-line="87" selection-end-column="37" />
+            <state relative-caret-position="620">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -93,35 +68,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="populateNewsFeed.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/helper_functions/populateNewsFeed.js">
+      <file leaf-file-name="jobResultsHeadline.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/helper_functions/jobResultsHeadline.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__jobTable.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__jobTable.scss">
+      <file leaf-file-name="populateTable.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/helper_functions/populateTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="240">
-                <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-                <folding />
-              </first_editor>
-              <second_editor />
+            <state relative-caret-position="722">
+              <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,7 +118,6 @@
       <find>openMultiple</find>
       <find>onFilterJobType</find>
       <find>console.log</find>
-      <find>data</find>
       <find>page1</find>
       <find>currentPage</find>
       <find>urlOpen</find>
@@ -164,6 +127,12 @@
       <find>jobCounterHeadline</find>
       <find>jobsPerPage</find>
       <find>open selec</find>
+      <find>queryArr</find>
+      <find>data</find>
+      <find>onOpenMultipleURLs</find>
+      <find>this.props.</find>
+      <find>openListArr</find>
+      <find>currentPageToProps</find>
     </findStrings>
     <replaceStrings>
       <replace>article</replace>
@@ -184,11 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/.env.local" />
-        <option value="$PROJECT_DIR$/src/components/helper_functions/rssFeedResults.js" />
-        <option value="$PROJECT_DIR$/src/components/helper_functions/populateRSSfeed.js" />
-        <option value="$PROJECT_DIR$/src/components/helper_functions/getNewsfeed.js" />
-        <option value="$PROJECT_DIR$/src/styles/main.scss" />
         <option value="$PROJECT_DIR$/src/components/helper_functions/getNewsFeeds.js" />
         <option value="$PROJECT_DIR$/src/styles/__landing.scss" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -216,7 +180,6 @@
         <option value="$PROJECT_DIR$/client/src/helper_functions/paginateCounter.js" />
         <option value="$PROJECT_DIR$/client/src/helper_functions/googleMapsModal.js" />
         <option value="$PROJECT_DIR$/client/src/components/Landing.js" />
-        <option value="$PROJECT_DIR$/client/src/reducers/jobList.js" />
         <option value="$PROJECT_DIR$/client/src/.env.development" />
         <option value="$PROJECT_DIR$/client/src/index.js" />
         <option value="$PROJECT_DIR$/client/src/styles/landing/_rssFeed.scss" />
@@ -227,14 +190,20 @@
         <option value="$PROJECT_DIR$/client/src/styles/jobResults/__modifyJobRole.scss" />
         <option value="$PROJECT_DIR$/client/src/styles/jobResults/_googleMapsModal.scss" />
         <option value="$PROJECT_DIR$/client/src/styles/jobResults/__modifyGeoSearch.scss" />
-        <option value="$PROJECT_DIR$/client/src/helper_functions/GoogleMapsModal.js" />
         <option value="$PROJECT_DIR$/client/src/styles/jobResults/__modifyJobType.scss" />
         <option value="$PROJECT_DIR$/client/src/styles/main.scss" />
         <option value="$PROJECT_DIR$/client/src/helper_functions/infoSpace.js" />
         <option value="$PROJECT_DIR$/client/src/styles/jobResults/__jobTable.scss" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/client/src/helper_functions/clearOpenJobList.js" />
+        <option value="$PROJECT_DIR$/client/src/helper_functions/GoogleMapsModal.js" />
         <option value="$PROJECT_DIR$/client/src/helper_functions/populateJobList.js" />
+        <option value="$PROJECT_DIR$/client/src/components/GoogleMapsModal.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/jobList.js" />
+        <option value="$PROJECT_DIR$/client/src/helper_functions/jobResultsHeadline.js" />
+        <option value="$PROJECT_DIR$/client/src/components/PopulateJobList.js" />
         <option value="$PROJECT_DIR$/client/src/components/JobResults.js" />
+        <option value="$PROJECT_DIR$/client/src/helper_functions/populateTable.js" />
       </list>
     </option>
   </component>
@@ -321,6 +290,13 @@
               <item name="solar_job_search" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solar_job_search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solar_job_search" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -356,13 +332,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components" />
       <recent name="$PROJECT_DIR$/client/src/helper_functions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components" />
       <recent name="$PROJECT_DIR$/client/src/styles/landing" />
       <recent name="$PROJECT_DIR$/client/src" />
       <recent name="$PROJECT_DIR$/client/src/components/helper_functions" />
-      <recent name="$PROJECT_DIR$/client/src/components" />
       <recent name="$PROJECT_DIR$/src/components/helper_functions" />
     </key>
   </component>
@@ -389,17 +366,18 @@
       <option name="presentableId" value="Default" />
       <updated>1517014559308</updated>
       <workItem from="1517014563289" duration="34859000" />
-      <workItem from="1517110594134" duration="94725000" />
+      <workItem from="1517110594134" duration="101178000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129584000" />
+    <option name="totallyTimeSpent" value="136037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1744" y="-413" width="1724" height="935" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2488399" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2488399" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -450,35 +428,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/google-news-rss/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/.env.local">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="79" lean-forward="false" selection-start-line="0" selection-start-column="79" selection-end-line="0" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/__landing.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" column="123" lean-forward="false" selection-start-line="23" selection-start-column="123" selection-end-line="23" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/helper_functions/helperFunctions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -664,14 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/jobList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/styles/landing/_rssFeed.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -693,7 +634,7 @@
         <state relative-caret-position="320">
           <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -738,16 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/helper_functions/GoogleMapsModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__modifyGeoSearch.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -768,32 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/helper_functions/fetchJobs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/helper_functions/fetchNewsFeed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/helper_functions/infoSpace.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -833,13 +738,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/helper_functions/populateJobList.js">
+    <entry file="file://$PROJECT_DIR$/client/src/helper_functions/infoSpace.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="84" column="7" lean-forward="true" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="20">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -854,12 +757,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/helper_functions/fetchNewsFeed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/helper_functions/fetchJobs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/helper_functions/clearOpenJobList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/BACKUPPopulateJobList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/GoogleMapsModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/jobList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/BACKUPJobResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-565">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="102" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/JobResults.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="87" column="37" lean-forward="false" selection-start-line="87" selection-start-column="37" selection-end-line="87" selection-end-column="37" />
+        <state relative-caret-position="620">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/helper_functions/jobResultsHeadline.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/PopulateJobList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1182">
+          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/helper_functions/populateTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
