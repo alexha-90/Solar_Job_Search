@@ -8,6 +8,14 @@ route to indeed first, to give affiliate credit and comply with TOS.
 ### Live demo: 
 TBD (WORK IN PROGRESS!)
 
+## Highlights:
+* Specialized job board for solar industry
+* Dynamically update results from user actions
+* Can dynamically view job location in a modal that is only rendered once
+* Can select multiple jobs and open together
+* Geolocation, auto complete
+
+
 ## Built with
 * React.js
 * Redux
