@@ -30,8 +30,8 @@
       <file leaf-file-name="fetchJobs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/fetchJobs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+            <state relative-caret-position="543">
+              <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -40,8 +40,8 @@
       <file leaf-file-name="JobResults.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/JobResults.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="157" column="30" lean-forward="false" selection-start-line="157" selection-start-column="30" selection-end-line="157" selection-end-column="30" />
+            <state relative-caret-position="581">
+              <caret line="253" column="29" lean-forward="false" selection-start-line="253" selection-start-column="29" selection-end-line="253" selection-end-column="29" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -49,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__modifySearch.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__modifySearch.scss">
+      <file leaf-file-name="__modifyGeoSearch.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__modifyGeoSearch.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,8 +62,38 @@
       <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/styles/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="140">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__modifyJobRole.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__modifyJobRole.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__jobTable.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__jobTable.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__infoSpace.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__infoSpace.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -121,10 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/styles/header.scss" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/styles/__header.scss" />
         <option value="$PROJECT_DIR$/src/components/Header.js" />
         <option value="$PROJECT_DIR$/node_modules/google-news-rss/index.js" />
         <option value="$PROJECT_DIR$/src/.env.development" />
@@ -167,10 +193,14 @@
         <option value="$PROJECT_DIR$/client/src/.env.development" />
         <option value="$PROJECT_DIR$/client/src/index.js" />
         <option value="$PROJECT_DIR$/client/src/helper_functions/GoogleMapsModal.js" />
-        <option value="$PROJECT_DIR$/client/src/styles/main.scss" />
         <option value="$PROJECT_DIR$/client/src/styles/landing/_rssFeed.scss" />
-        <option value="$PROJECT_DIR$/routes/fetchJobs.js" />
         <option value="$PROJECT_DIR$/client/src/styles/jobResults/__modifySearch.scss" />
+        <option value="$PROJECT_DIR$/client/src/styles/jobResults/__modifyJobRole.scss" />
+        <option value="$PROJECT_DIR$/client/src/styles/jobResults/__pagination.scss" />
+        <option value="$PROJECT_DIR$/routes/fetchJobs.js" />
+        <option value="$PROJECT_DIR$/client/src/styles/main.scss" />
+        <option value="$PROJECT_DIR$/client/src/styles/jobResults/__infoSpace.scss" />
+        <option value="$PROJECT_DIR$/client/src/styles/jobResults/__jobTable.scss" />
         <option value="$PROJECT_DIR$/client/src/components/JobResults.js" />
       </list>
     </option>
@@ -249,6 +279,14 @@
             <path>
               <item name="solar_job_search" type="b2602c69:ProjectViewProjectNode" />
               <item name="solar_job_search" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="jobResults" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solar_job_search" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solar_job_search" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -304,12 +342,12 @@
       <option name="presentableId" value="Default" />
       <updated>1517014559308</updated>
       <workItem from="1517014563289" duration="34859000" />
-      <workItem from="1517110594134" duration="80643000" />
+      <workItem from="1517110594134" duration="84732000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115502000" />
+    <option name="totallyTimeSpent" value="119591000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1744" y="-413" width="1724" height="935" extended-state="0" />
@@ -366,30 +404,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Landing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/App.css" />
-    <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/main.scss.css" />
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -707,24 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/styles/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -736,26 +732,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__modifySearch.scss">
+    <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__modifyGeoSearch.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__modifyJobRole.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/fetchJobs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        <state relative-caret-position="543">
+          <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__pagination.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/.env.local">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/styles/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__infoSpace.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/styles/jobResults/__jobTable.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/JobResults.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="157" column="30" lean-forward="false" selection-start-line="157" selection-start-column="30" selection-end-line="157" selection-end-column="30" />
+        <state relative-caret-position="581">
+          <caret line="253" column="29" lean-forward="false" selection-start-line="253" selection-start-column="29" selection-end-line="253" selection-end-column="29" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
