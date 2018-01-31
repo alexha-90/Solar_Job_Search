@@ -2,28 +2,30 @@ import React from 'react';
 //================================================================================================//
 
 
-export default function jobResultsHeadline (jobList, currentPage) {
-    // does not display if results have not loaded yet
+export default function jobResultsHeadline (jobList, currentPage, location) {
+    // function does not run if results have not loaded yet
 
     const jobsPerPg = 25;
 
-    let currentPg = 1;
-    if (currentPage) {
-        currentPg = currentPage
-    }
+    let currentPg = !currentPage ? 1: currentPage;
+
+    let headlineLocation = !location ? 'the USA' : location;
 
     let lowerBound = (currentPg - 1) * jobsPerPg;
     if (lowerBound === 0) {
         lowerBound = 1;
     }
+
     let upperBound = currentPg * jobsPerPg;
 
     if (jobList.length) {
         return (
             <div>
-                <h3>
-                    Displaying {lowerBound + '-' + upperBound + ' of ' + jobList.length} recently posted solar jobs in the area:
-                </h3>
+                <h2>
+                    Displaying {lowerBound + '-' + upperBound + ' of ' + jobList.length} recently posted
+                    <br/>
+                    solar jobs in {headlineLocation}:
+                </h2>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Form, ControlLabel, Checkbox, FormGroup, FormControl, Button, Glyphicon } from 'react-bootstrap';
+import { Form, Checkbox, Radio, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
 import fetchJobs from '../helper_functions/fetchJobs';
 import PlacesAutocomplete from 'react-places-autocomplete'
 import PopulateJobList from './PopulateJobList';
@@ -53,7 +53,7 @@ class JobResults extends Component {
     onUpdateLocation(location) {
         let query = (this.state.queryBuilder.length ? this.state.queryBuilder: 'solar');
         this.setState({ location: location });
-        fetchJobs(this.state.location, this.state.maxDistance, this.props, query, this.state.jobType)
+        fetchJobs(location, this.state.maxDistance, this.props, query, this.state.jobType)
     }
 
     onUpdateMaxDistance(event) {
@@ -146,7 +146,6 @@ class JobResults extends Component {
                         </div>
 
                         <FormGroup id="modifyJobRole">
-                            <ControlLabel id="jobRoleLabel">Filter job roles:</ControlLabel>
                             <FormGroup>
                                 <Checkbox inline name="" value="sales" onClick={this.onFilterJobRoles}>
                                     <a data-tip="tbd tbd tbd">Field/Sales</a>
@@ -172,53 +171,30 @@ class JobResults extends Component {
                         </FormGroup>
 
                         <FormGroup id="modifyJobType">
-                            <ControlLabel id="jobTypeLabel">Filter job type:</ControlLabel>
                             <FormGroup>
-                                <Checkbox inline name="" value='""' onClick={this.onFilterJobType}>
+                                <Radio inline name="jobTypeGroup" value='""' onClick={this.onFilterJobType} defaultChecked={true}>
                                     All job types
-                                </Checkbox>
-                                <Checkbox inline name="" value="fulltime" onClick={this.onFilterJobType}>
+                                </Radio>
+                                <Radio inline name="jobTypeGroup" value="fulltime" onClick={this.onFilterJobType}>
                                     Full-Time
-                                </Checkbox>
-                                <Checkbox inline name="" value="parttime" onClick={this.onFilterJobType}>
+                                </Radio>
+                                <Radio inline name="jobTypeGroup" value="parttime" onClick={this.onFilterJobType}>
                                     Part-Time
-                                </Checkbox>
-                                <Checkbox inline name="" value="contract" onClick={this.onFilterJobType}>
+                                </Radio>
+                                <Radio inline name="jobTypeGroup" value="contract" onClick={this.onFilterJobType}>
                                     Contract
-                                </Checkbox>
-                                <Checkbox inline name="" value="internship" onClick={this.onFilterJobType}>
+                                </Radio>
+                                <Radio inline name="jobTypeGroup" value="internship" onClick={this.onFilterJobType}>
                                     Internship
-                                </Checkbox>
+                                </Radio>
                             </FormGroup>
                         </FormGroup>
-
                     </Form>
-
-                    <div style={{clear: "both"}}>
-                    <h1>placeholder</h1>
-                    </div>
-
-
-
-
-
-                    {/*<div className='modifyJobType'>*/}
-                        {/*<Button value='""' onClick={this.onFilterJobType}>All job types</Button>*/}
-                        {/*&nbsp;&nbsp;&nbsp;*/}
-                        {/*<Button value='fulltime' onClick={this.onFilterJobType}>Full-Time</Button>*/}
-                        {/*&nbsp;&nbsp;&nbsp;*/}
-                        {/*<Button value='parttime' onClick={this.onFilterJobType}>Part-Time</Button>*/}
-                        {/*&nbsp;&nbsp;&nbsp;*/}
-                        {/*<Button value='contract' onClick={this.onFilterJobType}>Contract</Button>*/}
-                        {/*&nbsp;&nbsp;&nbsp;*/}
-                        {/*<Button value='internship' onClick={this.onFilterJobType}>Internship</Button>*/}
-                    {/*</div>*/}
+                    <div style={{clear: "both", marginBottom: '20px'}}/>
                 </div>
-
 
                 {/* Import iFrame class component */}
                 <GoogleMapsModal />
-
 
                 {/* Import class to populate table body with job results*/}
                 <PopulateJobList/>

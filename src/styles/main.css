@@ -95,11 +95,15 @@
   .jobResults .modifyGeoSearch #overflowBG {
     position: absolute;
     margin-top: -20px;
-    height: 150px;
+    height: 155px;
     width: 100%;
     background-color: orange;
-    left: 0; }
+    left: 0;
+    -webkit-box-shadow: -6px 32px 32px -17px #969366;
+    -moz-box-shadow: -6px 32px 32px -17px #969366;
+    box-shadow: -6px 32px 32px -17px #969366; }
   .jobResults .modifyGeoSearch .geoUpdateContainer {
+    margin-top: 5px;
     z-index: 100;
     position: relative;
     max-width: 875px;

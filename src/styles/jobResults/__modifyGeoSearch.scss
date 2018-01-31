@@ -5,13 +5,18 @@
     #overflowBG {
       position: absolute;
       margin-top: -20px;
-      height: 150px;
+      height: 155px;
       width: 100%;
       background-color: orange;
       left: 0;
+      //https://www.cssmatic.com/box-shadow
+      -webkit-box-shadow: -6px 32px 32px -17px rgba(150,147,102,1);
+      -moz-box-shadow: -6px 32px 32px -17px rgba(150,147,102,1);
+      box-shadow: -6px 32px 32px -17px rgba(150,147,102,1);
     }
 
     .geoUpdateContainer {
+      margin-top: 5px;
       z-index: 100;
       position: relative;
       //background-color: red;

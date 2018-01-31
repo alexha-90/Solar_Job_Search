@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Table, Glyphicon, Button } from 'react-bootstrap'
+import { Table, Button } from 'react-bootstrap'
 import ReactTooltip from 'react-tooltip'
 import adblockDetect from 'adblock-detect';
 import store from '../index';
@@ -36,11 +36,11 @@ class PopulateJobList extends Component {
     buttonActions() {
         if (this.props.jobList.length) {
             return (
-                <div>
+                <div style={{marginTop: '15px'}}>
                     <Button onClick={this.onOpenMultipleURLs} bsSize="small">
                         <a data-tip="Open multiple job links at one time. For this to work, you must select at least one checkbox and
                          disable ad blocker on your browser AND addons.">
-                            Open links for all selected jobs
+                            View selected jobs
                         </a>
                         <ReactTooltip place="top" type="dark" effect="float"/>
                     </Button>
@@ -50,14 +50,7 @@ class PopulateJobList extends Component {
                         openListArr = [];
                     }}
                     >
-                        Clear job selection
-                    </Button>
-                    &nbsp;&nbsp;
-                    <Button bsSize="small" id="infoButton">
-                        <a data-tip="the checkbox next to jobs you're interested in to open each link a new tab!">
-                            <Glyphicon glyph="info-sign" />
-                        </a>
-                        <ReactTooltip place="top" type="dark" effect="float"/>
+                        Clear selection
                     </Button>
                 </div>
             )
@@ -165,7 +158,8 @@ class PopulateJobList extends Component {
                         id="pageObj"
                         onChange={this.onPagination}
                         current={this.state.currentPage}
-                        total={totalPages(this.props.jobList.length)}
+                        defaultPageSize={25}
+                        total={Math.floor(this.props.jobList.length)}
                     />
                     <div>
                         (NOTE: clicking a page button above will clear your checkbox selections)
@@ -174,23 +168,23 @@ class PopulateJobList extends Component {
             )
         }
     }
-
-
+    
 
     render() {
         console.log(this.state);
+        console.log(this.props);
 
 
         return (
             <div>
-                {jobResultsHeadline(this.props.jobList, this.props.currentPage)}
+                {jobResultsHeadline(this.props.jobList, this.props.currentPage, this.props.locationParam)}
                 {this.buttonActions()}
                 <div id="jobTable">
                     <Table responsive striped>
                         <thead>
                         <tr>
                             <th>
-                                <a data-tip="Select all jobs">
+                                <a data-tip="Select all feature coming soon!">
                                     <input id="checkBox" type="checkbox"/>
                                 </a>
                                 <ReactTooltip place="top" type="dark" effect="float"/>
@@ -221,20 +215,11 @@ function mapStateToProps(state) {
     return {
         jobList: state.jobList.jobsList,
         urlOpenList: state.jobList.urlOpenList,
+        locationParam: state.jobList.locationParam,
         locationToLaunch: state.jobList.locationToLaunch,
         currentPage: state.jobList.currentPage
     };
 }
-
-function totalPages(jobCount) {
-    // display 25 per page
-    if (jobCount) {
-        return Math.floor(jobCount)
-    } else {
-        return 1;
-    }
-}
-
 
 function onTriggerMap(job) {
     store.dispatch({
