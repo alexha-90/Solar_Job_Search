@@ -83,29 +83,43 @@ class JobResults extends Component {
 
     render() {
         // console.log(this.state);
+        const cssClasses = {
+            root: 'placeAutoComplete',
+        };
 
-        return (
+        const defaultStyles = {
+            input: {
+                border: "2px solid blue",
+                paddingLeft: "3em",
+                width: '100%',
+                height: '40px'
+            }
+        };
+
+
+
+            return (
             <section className="jobResults">
 
                 <div className="modifyGeoSearch">
-                    <span id="grayBG"/>
+                    <span id="overflowBG"/>
 
                     <Form>
                         <div className="geoUpdateContainer">
                             <div id="updateLocation">
                                 <Glyphicon glyph="search" bsStyle='large' id="searchIcon"/>
 
-                                <FormGroup id="updateLocation">
+                                <FormGroup>
                                     <PlacesAutocomplete
                                         inputProps={{
                                             value: this.state.location,
                                             onChange: this.onUpdateLocation,
                                             placeholder: 'Enter city or leave blank to see all results'
                                         }}
-                                        styles= {{
-                                            root: { width: '90%', marginLeft: '2.5em', display: 'inline-block', marginRight: '0'}
-                                        }}
-                                        options={{types: ['(cities)']}}/>
+                                        options={{types: ['(cities)']}}
+                                        classNames={cssClasses}
+                                        styles={defaultStyles}
+                                    />
                                 </FormGroup>
                             </div>
                             <div id="updateMaxDistance">
@@ -113,7 +127,7 @@ class JobResults extends Component {
 
                                 <FormGroup>
                                     <FormControl
-                                        id="distanceDropDownMenu"
+                                        className="distanceDropDownMenu"
                                         componentClass="select"
                                         name="maxDistance"
                                         onChange={this.onUpdateMaxDistance}
@@ -131,10 +145,8 @@ class JobResults extends Component {
                             </div>
                         </div>
 
-                        <br />
-
                         <FormGroup id="modifyJobRole">
-                            <ControlLabel id="label">Filter job roles:</ControlLabel>
+                            <ControlLabel id="jobRoleLabel">Filter job roles:</ControlLabel>
                             <FormGroup>
                                 <Checkbox inline name="" value="sales" onClick={this.onFilterJobRoles}>
                                     <a data-tip="tbd tbd tbd">Field/Sales</a>
@@ -158,19 +170,49 @@ class JobResults extends Component {
                                 </Checkbox>
                             </FormGroup>
                         </FormGroup>
+
+                        <FormGroup id="modifyJobType">
+                            <ControlLabel id="jobTypeLabel">Filter job type:</ControlLabel>
+                            <FormGroup>
+                                <Checkbox inline name="" value='""' onClick={this.onFilterJobType}>
+                                    All job types
+                                </Checkbox>
+                                <Checkbox inline name="" value="fulltime" onClick={this.onFilterJobType}>
+                                    Full-Time
+                                </Checkbox>
+                                <Checkbox inline name="" value="parttime" onClick={this.onFilterJobType}>
+                                    Part-Time
+                                </Checkbox>
+                                <Checkbox inline name="" value="contract" onClick={this.onFilterJobType}>
+                                    Contract
+                                </Checkbox>
+                                <Checkbox inline name="" value="internship" onClick={this.onFilterJobType}>
+                                    Internship
+                                </Checkbox>
+                            </FormGroup>
+                        </FormGroup>
+
                     </Form>
 
-                    <div className='modifyJobType'>
-                        <Button value='""' onClick={this.onFilterJobType}>All job types</Button>
-                        &nbsp;&nbsp;&nbsp;
-                        <Button value='fulltime' onClick={this.onFilterJobType}>Full-Time</Button>
-                        &nbsp;&nbsp;&nbsp;
-                        <Button value='parttime' onClick={this.onFilterJobType}>Part-Time</Button>
-                        &nbsp;&nbsp;&nbsp;
-                        <Button value='contract' onClick={this.onFilterJobType}>Contract</Button>
-                        &nbsp;&nbsp;&nbsp;
-                        <Button value='internship' onClick={this.onFilterJobType}>Internship</Button>
+                    <div style={{clear: "both"}}>
+                    <h1>placeholder</h1>
                     </div>
+
+
+
+
+
+                    {/*<div className='modifyJobType'>*/}
+                        {/*<Button value='""' onClick={this.onFilterJobType}>All job types</Button>*/}
+                        {/*&nbsp;&nbsp;&nbsp;*/}
+                        {/*<Button value='fulltime' onClick={this.onFilterJobType}>Full-Time</Button>*/}
+                        {/*&nbsp;&nbsp;&nbsp;*/}
+                        {/*<Button value='parttime' onClick={this.onFilterJobType}>Part-Time</Button>*/}
+                        {/*&nbsp;&nbsp;&nbsp;*/}
+                        {/*<Button value='contract' onClick={this.onFilterJobType}>Contract</Button>*/}
+                        {/*&nbsp;&nbsp;&nbsp;*/}
+                        {/*<Button value='internship' onClick={this.onFilterJobType}>Internship</Button>*/}
+                    {/*</div>*/}
                 </div>
 
 

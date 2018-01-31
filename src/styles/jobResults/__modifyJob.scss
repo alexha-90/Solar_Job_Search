@@ -1,0 +1,20 @@
+.jobResults {
+  #modifyJobRole {
+    z-index: 1;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 0;
+    #jobRoleLabel {
+      width: 105px;
+    }
+  }
+
+  #modifyJobType {
+    z-index: 1;
+    position: relative;
+    clear: both;
+    #jobTypeLabel {
+      width: 105px;
+    }
+  }
+}
