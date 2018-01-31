@@ -90,6 +90,139 @@
   .rssFeed #articleContainer #articleContents {
     margin-left: 14%; }
 
+.jobResults .modifyGeoSearch {
+  padding-top: 20px; }
+  .jobResults .modifyGeoSearch #grayBG {
+    position: absolute;
+    margin-top: -20px;
+    height: 80px;
+    width: 100%;
+    background-color: red;
+    left: 0; }
+  .jobResults .modifyGeoSearch .geoUpdateContainer {
+    margin: 0 auto;
+    width: 70%;
+    height: 42px;
+    max-width: 600px;
+    padding-top: 1px; }
+    .jobResults .modifyGeoSearch .geoUpdateContainer #updateLocation {
+      position: relative;
+      float: left;
+      width: 60%;
+      height: 100%;
+      margin-bottom: 0; }
+      .jobResults .modifyGeoSearch .geoUpdateContainer #updateLocation #searchIcon {
+        z-index: 999;
+        position: absolute;
+        font-size: 1.75em;
+        margin-top: 14px; }
+    .jobResults .modifyGeoSearch .geoUpdateContainer #updateMaxDistance {
+      position: relative;
+      float: right;
+      width: 40%;
+      height: 100%; }
+      .jobResults .modifyGeoSearch .geoUpdateContainer #updateMaxDistance #radiusIcon {
+        z-index: 999;
+        position: absolute;
+        font-size: 1.75em;
+        margin-top: 12px; }
+      .jobResults .modifyGeoSearch .geoUpdateContainer #updateMaxDistance #distanceDropDownMenu {
+        height: 40px;
+        border: 0;
+        width: 80%;
+        margin-left: 2.5em; }
+
+/*
+.jobResults {
+  .modifySearch {
+    margin: 20px 0;
+
+    .geoUpdateContainer {
+      background-color: green;
+      margin: 0 auto;
+      width: 55%;
+      height: 42px;
+      max-width: 1000px;
+
+
+      #updateLocation {
+        display: inline-block;
+        background-color: orange;
+        width: 60%;
+        height: 100%;
+        margin-bottom: 0;
+
+        #searchIcon {
+          display: inline-block;
+          font-size: 1.75em;
+          vertical-align: bottom;
+          margin-bottom: 3px;
+        }
+      }
+
+      #updateMaxDistance {
+        display: inline-block;
+        background-color: green;
+        width: 40%;
+        #radiusIcon {
+          display: inline-block;
+          font-size: 1.75em;
+        }
+        #distanceDropDownMenu {
+          border: 0;
+        }
+
+
+      }
+
+    }
+
+  }
+}
+ */
+.jobResults #modifyJobRole #label {
+  margin-right: 10px; }
+
+.jobResults .modifyJobType {
+  clear: both;
+  display: block; }
+
+.jobResults #jobTable {
+  margin-top: 20px;
+  float: left;
+  max-width: 875px;
+  width: 70%; }
+  .jobResults #jobTable #jobLocation {
+    cursor: pointer;
+    color: #337ab7; }
+  .jobResults #jobTable #pager {
+    display: block;
+    position: relative;
+    width: 100%;
+    clear: both; }
+    .jobResults #jobTable #pager ul {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); }
+    .jobResults #jobTable #pager div {
+      padding-top: 40px;
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.75em; }
+
+.jobResults #infoSpace {
+  background-color: #999999;
+  float: right;
+  margin-left: 40px;
+  width: 320px; }
+
+.jobResults #mockAd {
+  margin: 10px;
+  width: 300px;
+  height: 250px; }
+
 * {
   margin: 0;
   padding: 0;
@@ -99,3 +232,43 @@
 h1, h2, h3, h4 {
   margin: 0;
   padding: 0; }
+
+.jobResults {
+  margin: 0 auto;
+  max-width: 1250px; }
+
+#googleMapFrame {
+  height: 50vh; }
+
+body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-header {
+  background-color: #cccccc; }
+  body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-header #companyName {
+    font-size: 1.3em; }
+  body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-header #datePosted {
+    text-decoration: overline; }
+
+body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-footer {
+  background-color: #cccccc; }
+  body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-footer #jobSummary {
+    left: 0;
+    position: absolute;
+    text-align: left;
+    margin-left: 15px; }
+  body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-footer Button {
+    margin-top: 15px;
+    width: 30%;
+    border-radius: 8px; }
+    body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-footer Button a {
+      color: inherit; }
+
+.form-group,
+.form-group label,
+.form-group input {
+  float: left;
+  display: inline; }
+
+.form-group {
+  margin-right: 5px; }
+
+.form-group label {
+  line-height: 20px; }

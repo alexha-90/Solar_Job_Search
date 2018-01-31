@@ -1,0 +1,111 @@
+.jobResults {
+  .modifyGeoSearch {
+    padding-top: 20px;
+
+    #grayBG {
+      position: absolute;
+      margin-top: -20px;
+      height: 80px;
+      width: 100%;
+      background-color: red;
+      left: 0;
+    }
+
+    .geoUpdateContainer {
+      margin: 0 auto;
+      width: 70%;
+      height: 42px;
+      max-width: 600px;
+      padding-top: 1px;
+
+
+      #updateLocation {
+        position: relative;
+        float: left;
+        width: 60%;
+        height: 100%;
+        margin-bottom: 0;
+
+        #searchIcon {
+          z-index: 999;
+          position: absolute;
+          font-size: 1.75em;
+          margin-top: 14px;
+        }
+      }
+
+      #updateMaxDistance {
+        position: relative;
+        float: right;
+        width: 40%;
+        height: 100%;
+        #radiusIcon {
+          z-index: 999;
+          position: absolute;
+          font-size: 1.75em;
+          margin-top: 12px;
+        }
+        #distanceDropDownMenu {
+          height: 40px;
+          border: 0;
+          width: 80%;
+          margin-left: 2.5em;
+        }
+
+
+      }
+
+    }
+
+  }
+}
+
+
+/*
+.jobResults {
+  .modifySearch {
+    margin: 20px 0;
+
+    .geoUpdateContainer {
+      background-color: green;
+      margin: 0 auto;
+      width: 55%;
+      height: 42px;
+      max-width: 1000px;
+
+
+      #updateLocation {
+        display: inline-block;
+        background-color: orange;
+        width: 60%;
+        height: 100%;
+        margin-bottom: 0;
+
+        #searchIcon {
+          display: inline-block;
+          font-size: 1.75em;
+          vertical-align: bottom;
+          margin-bottom: 3px;
+        }
+      }
+
+      #updateMaxDistance {
+        display: inline-block;
+        background-color: green;
+        width: 40%;
+        #radiusIcon {
+          display: inline-block;
+          font-size: 1.75em;
+        }
+        #distanceDropDownMenu {
+          border: 0;
+        }
+
+
+      }
+
+    }
+
+  }
+}
+ */

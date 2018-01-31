@@ -1,25 +1,47 @@
 const jobList = (state = {
     jobsList: {},
-    urlOpenList: null
+    locationParam: '',
+    maxDistance: '',
+    urlOpenList: null,
+    locationToLaunch: false,
+    currentPage: 1
 }, action) => {
 
     switch (action.type) {
         case 'JOB_LIST_TO_PROPS': {
             // console.log(action.payload);
             return {
-                jobsList: action.payload
+                jobsList: action.payload[0],
+                locationParam: action.payload[1],
+                maxDistance: action.payload[2]
             }
         }
 
-        case 'GATHER_URLS_TO_PROPS': {
-            console.log(action.payload);
+        case 'JOB_LOCATION_TO_PROPS': {
+            // console.log(action.payload);
             return {
-                jobsList: {
-                    ...state.jobsList
-                },
-                urlOpenList: action.payload
+                ...state
+                ,
+                locationToLaunch: action.payload
             };
         }
+
+        case 'REMOVE_JOB_LOCATION_PROPS': {
+            return {
+                ...state
+                ,
+                locationToLaunch: undefined
+            };
+        }
+
+        case 'REMOVE_URLS_FROM_PROPS': {
+            return {
+                ...state
+                ,
+                urlOpenList: null
+            };
+        }
+
 
         default: {
             return state;

@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Form, ControlLabel, Checkbox, FormGroup, FormControl, Button, Glyphicon } from 'react-bootstrap';
+import { Table, Form, ControlLabel, Checkbox, FormGroup, FormControl, Button, Glyphicon } from 'react-bootstrap';
 import fetchJobs from '../helper_functions/fetchJobs';
 import PlacesAutocomplete from 'react-places-autocomplete'
 import PopulateJobList from './PopulateJobList';
 import GoogleMapsModal from './GoogleMapsModal';
+import adblockDetect from 'adblock-detect';
 import ReactTooltip from 'react-tooltip'
 import infoSpace from '../helper_functions/infoSpace';
+import store from '../index';
+
+
 
 /*
 TO:DO:
 select all jobs
 paginate onclick update url
+clear job selection
  */
 //===============================================================================================//
 const queryArr = [];
@@ -20,6 +25,7 @@ class JobResults extends Component {
     constructor() {
         super();
         this.state = {
+            // currentPage: 1,
             location: '',
             maxDistance: '',
             queryBuilder: queryArr,
@@ -28,7 +34,10 @@ class JobResults extends Component {
         this.onUpdateLocation = this.onUpdateLocation.bind(this);
         this.onUpdateMaxDistance = this.onUpdateMaxDistance.bind(this);
         this.onFilterJobRoles = this.onFilterJobRoles.bind(this);
+        this.jobResultsHeadline = this.jobResultsHeadline.bind(this);
+        this.onOpenMultipleURLs = this.onOpenMultipleURLs.bind(this);
         this.onFilterJobType = this.onFilterJobType.bind(this);
+        // this.onPagination = this.onPagination.bind(this);
     }
 
 
@@ -62,6 +71,41 @@ class JobResults extends Component {
         fetchJobs(this.state.location, this.state.maxDistance, this.props, query, this.state.jobType)
     }
 
+    jobResultsHeadline () {
+        const jobsPerPg = 25;
+        let lowerBound = (this.state.currentPage - 1) * jobsPerPg;
+        if (lowerBound === 0) {
+            lowerBound = 1;
+        }
+        let upperBound = this.state.currentPage * jobsPerPg;
+        if (this.props.jobList.length) {
+            return (
+                <div>
+                    <h3>
+                        Displaying {lowerBound + '-' + upperBound + ' of ' + this.props.jobList.length} recently posted solar jobs in the area:
+                    </h3>
+                    <Button onClick={this.onOpenMultipleURLs} bsSize="small">
+                        <a data-tip="Select the checkboxes next to jobs you're interested in. Then click the button above to open each link in a new tab!">
+                            Open links for all selected jobs
+                        </a>
+                        <ReactTooltip place="top" type="dark" effect="float"/>
+                    </Button>
+                    &nbsp;&nbsp;
+                    <Button bsSize="small" onClick={clearOpenJobList}>
+                        Clear job selection
+                    </Button>
+                    &nbsp;&nbsp;
+                    <Button bsSize="small" id="infoButton">
+                        <a data-tip="the checkbox next to jobs you're interested in to open each link a new tab!">
+                            <Glyphicon glyph="info-sign" />
+                        </a>
+                        <ReactTooltip place="top" type="dark" effect="float"/>
+                    </Button>
+                </div>
+            )
+        }
+    }
+
     onFilterJobRoles(event) {
         if (event.target.checked) {
             queryArr.push(event.target.value);
@@ -80,9 +124,32 @@ class JobResults extends Component {
         fetchJobs(this.state.location, this.state.maxDistance, this.props, query, this.state.jobType)
     }
 
+    // onPagination(page) {
+    //     this.setState({ currentPage: page });
+    //     currentPageToProps(page);
+    // }
+
+    onOpenMultipleURLs(event) {
+        event.preventDefault();
+        adblockDetect(blocker => {
+            if (blocker) {
+                return alert('Note: for the open multiple links feature to work, you must disable ad blocker by browser AND any addons. Then refresh page. We do not spam you.');
+            } else {
+                if (!this.props.urlOpenList) {
+                    return alert('You must select at least one job to open in a new tab!')
+                }
+                const urlOpenList = this.props.urlOpenList;
+                for (let i = 0; i < urlOpenList.length; i++) {
+                    window.open(urlOpenList[i]);
+                }
+            }
+        });
+    }
+
 
     render() {
         // console.log(this.state);
+        console.log(this.props.urlOpenList);
 
         return (
             <section className="jobResults">
@@ -183,7 +250,6 @@ class JobResults extends Component {
 
                 <br />
 
-                {/* Import placeholder for ads*/}
                 {infoSpace}
 
             </section>
@@ -204,3 +270,47 @@ function mapStateToProps(state) {
         currentPage: state.jobList.currentPage
     };
 }
+
+// function totalPages(jobCount) {
+//     // display 25 per page
+//     if (jobCount) {
+//         return Math.floor(jobCount)
+//     } else {
+//         return 1;
+//     }
+// }
+
+function clearOpenJobList() {
+    return store.dispatch({
+        type: 'REMOVE_URLS_FROM_PROPS',
+        payload: null
+    });
+}
+
+// function currentPageToProps(currentPg) {
+//     return store.dispatch({
+//         type: 'CURRENT_PAGE_TO_PROPS',
+//         payload: currentPg
+//     });
+// }
+
+/*
+                    <Table responsive striped>
+                        <thead>
+                        <tr>
+                            <th>
+                                <a data-tip="Select all jobs">
+                                    <input id="checkBox" type="checkbox"/>
+                                </a>
+                                <ReactTooltip place="top" type="dark" effect="float"/>
+                            </th>
+                            <th>Posted</th>
+                            <th>Company</th>
+                            <th>Job Title</th>
+                            <th>Location</th>
+                            <th>Summary</th>
+                        </tr>
+                        </thead>
+<PopulateJobList/>
+</Table>
+ */

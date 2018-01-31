@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Grid, Row, Col, Button, Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 // import ScrollToTop from 'react-scroll-up';
 import { connect } from 'react-redux';
-import fetchNewsFeed from './helper_functions/fetchNewsFeed'
-import fetchJobs from './helper_functions/fetchJobs';
-import populateNewsFeed from './helper_functions/populateNewsFeed';
+import fetchNewsFeed from '../helper_functions/fetchNewsFeed'
+import fetchJobs from '../helper_functions/fetchJobs';
+import populateNewsFeed from '../helper_functions/populateNewsFeed';
 import PlacesAutocomplete from 'react-places-autocomplete'
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 
 
@@ -108,7 +108,12 @@ class Landing extends Component {
                                 <FormGroup>
                                     <ControlLabel>Location:</ControlLabel>
                                     <PlacesAutocomplete
-                                        inputProps={{ value: this.state.location, onChange: this.onUpdateLocation, autoFocus: true, placeholder: 'Enter city or leave blank to see all results' }}
+                                        inputProps={{
+                                            value: this.state.location,
+                                            onChange: this.onUpdateLocation,
+                                            autoFocus: true,
+                                            placeholder: 'Enter city or leave blank to see all results'
+                                        }}
                                         options={{types: ['(cities)']}}/>
                                 </FormGroup>
 
