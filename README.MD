@@ -38,3 +38,4 @@ Limitations
 - [] Select all jobs does not work
 - [] Positioning can be improved for header jumbotron
 - [] Header needs work
+- [] Need to translate coordinates to city before running

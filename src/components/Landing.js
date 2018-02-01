@@ -9,7 +9,7 @@ import PlacesAutocomplete from 'react-places-autocomplete'
 import { Redirect } from 'react-router-dom';
 import Typist from 'react-typist';
 import ReactTooltip from 'react-tooltip'
-
+import { ChasingDots } from 'better-react-spinkit';
 
 
 //TO-DO:
@@ -29,6 +29,7 @@ class Landing extends Component {
         super(props);
         this.state = {
             loadingFeed: true,
+            loadingJobs: false,
             redirectToJobResults: false,
             location: '',
             maxDistance: '',
@@ -38,6 +39,7 @@ class Landing extends Component {
         this.onGetGeolocation = this.onGetGeolocation.bind(this);
         this.onUpdateMaxDistance = this.onUpdateMaxDistance.bind(this);
         this.onHandleInputSubmit = this.onHandleInputSubmit.bind(this);
+        this.loadingJobResultsAnimation = this.loadingJobResultsAnimation.bind(this);
     }
 
     componentWillMount() {
@@ -74,6 +76,7 @@ class Landing extends Component {
     }
 
     onHandleInputSubmit() {
+        this.setState({ loadingJobs: true });
         fetchJobs(this.state.location, this.state.maxDistance, this.props)
             .then((res) => {
                 if (res === 'error') {
@@ -82,6 +85,21 @@ class Landing extends Component {
                 this.setState({ redirectToJobResults: true });
             })
     };
+
+    loadingJobResultsAnimation() {
+        if (this.state.loadingJobs) {
+            return (
+                <div className="loadingJobsSpinner">
+                    <div>
+                        <ChasingDots
+                            size = {100}
+                            color = {'orange'}
+                        />
+                    </div>
+                </div>
+            )
+        }
+    }
 
 
     render() {
@@ -117,24 +135,15 @@ class Landing extends Component {
         return (
             <section className="landing">
 
-                <div className="mainJumbotron">
+                {this.loadingJobResultsAnimation()}
 
-                    {/*<div id="headline">*/}
-                        {/*<Typist>*/}
-                            {/*<h1>*/}
-                                {/*Power your next career*/}
-                                {/*<Typist.Delay ms={300} />*/}
-                                {/*<br />*/}
-                                {/*with sunshine &#9788;*/}
-                            {/*</h1>*/}
-                        {/*</Typist>*/}
-                    {/*</div>*/}
+                <div className="mainJumbotron">
 
                     <div id="searchContainer" className="animated fadeIn">
                         <div id="headline">
-                            <Typist>
+                            <Typist cursor={{ show: false }}>
                                 <h2>
-                                    Find a bright future &#9788;
+                                    Power your life with sunshine <span>&#9788;</span>
                                 </h2>
                             </Typist>
                         </div>
@@ -188,7 +197,7 @@ class Landing extends Component {
                                 </div>
                                 <div id="submitButton">
                                     <Button onClick={this.onHandleInputSubmit} bsStyle="success">
-                                        Search!
+                                        Search for solar jobs!
                                     </Button>
                                 </div>
                             </Form>

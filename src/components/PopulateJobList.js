@@ -7,6 +7,8 @@ import store from '../index';
 import jobResultsHeadline from '../helper_functions/jobResultsHeadline';
 import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
+import { FadingCircle } from 'better-react-spinkit';
+
 // import populateTable from '../helper_functions/populateTable';
 
 /*
@@ -62,9 +64,12 @@ class PopulateJobList extends Component {
         if (!Object.keys(this.props.jobList).length) {
             return (
                 <tbody>
-                <tr>
+                <tr style={{background: 'none'}}>
                     <td>
-                        Loading...
+                        <FadingCircle
+                            size = {80}
+                            color = {'orange'}
+                        />
                     </td>
                 </tr>
                 </tbody>
@@ -168,7 +173,7 @@ class PopulateJobList extends Component {
             )
         }
     }
-    
+
 
     render() {
         console.log(this.state);

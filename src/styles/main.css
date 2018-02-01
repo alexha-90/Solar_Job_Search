@@ -37,6 +37,8 @@
       font-size: 4em;
       letter-spacing: 0.05em;
       color: black; }
+      .landing #searchContainer #headline h2 span {
+        color: orange; }
   .landing #searchContainer #search {
     height: 40px;
     position: relative;
@@ -163,6 +165,19 @@
           margin-left: 14%; }
           .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #articleContainer #articleContents a {
             font-size: 1.2em; }
+
+.landing .loadingJobsSpinner {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .landing .loadingJobsSpinner div {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 75%;
+    transform: translateY(-75%); }
 
 .jobResults .modifyGeoSearch {
   padding-top: 20px; }
