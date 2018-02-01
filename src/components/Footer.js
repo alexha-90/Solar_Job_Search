@@ -12,24 +12,20 @@ class Footer extends Component {
         const googleMapURL='https://www.google.com/maps/embed/v1/place?q=37.788383%2C%20-122.407793&key=' + process.env.REACT_APP_GOOGLE_MAPS_KEY;
 
         return (
-            <div className="footerContainer">
-                {/*<Grid id="centeredFooterText">*/}
-                    {/*<Row>*/}
-                        {/*<Col sm={2} md={2}>{' '}</Col>*/}
-                        {/*<Col sm={8} md={8}>*/}
-                            {/*<Link to="/about">About Us</Link>*/}
-                            {/*&nbsp;&nbsp;|&nbsp;&nbsp;*/}
-                            {/*<Link to="/contact">Contact Us</Link>*/}
-                            {/*&nbsp;&nbsp;|&nbsp;&nbsp;*/}
-                            {/*<Link to="/terms">Terms of Use</Link>*/}
-                            {/*<br />*/}
-                            {/*© 2018 SolarJobSearch.com*/}
-                            {/*<br />*/}
-                            {/*<hr id="footerBar"/>*/}
-                        {/*</Col>*/}
-                        {/*<Col sm={2} md={2}>{' '}</Col>*/}
-                    {/*</Row>*/}
-                {/*</Grid>*/}
+            <div className="footer">
+                <Grid id="centeredFooterText">
+                    <Row>
+                        <Col sm={2} md={2}>{' '}</Col>
+                        <Col sm={8} md={8}>
+                            <Link to="/contact">Contact Us</Link>
+                            &nbsp;&nbsp;|&nbsp;&nbsp;
+                            <Link to="/terms">Terms of Use</Link>
+                            <br />
+                            © 2018 SolarJobSearch.com
+                        </Col>
+                        <Col sm={2} md={2}>{' '}</Col>
+                    </Row>
+                </Grid>
 
 
                 {/*<div id="footerLicensingColor">*/}

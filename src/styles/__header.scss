@@ -2,5 +2,24 @@
   nav {
     border-radius: 0;
     margin-bottom: 0;
+    color: #f2f2f2;
+    div > div.navbar-collapse.collapse > ul > li > a {
+      color: #f2f2f2;
+      font-size: 1.25em;
+    }
+  }
+
+
+
+
+  .headerContainer {
+    background-color: #004d00;
+    border: none;
+    height: 50px;
+    // this is for logo
+    a {
+      color: #f2f2f2;
+    }
   }
 }
+

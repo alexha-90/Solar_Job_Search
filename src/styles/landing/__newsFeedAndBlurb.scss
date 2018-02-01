@@ -1,48 +1,83 @@
 .landing {
-  .newsFeedAndBlurb {
+  .newsFeedAndBlurbGrid {
     width: 100%;
     padding: 0;
     margin: 0;
     position: relative;
     color: #f2f2f2;
-
-
-    div.row {
+    #newsFeedAndBlurbRow {
+      // flex method: https://stackoverflow.com/questions/19695784/how-can-i-make-bootstrap-columns-all-the-same-height
+      display: flex;
+      display: -webkit-flex;
+      flex-wrap: wrap;
       padding: 0;
       margin: 0;
-    }
+      $minHeight: 575px;
+      $topBottomBorderColor: #38ad73;
 
-    h1 {
-      margin: 10px 0;
-      text-align: center;
-    }
-
-    // more specific styling is in TBD
-    .learnMore {
-      min-height: 575px; //match
-      font-size: 1.2em;
-      text-align: center;
-      background-color: #404040;
-      border-top: 8px solid green;
-      border-right: 8px solid orange;
-      p {
-        margin: 0 auto;
-        width: 80%;
-      }
-
-      Button {
+      h1 {
         margin: 10px 0;
-        width: 200px;
+        text-align: center;
       }
 
-    }
+      .learnMore {
+        min-height: $minHeight; //match
+        font-size: 1.2em;
+        text-align: center;
+        background-color: #194d33;
+        border-top: 8px solid $topBottomBorderColor;
+        border-bottom: 8px solid $topBottomBorderColor;
+        border-right: 8px solid #669900;
+        p {
+          margin: 0 auto;
+          width: 80%;
+        }
 
-    // more specific styling is in _rssFeed.scss file
-    .rssFeed {
-      min-height: 575px; //match
-      background-color: #9494b8;
-      border-top: 8px solid navy;
-      border-left: 8px solid orange;
+        Button {
+          margin: 10px 0;
+          width: 200px;
+        }
+
+      }
+
+      .rssFeed {
+        min-height: $minHeight; //match
+        background-color: #194d33;
+        border-top: 8px solid $topBottomBorderColor;
+        border-bottom: 8px solid $topBottomBorderColor;
+        border-left: 8px solid #669900;
+        #newsAPICredit {
+          margin-top: -5px;
+          right: 0;
+        }
+
+        #articleContainer {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 10px;
+          min-height: 50px;
+
+          #articleImage{
+            position: absolute;
+            width: 10%;
+            height: 50px;
+            margin: 0 2%;
+
+            img {
+              display: block;
+              margin: 0 auto;
+              height: 100%;
+            }
+          }
+
+          #articleContents {
+            margin-left: 14%;
+            a {
+              font-size: 1.2em;
+            }
+          }
+        }
+      }
     }
   }
 }

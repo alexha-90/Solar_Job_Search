@@ -20,7 +20,7 @@ export default function populateNewsFeed(data, loading) {
                     <div className='' key={article.url}>
                         <div id='articleContainer'>
                             <div id='articleImage'>
-                                <img src={article.urlToImage} alt="img"/>
+                                <img src={article.urlToImage} alt="articleImg"/>
                             </div>
                             <div id='articleContents'>
                                 <a href={article.url}>{article.title}</a>

@@ -6,7 +6,7 @@ class Header extends Component {
     render() {
         return (
             <section className="header">
-                <Navbar inverse collapseOnSelect>
+                <Navbar collapseOnSelect className="headerContainer">
                     <Navbar.Header>
                         <Navbar.Brand>
                             <a href="/" alt="SolarJobSearch">SolarJobSearch</a>

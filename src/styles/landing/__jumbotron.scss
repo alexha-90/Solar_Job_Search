@@ -1,4 +1,4 @@
-$mainHeight: 88vh;
+$mainHeight: 92vh;
 
 .landing {
   .mainJumbotron {
@@ -7,13 +7,14 @@ $mainHeight: 88vh;
 
     #headline {
       h1 {
-        margin: 10vh auto 0 auto;
+        margin: 20vh auto 0 auto;
         width: 100%;
         position: absolute;
-        background-color: red;
+        //background-color: red;
         text-align: center;
         font-size: 4em;
         letter-spacing: 0.05em;
+        color: #ffffcc;
       }
     }
   }
@@ -21,7 +22,7 @@ $mainHeight: 88vh;
   .mainJumbotron::before {
     height: $mainHeight;
     position: absolute;
-    background: url('https://i.imgur.com/YWabzcb.jpg') no-repeat center;
+    background: url('https://cdn.citylab.com/media/img/citylab/2016/04/shutterstock_61884112/facebook.jpg?1494533575') no-repeat center;
     top: 0;
     left: 0;
     bottom: 0;
@@ -30,7 +31,7 @@ $mainHeight: 88vh;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    opacity: 0.7;
+    opacity: 0.8;
     z-index: -1;
     content: '';
   }

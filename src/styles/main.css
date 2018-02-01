@@ -1,6 +1,17 @@
 .header nav {
   border-radius: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  color: #f2f2f2; }
+  .header nav div > div.navbar-collapse.collapse > ul > li > a {
+    color: #f2f2f2;
+    font-size: 1.25em; }
+
+.header .headerContainer {
+  background-color: #004d00;
+  border: none;
+  height: 50px; }
+  .header .headerContainer a {
+    color: #f2f2f2; }
 
 .landing #searchContainer {
   -webkit-animation-duration: 2s;
@@ -11,7 +22,7 @@
   height: 48px;
   background-color: purple;
   position: absolute;
-  top: 44vh;
+  top: 46vh;
   transform: translateY(-50%);
   border-radius: 10px; }
   .landing #searchContainer #search {
@@ -32,28 +43,6 @@
       right: 0;
       margin-right: 1em; }
 
-.rssFeed #newsAPICredit {
-  background-color: green;
-  margin-top: -5px;
-  right: 0; }
-
-.rssFeed #articleContainer {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 10px;
-  min-height: 50px; }
-  .rssFeed #articleContainer #articleImage {
-    position: absolute;
-    width: 10%;
-    height: 50px;
-    margin: 0 2%; }
-    .rssFeed #articleContainer #articleImage img {
-      display: block;
-      margin: 0 auto;
-      height: 100%; }
-  .rssFeed #articleContainer #articleContents {
-    margin-left: 14%; }
-
 .landing .threeHighlights {
   display: block;
   width: 80%;
@@ -68,27 +57,34 @@
       display: flex;
       display: -webkit-flex;
       flex-wrap: wrap;
-      padding: 0; }
+      padding: 0;
+      margin: 0; }
       .landing .threeHighlights .threeHighlightsGrid #threeHighlightsRow p {
         width: 75%;
-        margin: 25px auto 10px auto; }
+        margin: 25px auto 10px auto;
+        letter-spacing: 0.1em; }
+      .landing .threeHighlights .threeHighlightsGrid #threeHighlightsRow h1 {
+        letter-spacing: 0.2em; }
+      .landing .threeHighlights .threeHighlightsGrid #threeHighlightsRow h2 {
+        margin-top: 10px;
+        font-size: 1.75em; }
 
 .landing .mainJumbotron {
-  height: 88vh;
+  height: 92vh;
   position: relative; }
   .landing .mainJumbotron #headline h1 {
-    margin: 10vh auto 0 auto;
+    margin: 20vh auto 0 auto;
     width: 100%;
     position: absolute;
-    background-color: red;
     text-align: center;
     font-size: 4em;
-    letter-spacing: 0.05em; }
+    letter-spacing: 0.05em;
+    color: #ffffcc; }
 
 .landing .mainJumbotron::before {
-  height: 88vh;
+  height: 92vh;
   position: absolute;
-  background: url("https://i.imgur.com/YWabzcb.jpg") no-repeat center;
+  background: url("https://cdn.citylab.com/media/img/citylab/2016/04/shutterstock_61884112/facebook.jpg?1494533575") no-repeat center;
   top: 0;
   left: 0;
   bottom: 0;
@@ -97,40 +93,66 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  opacity: 0.7;
+  opacity: 0.8;
   z-index: -1;
   content: ''; }
 
-.landing .newsFeedAndBlurb {
+.landing .newsFeedAndBlurbGrid {
   width: 100%;
   padding: 0;
   margin: 0;
   position: relative;
   color: #f2f2f2; }
-  .landing .newsFeedAndBlurb div.row {
+  .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0; }
-  .landing .newsFeedAndBlurb h1 {
-    margin: 10px 0;
-    text-align: center; }
-  .landing .newsFeedAndBlurb .learnMore {
-    min-height: 575px;
-    font-size: 1.2em;
-    text-align: center;
-    background-color: #404040;
-    border-top: 8px solid green;
-    border-right: 8px solid orange; }
-    .landing .newsFeedAndBlurb .learnMore p {
-      margin: 0 auto;
-      width: 80%; }
-    .landing .newsFeedAndBlurb .learnMore Button {
+    .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow h1 {
       margin: 10px 0;
-      width: 200px; }
-  .landing .newsFeedAndBlurb .rssFeed {
-    min-height: 575px;
-    background-color: #9494b8;
-    border-top: 8px solid navy;
-    border-left: 8px solid orange; }
+      text-align: center; }
+    .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .learnMore {
+      min-height: 575px;
+      font-size: 1.2em;
+      text-align: center;
+      background-color: #194d33;
+      border-top: 8px solid #38ad73;
+      border-bottom: 8px solid #38ad73;
+      border-right: 8px solid #669900; }
+      .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .learnMore p {
+        margin: 0 auto;
+        width: 80%; }
+      .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .learnMore Button {
+        margin: 10px 0;
+        width: 200px; }
+    .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed {
+      min-height: 575px;
+      background-color: #194d33;
+      border-top: 8px solid #38ad73;
+      border-bottom: 8px solid #38ad73;
+      border-left: 8px solid #669900; }
+      .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #newsAPICredit {
+        margin-top: -5px;
+        right: 0; }
+      .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #articleContainer {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 10px;
+        min-height: 50px; }
+        .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #articleContainer #articleImage {
+          position: absolute;
+          width: 10%;
+          height: 50px;
+          margin: 0 2%; }
+          .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #articleContainer #articleImage img {
+            display: block;
+            margin: 0 auto;
+            height: 100%; }
+        .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #articleContainer #articleContents {
+          margin-left: 14%; }
+          .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #articleContainer #articleContents a {
+            font-size: 1.2em; }
 
 .jobResults .modifyGeoSearch {
   padding-top: 20px; }
@@ -195,7 +217,7 @@
       font-size: 0.75em; }
 
 .jobResults #infoSpace {
-  background-color: #999999;
+  background-color: #d9d9d9;
   float: right;
   margin-left: 40px;
   width: 320px; }
@@ -290,6 +312,11 @@ body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-f
 .form-group label {
   line-height: 20px; }
 
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #f2f2f2; }
+
 * {
   margin: 0;
   padding: 0;
@@ -299,3 +326,6 @@ body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-f
 h1, h2, h3, h4 {
   margin: 0;
   padding: 0; }
+
+body, html {
+  font-family: 'Assistant', sans-serif; }
