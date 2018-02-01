@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Button, Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import { Grid, Row, Col, Button, Form, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
 // import ScrollToTop from 'react-scroll-up';
 import { connect } from 'react-redux';
 import fetchNewsFeed from '../helper_functions/fetchNewsFeed'
@@ -95,51 +95,97 @@ class Landing extends Component {
             return <Redirect push to={'/jobs/maxDistance=' + this.state.maxDistance + '_location=' + submittedLocation}/>;
         }
 
+        const cssClasses = {
+            root: 'placeAutoComplete',
+        };
+
+        const defaultStyles = {
+            input: {
+                border: "2px solid blue",
+                paddingLeft: "3em",
+                width: '100%',
+                height: '40px'
+            }
+        };
+
+
+
+
 
         return (
             <section className="landing">
 
                 <div className="mainJumbotron">
-                    <div id="searchContainer">
+
+                    <div id="headline">
+                        <h1>Find your next role:</h1>
+                    </div>
+
+                    <div id="searchContainer" className="animated fadeIn">
                         <div id="search">
-
-                            {/*<Form onSubmit={this.handleInputSubmit}>*/}
                             <Form>
-                                <FormGroup>
-                                    <ControlLabel>Location:</ControlLabel>
-                                    <PlacesAutocomplete
-                                        inputProps={{
-                                            value: this.state.location,
-                                            onChange: this.onUpdateLocation,
-                                            autoFocus: true,
-                                            placeholder: 'Enter city or leave blank to see all results'
-                                        }}
-                                        options={{types: ['(cities)']}}/>
-                                </FormGroup>
+                                <Button onClick={this.onGetGeolocation} bsStyle="warning" id="homeIcon">
+                                    <Glyphicon glyph="home"/>
+                                </Button>
 
-                                <Button onClick={this.onGetGeolocation} bsStyle="warning">Get my location</Button>
+                                <div id="updateLocation">
+                                    <Glyphicon glyph="search" bsStyle='large' id="searchIcon"/>
 
-                                <FormGroup>
-                                    <ControlLabel>Max distance</ControlLabel>
-                                    <FormControl
-                                        componentClass="select"
-                                        name="maxDistance"
-                                        onChange={this.onUpdateMaxDistance}
-                                        value={this.state.maxDistance}
+                                    <FormGroup>
+                                        <PlacesAutocomplete
+                                            inputProps={{
+                                                value: this.state.location,
+                                                onChange: this.onUpdateLocation,
+                                                placeholder: 'Enter city or leave blank to see all results'
+                                            }}
+                                            options={{types: ['(cities)']}}
+                                            classNames={cssClasses}
+                                            styles={defaultStyles}
+                                        />
+                                    </FormGroup>
+                                </div>
+
+                                <div id="updateMaxDistance">
+                                    <Glyphicon glyph="map-marker" bsStyle='large' id="radiusIcon"/>
+
+                                    <FormGroup>
+                                        <FormControl
+                                            className="distanceDropDownMenu"
+                                            componentClass="select"
+                                            name="maxDistance"
+                                            onChange={this.onUpdateMaxDistance}
+                                            value={this.state.maxDistance}
                                         >
-                                        <option value="3000">-</option>
-                                        <option value="25">25 miles</option>
-                                        <option value="50">50 miles</option>
-                                        <option value="75">75 miles</option>
-                                        <option value="100">100 miles</option>
-                                        <option value="500">500 miles</option>
-                                        <option value="1000">1000 miles</option>
-                                    </FormControl>
-                                </FormGroup>
-                                <Button onClick={this.onHandleInputSubmit} bsStyle="success">Search for jobs!</Button>
-                                {/*<Button type="submit" bsStyle="success">Search for jobs!</Button>*/}
-                            </Form>
+                                            <option value="3000">-</option>
+                                            <option value="25">25 miles</option>
+                                            <option value="50">50 miles</option>
+                                            <option value="75">75 miles</option>
+                                            <option value="100">100 miles</option>
+                                            <option value="500">500 miles</option>
+                                            <option value="1000">1000 miles</option>
+                                        </FormControl>
+                                    </FormGroup>
+                                </div>
 
+
+                                {/*<FormGroup>*/}
+                                    {/*<FormControl*/}
+                                        {/*componentClass="select"*/}
+                                        {/*name="maxDistance"*/}
+                                        {/*onChange={this.onUpdateMaxDistance}*/}
+                                        {/*value={this.state.maxDistance}*/}
+                                        {/*>*/}
+                                        {/*<option value="3000">-</option>*/}
+                                        {/*<option value="25">25 miles</option>*/}
+                                        {/*<option value="50">50 miles</option>*/}
+                                        {/*<option value="75">75 miles</option>*/}
+                                        {/*<option value="100">100 miles</option>*/}
+                                        {/*<option value="500">500 miles</option>*/}
+                                        {/*<option value="1000">1000 miles</option>*/}
+                                    {/*</FormControl>*/}
+                                {/*</FormGroup>*/}
+                                {/*<Button onClick={this.onHandleInputSubmit} bsStyle="success">Search for jobs!</Button>*/}
+                            </Form>
 
                         </div>
                     </div>

@@ -5,21 +5,43 @@
 .landing .mainJumbotron {
   height: 88vh;
   position: relative; }
-  .landing .mainJumbotron #searchContainer {
-    margin: 0 25%;
-    width: 50%;
-    height: 300px;
+  .landing .mainJumbotron #headline h1 {
+    margin: 10vh auto 0 auto;
+    width: 100%;
+    position: absolute;
     background-color: red;
+    text-align: center;
+    font-size: 4em;
+    letter-spacing: 0.05em; }
+  .landing .mainJumbotron #searchContainer {
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -ms-transition-animation-duration: 2s;
+    margin: 0 28%;
+    width: 44%;
+    height: 48px;
+    background-color: purple;
     position: absolute;
     top: 44vh;
     transform: translateY(-50%);
-    border-radius: 20px; }
+    border-radius: 10px; }
     .landing .mainJumbotron #searchContainer #search {
-      height: 50px;
-      background-color: green;
+      height: 40px;
       position: relative;
       top: 50%;
-      transform: translateY(-50%); }
+      transform: translateY(-50%);
+      padding-left: 1em; }
+      .landing .mainJumbotron #searchContainer #search #homeIcon {
+        display: inline-block;
+        height: 40px; }
+      .landing .mainJumbotron #searchContainer #search #updateLocation {
+        background-color: green;
+        width: 70%;
+        height: 40px; }
+      .landing .mainJumbotron #searchContainer #search #updateMaxDistance {
+        border: 2px solid blue;
+        right: 0;
+        margin-right: 1em; }
 
 .landing .mainJumbotron::before {
   height: 88vh;
@@ -109,47 +131,8 @@
     max-width: 875px;
     width: 70%; }
     .jobResults .modifyGeoSearch .geoUpdateContainer #updateLocation {
-      display: inline-block;
       position: relative;
-      width: 50%;
       height: 48px; }
-      .jobResults .modifyGeoSearch .geoUpdateContainer #updateLocation #searchIcon {
-        z-index: 999;
-        position: absolute;
-        font-size: 1.75em;
-        margin: 8px 0 0 5px; }
-      .jobResults .modifyGeoSearch .geoUpdateContainer #updateLocation .placeAutoComplete {
-        height: 40px;
-        width: 400px; }
-    .jobResults .modifyGeoSearch .geoUpdateContainer #updateMaxDistance {
-      top: 0;
-      position: absolute;
-      background-color: white;
-      border: 2px solid blue;
-      display: inline-block;
-      margin-left: 3em;
-      width: 23%;
-      height: 40px; }
-      .jobResults .modifyGeoSearch .geoUpdateContainer #updateMaxDistance #radiusIcon {
-        z-index: 999;
-        position: absolute;
-        font-size: 1.75em;
-        margin: 8px 0 10px 5px; }
-      .jobResults .modifyGeoSearch .geoUpdateContainer #updateMaxDistance .distanceDropDownMenu {
-        height: 36px;
-        margin-left: 3em;
-        width: 100%;
-        border-radius: 0;
-        border: none;
-        background: none; }
-      .jobResults .modifyGeoSearch .geoUpdateContainer #updateMaxDistance select:not([multiple]) {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        background-position: right 50%;
-        background-repeat: no-repeat;
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=);
-        padding: .5em;
-        padding-right: 1.5em; }
 
 .jobResults #modifyJobRole {
   z-index: 1;
@@ -202,19 +185,50 @@
   width: 300px;
   height: 250px; }
 
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  max-width: 100%; }
+#updateMaxDistance {
+  top: 0;
+  position: absolute;
+  background-color: white;
+  border: 2px solid blue;
+  display: inline-block;
+  margin-left: 3em;
+  width: 150px;
+  height: 40px;
+  padding-right: 40px; }
+  #updateMaxDistance #radiusIcon {
+    z-index: 999;
+    position: absolute;
+    font-size: 1.75em;
+    margin: 8px 0 10px 5px; }
+  #updateMaxDistance .distanceDropDownMenu {
+    height: 36px;
+    margin-left: 3em;
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    background: none; }
+  #updateMaxDistance select:not([multiple]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position: right 50%;
+    background-repeat: no-repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=);
+    padding: .5em;
+    padding-right: 1.5em; }
 
-h1, h2, h3, h4 {
-  margin: 0;
-  padding: 0; }
-
-.jobResults {
-  margin: 0 auto;
-  max-width: 1250px; }
+#updateLocation {
+  display: inline-block;
+  position: absolute;
+  width: 50%;
+  margin-left: 10px; }
+  #updateLocation #searchIcon {
+    z-index: 999;
+    position: absolute;
+    font-size: 1.75em;
+    margin: 8px 0 0 5px; }
+  #updateLocation .placeAutoComplete {
+    height: 40px;
+    width: 600px; }
 
 #googleMapFrame {
   height: 50vh; }
@@ -239,6 +253,20 @@ body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-f
     border-radius: 8px; }
     body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-footer Button a {
       color: inherit; }
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 100%; }
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0; }
+
+.jobResults {
+  margin: 0 auto;
+  max-width: 1250px; }
 
 .form-group,
 .form-group label,

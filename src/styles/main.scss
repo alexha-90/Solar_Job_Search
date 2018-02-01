@@ -6,6 +6,10 @@
 @import 'jobResults/_jobTable';
 @import 'jobResults/_infoSpace';
 
+@import 'jobResults/_updateMaxDistance';
+@import 'jobResults/__updateLocation.scss';
+@import 'jobResults/_googleMapsModal';
+
 * {
   margin: 0;
   padding: 0;
@@ -26,42 +30,6 @@ h1, h2, h3, h4 {
 .jobResults {
   margin: 0 auto;
   max-width: 1250px;
-}
-
-
-// Google Maps modal styling
-#googleMapFrame {
-  height: 50vh;
-}
-body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div {
-  .modal-header {
-    background-color: #cccccc;
-
-    #companyName {
-      font-size: 1.3em;
-    }
-    #datePosted {
-      text-decoration: overline;
-    }
-  }
-  .modal-footer {
-    background-color: #cccccc;
-
-    #jobSummary {
-      left: 0;
-      position: absolute;
-      text-align: left;
-      margin-left: 15px;
-    }
-    Button {
-      margin-top: 15px;
-      width: 30%;
-      border-radius: 8px;
-      a {
-        color: inherit;
-      }
-    }
-  }
 }
 
 

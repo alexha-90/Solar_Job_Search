@@ -1,0 +1,17 @@
+#updateLocation {
+  //background-color: orange;
+  display: inline-block;
+  position: absolute;
+  width: 50%;
+  margin-left: 10px;
+  #searchIcon {
+    z-index: 999;
+    position: absolute;
+    font-size: 1.75em;
+    margin: 8px 0 0 5px;
+  }
+  .placeAutoComplete {
+    height: 40px;
+    width: 600px;
+  }
+}
