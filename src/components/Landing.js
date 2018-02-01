@@ -166,31 +166,40 @@ class Landing extends Component {
                                         </FormControl>
                                     </FormGroup>
                                 </div>
-
-
-                                {/*<FormGroup>*/}
-                                    {/*<FormControl*/}
-                                        {/*componentClass="select"*/}
-                                        {/*name="maxDistance"*/}
-                                        {/*onChange={this.onUpdateMaxDistance}*/}
-                                        {/*value={this.state.maxDistance}*/}
-                                        {/*>*/}
-                                        {/*<option value="3000">-</option>*/}
-                                        {/*<option value="25">25 miles</option>*/}
-                                        {/*<option value="50">50 miles</option>*/}
-                                        {/*<option value="75">75 miles</option>*/}
-                                        {/*<option value="100">100 miles</option>*/}
-                                        {/*<option value="500">500 miles</option>*/}
-                                        {/*<option value="1000">1000 miles</option>*/}
-                                    {/*</FormControl>*/}
-                                {/*</FormGroup>*/}
-                                {/*<Button onClick={this.onHandleInputSubmit} bsStyle="success">Search for jobs!</Button>*/}
                             </Form>
 
                         </div>
                     </div>
                 </div>
-                <Grid id="additionalContent">
+
+                <div className='threeHighlights'>
+                    <h1 style={{textAlign: 'center'}}>Solar job searching made easy...</h1>
+                    <Grid className='threeHighlightsGrid'>
+                        <Row style={{margin: '0'}} id='threeHighlightsRow'>
+                            <Col lg={4} xs={12} className="blurb-specific">
+                                <img alt="blurb-specific-img" src="http://www.mounthousing.com/images/Sustainable%20site%20development_icon.png"/>
+                                <p>
+                                    ed dignissim fermentum dolor sed sodales. Pellentesque sapien sapien, posuere nec arcu dictum, bibendum suscipit purus. Integer non odio a metus tincidunt blandit.                                <h2>specific</h2>
+                                </p>
+                            </Col>
+                            <Col lg={4} xs={12} className="blurb-map">
+                                <img alt="blurb-map-img" src="https://smarterdevs.com/wp-content/uploads/2014/06/map-brazil-300x250.jpg" />
+                                <p>
+                                    ed dignissim fermentum dolor sed sodales. Pellentesque sapien sapien, posuere nec arcu dictum, bibendum suscipit purus. Integer non odio a metus tincidunt blandit.
+                                </p>
+                                <h2>map</h2>
+                            </Col>
+                            <Col lg={4} xs={12} className="blurb-efficiency">
+                                <img alt="blurb-efficiency" src="https://static.robinpowered.com/blog/images/why-meetings-unproductive/unproductive-meetings-watch-clock.png" />
+                                <p>
+                                    ed dignissim fermentum dolor sed sodales. Pellentesque sapien sapien, posuere nec arcu dictum, bibendum suscipit purus. Integer non odio a metus tincidunt blandit.
+                                </p>
+                                <h2>efficiency</h2>
+                            </Col>
+                        </Row>
+                    </Grid>
+                </div>
+                <Grid className="newsFeedAndBlurb">
                     <Row>
                         <Col md={12} lg={6} className="learnMore">
                             <h1>Why solar?</h1>
@@ -221,12 +230,7 @@ class Landing extends Component {
                 {/*<ScrollToTop showUnder={160}>*/}
                     {/*<span>UP</span>*/}
                 {/*</ScrollToTop>*/}
-
-
-                <div className="infoJumbotron">
-                    <h1>info goes here later</h1>
-
-                </div>
+                
             </section>
         )
     }

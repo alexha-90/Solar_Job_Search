@@ -1,0 +1,48 @@
+.landing {
+  .newsFeedAndBlurb {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    color: #f2f2f2;
+
+
+    div.row {
+      padding: 0;
+      margin: 0;
+    }
+
+    h1 {
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    // more specific styling is in TBD
+    .learnMore {
+      min-height: 575px; //match
+      font-size: 1.2em;
+      text-align: center;
+      background-color: #404040;
+      border-top: 8px solid green;
+      border-right: 8px solid orange;
+      p {
+        margin: 0 auto;
+        width: 80%;
+      }
+
+      Button {
+        margin: 10px 0;
+        width: 200px;
+      }
+
+    }
+
+    // more specific styling is in _rssFeed.scss file
+    .rssFeed {
+      min-height: 575px; //match
+      background-color: #9494b8;
+      border-top: 8px solid navy;
+      border-left: 8px solid orange;
+    }
+  }
+}

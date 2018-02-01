@@ -1,0 +1,21 @@
+@import '_modifyGeoSearch';
+@import 'jobResults/_modifyJob';
+@import 'jobResults/_jobTable';
+@import 'jobResults/_infoSpace';
+
+@import 'jobResults/_updateMaxDistance';
+@import 'jobResults/__updateLocation.scss';
+@import 'jobResults/_googleMapsModal';
+
+// global container
+.jobResults {
+  margin: 0 auto;
+  max-width: 1250px;
+}
+
+// inline bootstrap label method from: https://stackoverflow.com/questions/18404003/label-on-the-left-side-instead-above-an-input-field
+.form-group,
+.form-group label,
+.form-group input { float:left; display:inline;   }
+.form-group { margin-right:5px }
+.form-group label { line-height: 20px; }

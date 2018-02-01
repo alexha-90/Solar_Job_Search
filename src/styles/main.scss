@@ -1,14 +1,6 @@
 @import '_header';
 @import '_landing';
-@import 'landing/rssFeed';
-@import 'jobResults/_modifyGeoSearch';
-@import 'jobResults/_modifyJob';
-@import 'jobResults/_jobTable';
-@import 'jobResults/_infoSpace';
-
-@import 'jobResults/_updateMaxDistance';
-@import 'jobResults/__updateLocation.scss';
-@import 'jobResults/_googleMapsModal';
+@import '_jobResults';
 
 * {
   margin: 0;
@@ -17,25 +9,7 @@
   max-width: 100%;
 }
 
-html, body {
-}
-
 h1, h2, h3, h4 {
   margin: 0;
   padding: 0;
 }
-
-
-// global container
-.jobResults {
-  margin: 0 auto;
-  max-width: 1250px;
-}
-
-
-// inline bootstrap label method from: https://stackoverflow.com/questions/18404003/label-on-the-left-side-instead-above-an-input-field
-.form-group,
-.form-group label,
-.form-group input { float:left; display:inline;   }
-.form-group { margin-right:5px }
-.form-group label { line-height: 20px; }

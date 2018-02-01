@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Header from './components/Header';
 import Landing from './components/Landing';
 import JobResults from './components/JobResults';
+import Footer from './components/Footer';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ class App extends Component {
                   <Header />
                   <Route exact path='/' component={Landing} />
                   <Route path='/jobs' component={JobResults} />
+                  <Footer />
               </div>
           </BrowserRouter>
       </div>

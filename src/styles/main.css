@@ -2,93 +2,35 @@
   border-radius: 0;
   margin-bottom: 0; }
 
-.landing .mainJumbotron {
-  height: 88vh;
-  position: relative; }
-  .landing .mainJumbotron #headline h1 {
-    margin: 10vh auto 0 auto;
-    width: 100%;
-    position: absolute;
-    background-color: red;
-    text-align: center;
-    font-size: 4em;
-    letter-spacing: 0.05em; }
-  .landing .mainJumbotron #searchContainer {
-    -webkit-animation-duration: 2s;
-    -moz-animation-duration: 2s;
-    -ms-transition-animation-duration: 2s;
-    margin: 0 28%;
-    width: 44%;
-    height: 48px;
-    background-color: purple;
-    position: absolute;
-    top: 44vh;
-    transform: translateY(-50%);
-    border-radius: 10px; }
-    .landing .mainJumbotron #searchContainer #search {
-      height: 40px;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      padding-left: 1em; }
-      .landing .mainJumbotron #searchContainer #search #homeIcon {
-        display: inline-block;
-        height: 40px; }
-      .landing .mainJumbotron #searchContainer #search #updateLocation {
-        background-color: green;
-        width: 70%;
-        height: 40px; }
-      .landing .mainJumbotron #searchContainer #search #updateMaxDistance {
-        border: 2px solid blue;
-        right: 0;
-        margin-right: 1em; }
-
-.landing .mainJumbotron::before {
-  height: 88vh;
+.landing #searchContainer {
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -ms-transition-animation-duration: 2s;
+  margin: 0 28%;
+  width: 44%;
+  height: 48px;
+  background-color: purple;
   position: absolute;
-  background: url("https://i.imgur.com/YWabzcb.jpg") no-repeat center;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  opacity: 0.7;
-  z-index: -1;
-  content: ''; }
-
-.landing #additionalContent {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  color: #f2f2f2; }
-  .landing #additionalContent div.row {
-    padding: 0;
-    margin: 0; }
-  .landing #additionalContent h1 {
-    margin: 10px 0;
-    text-align: center; }
-  .landing #additionalContent .learnMore {
-    min-height: 575px;
-    font-size: 1.2em;
-    text-align: center;
-    background-color: #404040;
-    border-top: 8px solid green;
-    border-right: 8px solid orange; }
-    .landing #additionalContent .learnMore p {
-      margin: 0 auto;
-      width: 80%; }
-    .landing #additionalContent .learnMore Button {
-      margin: 10px 0;
-      width: 200px; }
-  .landing #additionalContent .rssFeed {
-    min-height: 575px;
-    background-color: #9494b8;
-    border-top: 8px solid navy;
-    border-left: 8px solid orange; }
+  top: 44vh;
+  transform: translateY(-50%);
+  border-radius: 10px; }
+  .landing #searchContainer #search {
+    height: 40px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 1em; }
+    .landing #searchContainer #search #homeIcon {
+      display: inline-block;
+      height: 40px; }
+    .landing #searchContainer #search #updateLocation {
+      background-color: green;
+      width: 70%;
+      height: 40px; }
+    .landing #searchContainer #search #updateMaxDistance {
+      border: 2px solid blue;
+      right: 0;
+      margin-right: 1em; }
 
 .rssFeed #newsAPICredit {
   background-color: green;
@@ -111,6 +53,84 @@
       height: 100%; }
   .rssFeed #articleContainer #articleContents {
     margin-left: 14%; }
+
+.landing .threeHighlights {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 40px; }
+  .landing .threeHighlights .threeHighlightsGrid {
+    margin: 40px 0;
+    padding: 0;
+    width: 100%;
+    text-align: center; }
+    .landing .threeHighlights .threeHighlightsGrid #threeHighlightsRow {
+      display: flex;
+      display: -webkit-flex;
+      flex-wrap: wrap;
+      padding: 0; }
+      .landing .threeHighlights .threeHighlightsGrid #threeHighlightsRow p {
+        width: 75%;
+        margin: 25px auto 10px auto; }
+
+.landing .mainJumbotron {
+  height: 88vh;
+  position: relative; }
+  .landing .mainJumbotron #headline h1 {
+    margin: 10vh auto 0 auto;
+    width: 100%;
+    position: absolute;
+    background-color: red;
+    text-align: center;
+    font-size: 4em;
+    letter-spacing: 0.05em; }
+
+.landing .mainJumbotron::before {
+  height: 88vh;
+  position: absolute;
+  background: url("https://i.imgur.com/YWabzcb.jpg") no-repeat center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.7;
+  z-index: -1;
+  content: ''; }
+
+.landing .newsFeedAndBlurb {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  color: #f2f2f2; }
+  .landing .newsFeedAndBlurb div.row {
+    padding: 0;
+    margin: 0; }
+  .landing .newsFeedAndBlurb h1 {
+    margin: 10px 0;
+    text-align: center; }
+  .landing .newsFeedAndBlurb .learnMore {
+    min-height: 575px;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #404040;
+    border-top: 8px solid green;
+    border-right: 8px solid orange; }
+    .landing .newsFeedAndBlurb .learnMore p {
+      margin: 0 auto;
+      width: 80%; }
+    .landing .newsFeedAndBlurb .learnMore Button {
+      margin: 10px 0;
+      width: 200px; }
+  .landing .newsFeedAndBlurb .rssFeed {
+    min-height: 575px;
+    background-color: #9494b8;
+    border-top: 8px solid navy;
+    border-left: 8px solid orange; }
 
 .jobResults .modifyGeoSearch {
   padding-top: 20px; }
@@ -254,16 +274,6 @@ body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-f
     body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-footer Button a {
       color: inherit; }
 
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  max-width: 100%; }
-
-h1, h2, h3, h4 {
-  margin: 0;
-  padding: 0; }
-
 .jobResults {
   margin: 0 auto;
   max-width: 1250px; }
@@ -279,3 +289,13 @@ h1, h2, h3, h4 {
 
 .form-group label {
   line-height: 20px; }
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 100%; }
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0; }

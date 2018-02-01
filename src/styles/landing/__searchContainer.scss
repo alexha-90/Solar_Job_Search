@@ -1,0 +1,47 @@
+$animationSpeed: 2s;
+$inputHeight: 40px;
+$geoHeight: 48px;
+$mainHeight: 88vh;
+
+.landing {
+  #searchContainer {
+    -webkit-animation-duration: $animationSpeed;
+    -moz-animation-duration: $animationSpeed;
+    -ms-transition-animation-duration: $animationSpeed;
+    margin: 0 28%; // left: 28% + width: 44% + right: 28%
+    width: 44%;
+    height: $geoHeight;
+    background-color: purple;
+    position: absolute;
+    top: $mainHeight/2;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    #search {
+      height: 40px;
+      //background-color: green;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-left: 1em;
+
+      #homeIcon {
+        display: inline-block;
+        height: $inputHeight;
+      }
+
+      #updateLocation {
+        background-color: green;
+        width: 70%;
+        height: $inputHeight;
+        .placeAutoComplete {
+        }
+      }
+
+      #updateMaxDistance {
+        border: 2px solid blue;
+        right: 0;
+        margin-right: 1em;
+      }
+    }
+  }
+}

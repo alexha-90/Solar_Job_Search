@@ -1,0 +1,35 @@
+ .landing {
+   .threeHighlights {
+     //background-color: red;
+     display: block;
+     width: 80%;
+     margin: 0 auto;
+     padding-top: 40px;
+     .threeHighlightsGrid {
+       margin: 40px 0;
+       padding: 0;
+       width: 100%;
+       text-align: center;
+       #threeHighlightsRow {
+         // flex method: https://stackoverflow.com/questions/19695784/how-can-i-make-bootstrap-columns-all-the-same-height
+         display: flex;
+         display: -webkit-flex;
+         flex-wrap: wrap;
+         padding: 0;
+         p {
+           width: 75%;
+           margin: 25px auto 10px auto;
+         }
+         .blurb-specific {
+           //background-color: blue;
+         }
+         .blurb-map {
+           //background-color: silver;
+         }
+         .blurb-efficiency {
+           //background-color: gray;
+         }
+       }
+     }
+   }
+ }
