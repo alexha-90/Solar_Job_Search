@@ -15,7 +15,6 @@ TBD (WORK IN PROGRESS!)
 * Can select multiple jobs and open together
 * Geolocation, auto complete
 
-
 ## Built with
 * React.js
 * Redux
@@ -24,6 +23,11 @@ TBD (WORK IN PROGRESS!)
 * HTML
 * Node.js (Express)
 
+
+Limitations
+* Some summary data does not always populate
+* Unable to retrieve data in chunks. Must make large call at once. Limitation of scraper used.
+
 ## Notable tools
 * indeed-scraper
 * Axios + redux-thunk
@@ -31,8 +35,6 @@ TBD (WORK IN PROGRESS!)
 
 [x] = addressed, [ ] = work in progress
 ## Known bugs and issues
-- [] There are not enough solar jobs to correctly display type (part-time, etc). Sad.
-- [] Some summary data does not always populate
-- [] Unable to retrieve data in chunks
 - [] Select all jobs does not work
-- [] Must make large call at once. Limitation of scraper.
+- [] Positioning can be improved for header jumbotron
+- [] Header needs work

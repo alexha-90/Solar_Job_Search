@@ -103,10 +103,10 @@ class Landing extends Component {
 
         const defaultStyles = {
             input: {
-                border: "2px solid blue",
+                border: "2px solid #003300",
                 paddingLeft: "3em",
                 width: '100%',
-                height: '40px'
+                height: '40px',
             }
         };
 
@@ -119,18 +119,25 @@ class Landing extends Component {
 
                 <div className="mainJumbotron">
 
-                    <div id="headline">
-                        <Typist>
-                            <h1>
-                                Power your next career
-                                <Typist.Delay ms={300} />
-                                <br />
-                                with sunshine &#9788;
-                            </h1>
-                        </Typist>
-                    </div>
+                    {/*<div id="headline">*/}
+                        {/*<Typist>*/}
+                            {/*<h1>*/}
+                                {/*Power your next career*/}
+                                {/*<Typist.Delay ms={300} />*/}
+                                {/*<br />*/}
+                                {/*with sunshine &#9788;*/}
+                            {/*</h1>*/}
+                        {/*</Typist>*/}
+                    {/*</div>*/}
 
                     <div id="searchContainer" className="animated fadeIn">
+                        <div id="headline">
+                            <Typist>
+                                <h2>
+                                    Find a bright future &#9788;
+                                </h2>
+                            </Typist>
+                        </div>
                         <div id="search">
                             <Form>
                                 <Button onClick={this.onGetGeolocation} bsStyle="warning" id="homeIcon">
@@ -149,7 +156,7 @@ class Landing extends Component {
                                                 onChange: this.onUpdateLocation,
                                                 placeholder: 'Enter city or leave blank to see all results'
                                             }}
-                                            options={{types: ['(cities)']}}
+                                            options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
                                             classNames={cssClasses}
                                             styles={defaultStyles}
                                         />
@@ -179,7 +186,11 @@ class Landing extends Component {
                                         </FormControl>
                                     </FormGroup>
                                 </div>
-                                <Button onClick={this.onHandleInputSubmit} bsStyle="success">Search!</Button>
+                                <div id="submitButton">
+                                    <Button onClick={this.onHandleInputSubmit} bsStyle="success">
+                                        Search!
+                                    </Button>
+                                </div>
                             </Form>
 
                         </div>

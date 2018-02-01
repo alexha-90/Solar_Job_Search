@@ -1,6 +1,6 @@
 $animationSpeed: 2s;
 $inputHeight: 40px;
-$geoHeight: 48px;
+$geoHeight: 100px;
 $mainHeight: 92vh;
 
 .landing {
@@ -11,17 +11,35 @@ $mainHeight: 92vh;
     margin: 0 28%; // left: 28% + width: 44% + right: 28%
     width: 44%;
     height: $geoHeight;
-    background-color: purple;
+    background-color: #008000;
     position: absolute;
     top: $mainHeight/2;
     transform: translateY(-50%);
     border-radius: 10px;
+
+    #headline {
+      position: absolute;
+      width: 100%;
+      margin-top: -250px;
+
+      h2 {
+        margin: 0 auto;
+        width: 100%;
+        position: absolute;
+        //background-color: red;
+        text-align: center;
+        font-size: 4em;
+        letter-spacing: 0.05em;
+        color: black;
+      }
+    }
+
     #search {
       height: 40px;
       //background-color: green;
       position: relative;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 13%;
+      transform: translateY(-13%);
       padding-left: 1em;
 
       #homeIcon {
@@ -38,10 +56,20 @@ $mainHeight: 92vh;
       }
 
       #updateMaxDistance {
-        border: 2px solid blue;
         right: 0;
         margin-right: 1em;
       }
+      #submitButton {
+        width: 100%;
+        margin: 10px 0;
+
+        Button {
+          display: block;
+          margin: 0 auto 0 auto;
+          width: 40%;
+        }
+      }
+
     }
   }
 }

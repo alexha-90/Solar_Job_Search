@@ -89,7 +89,7 @@ class JobResults extends Component {
 
         const defaultStyles = {
             input: {
-                border: "2px solid blue",
+                border: "2px solid #003300",
                 paddingLeft: "3em",
                 width: '100%',
                 height: '40px'
@@ -116,7 +116,7 @@ class JobResults extends Component {
                                             onChange: this.onUpdateLocation,
                                             placeholder: 'Enter city or leave blank to see all results'
                                         }}
-                                        options={{types: ['(cities)']}}
+                                        options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
                                         classNames={cssClasses}
                                         styles={defaultStyles}
                                     />
