@@ -13,14 +13,16 @@ import { ChasingDots } from 'better-react-spinkit';
 
 
 //TO-DO:
-// add note that all links go through indeed portal first. they are getting affiliate and aggregate links
+// maybe not load newsfeed for mobiel devices
 // can't get getNewsFeed catch statement to trigger properly
 // integrate redux so entirety of Landing is not passed into result
-// remove duplicate entries if present
-// redundant articles
+// remove duplicate articles if present
 // error handling for location
 // get local time based on client location
 // custom styling for auto complete: https://www.npmjs.com/package/react-places-autocomplete#geocode-by-place-id
+
+//loader can get stuck in a loop if no results
+//coordinates to city encoding
 
 //===============================================================================================//
 
@@ -65,6 +67,7 @@ class Landing extends Component {
                     let longitude = position.coords.longitude.toString().slice(0,9);
                     this.setState({ location: latitude + ', ' + longitude });
                 }, 500)
+                // then convert to address
             });
         } else {
             return alert('You must allow geolocation permission for us to retrieve your location.');
@@ -103,33 +106,20 @@ class Landing extends Component {
 
 
     render() {
+
         // console.log(this.state);
-        let submittedLocation;
-        if (this.state.location.includes('United States')) {
-            submittedLocation = this.state.location.replace(/United States/i, 'USA');
-        } else {
-            submittedLocation = this.state.location;
-        }
+        // let submittedLocation;
+        // if (this.state.location.includes('United States')) {
+        //     submittedLocation = this.state.location.replace(/United States/i, 'USA');
+        // } else {
+        //     submittedLocation = this.state.location;
+        // }
+
+        let submittedLocation = this.state.location.includes('United States') ? this.state.location.replace(/United States/i, 'USA') : this.state.location;
 
         if (this.state.redirectToJobResults) {
             return <Redirect push to={'/jobs/maxDistance=' + this.state.maxDistance + '_location=' + submittedLocation}/>;
         }
-
-        const cssClasses = {
-            root: 'placeAutoComplete',
-        };
-
-        const defaultStyles = {
-            input: {
-                border: "2px solid #003300",
-                paddingLeft: "3em",
-                width: '100%',
-                height: '40px',
-            }
-        };
-
-
-
 
 
         return (
@@ -166,8 +156,13 @@ class Landing extends Component {
                                                 placeholder: 'Enter city or leave blank to see all results'
                                             }}
                                             options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
-                                            classNames={cssClasses}
-                                            styles={defaultStyles}
+                                            classNames={{ root: 'placesAutoComplete' }}
+                                            styles={{ input: {
+                                                border: "2px solid #003300",
+                                                paddingLeft: "3em",
+                                                width: '100%',
+                                                height: '40px'
+                                            }}}
                                         />
                                     </FormGroup>
                                 </div>

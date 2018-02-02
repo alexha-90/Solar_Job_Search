@@ -120,6 +120,8 @@ class PopulateJobList extends Component {
     }
 
 
+
+
     gatherOpenList(event) {
         if (event.target.checked) {
             openListArr.push(event.target.value);
@@ -176,8 +178,8 @@ class PopulateJobList extends Component {
 
 
     render() {
-        console.log(this.state);
-        console.log(this.props);
+        // console.log(this.state);
+        // console.log(this.props);
 
 
         return (

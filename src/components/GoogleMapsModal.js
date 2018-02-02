@@ -4,6 +4,8 @@ import { connect} from 'react-redux';
 import store from '../index';
 import Iframe from 'react-iframe';
 
+
+// think this can be a function
 //TO-DO: onhover, load google maps api and show location in modal
 // g key: AIzaSyDJlAgCIT52lOjHJKUzLIsyc-VMR4r3voQ
 // AIzaSyDM79XowJmUO9FJmV99vyDpnd-6tKywxWY

@@ -10,6 +10,7 @@ import infoSpace from '../helper_functions/infoSpace';
 
 /*
 TO:DO:
+always shows 'Displaying 1-25'
 select all jobs
 paginate onclick update url
  */
@@ -82,21 +83,6 @@ class JobResults extends Component {
 
 
     render() {
-        // console.log(this.state);
-        const cssClasses = {
-            root: 'placeAutoComplete',
-        };
-
-        const defaultStyles = {
-            input: {
-                border: "2px solid #003300",
-                paddingLeft: "3em",
-                width: '100%',
-                height: '40px'
-            }
-        };
-
-
 
             return (
             <section className="jobResults">
@@ -117,8 +103,13 @@ class JobResults extends Component {
                                             placeholder: 'Enter city or leave blank to see all results'
                                         }}
                                         options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
-                                        classNames={cssClasses}
-                                        styles={defaultStyles}
+                                        classNames={{ root: 'placesAutoComplete' }}
+                                        styles={{ input: {
+                                            border: "2px solid #003300",
+                                            paddingLeft: "3em",
+                                            width: '100%',
+                                            height: '40px'
+                                        }}}
                                     />
                                 </FormGroup>
                             </div>
@@ -148,23 +139,23 @@ class JobResults extends Component {
                         <FormGroup id="modifyJobRole">
                             <FormGroup>
                                 <Checkbox inline name="" value="sales" onClick={this.onFilterJobRoles}>
-                                    <a data-tip="tbd tbd tbd">Field/Sales</a>
+                                    <a data-tip="Roles that focus more on customer interactions">Field/Sales</a>
                                     <ReactTooltip place="top" type="dark" effect="float"/>
                                 </Checkbox>
                                 <Checkbox inline name="" value="engineer" onClick={this.onFilterJobRoles}>
-                                    <a data-tip="an engineer does this">Design/Engineer</a>
+                                    <a data-tip="Technical roles that require deeper understanding about how PV works">Design/Engineer</a>
                                     <ReactTooltip place="top" type="dark" effect="float"/>
                                 </Checkbox>
                                 <Checkbox inline name="" value="installer" onClick={this.onFilterJobRoles}>
-                                    <a data-tip="installer, roofer, etc">Installer/Technician</a>
+                                    <a data-tip="Hands-on roles that deal with the physical solar panels themselves">Installer/Technician</a>
                                     <ReactTooltip place="top" type="dark" effect="float"/>
                                 </Checkbox>
                                 <Checkbox inline name="" value="pm" onClick={this.onFilterJobRoles}>
-                                    <a data-tip="project manager, analsyst">Project Management/Analyst</a>
+                                    <a data-tip="Roles that deal with the logistics, numbers, and business behind solar">Project Management/Analyst</a>
                                     <ReactTooltip place="top" type="dark" effect="float"/>
                                 </Checkbox>
                                 <Checkbox inline name="" value="csr" onClick={this.onFilterJobRoles}>
-                                    <a data-tip="customer service, talk on phone">Customer Service</a>
+                                    <a data-tip="Roles that interact with customers">Customer Service</a>
                                     <ReactTooltip place="top" type="dark" effect="float"/>
                                 </Checkbox>
                             </FormGroup>

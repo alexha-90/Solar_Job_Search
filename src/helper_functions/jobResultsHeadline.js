@@ -7,7 +7,7 @@ export default function jobResultsHeadline (jobList, currentPage, location) {
 
     const jobsPerPg = 25;
 
-    let currentPg = !currentPage ? 1: currentPage;
+    let currentPg = !currentPage ? 1 : currentPage;
 
     let headlineLocation = !location ? 'the USA' : location;
 
