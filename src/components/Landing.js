@@ -106,15 +106,6 @@ class Landing extends Component {
 
 
     render() {
-
-        // console.log(this.state);
-        // let submittedLocation;
-        // if (this.state.location.includes('United States')) {
-        //     submittedLocation = this.state.location.replace(/United States/i, 'USA');
-        // } else {
-        //     submittedLocation = this.state.location;
-        // }
-
         let submittedLocation = this.state.location.includes('United States') ? this.state.location.replace(/United States/i, 'USA') : this.state.location;
 
         if (this.state.redirectToJobResults) {
@@ -156,7 +147,9 @@ class Landing extends Component {
                                                 placeholder: 'Enter city or leave blank to see all results'
                                             }}
                                             options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
-                                            classNames={{ root: 'placesAutoComplete' }}
+                                            classNames={{
+                                                root: 'placeAutoComplete'
+                                            }}
                                             styles={{ input: {
                                                 border: "2px solid #003300",
                                                 paddingLeft: "3em",

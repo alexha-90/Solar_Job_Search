@@ -120,8 +120,6 @@ class PopulateJobList extends Component {
     }
 
 
-
-
     gatherOpenList(event) {
         if (event.target.checked) {
             openListArr.push(event.target.value);
@@ -132,8 +130,6 @@ class PopulateJobList extends Component {
         console.log(openListArr);
         this.setState({ openListArr: openListArr });
     }
-
-
 
     onOpenMultipleURLs(event) {
         event.preventDefault();
@@ -176,15 +172,13 @@ class PopulateJobList extends Component {
         }
     }
 
-
     render() {
         // console.log(this.state);
         // console.log(this.props);
 
-
         return (
             <div>
-                {jobResultsHeadline(this.props.jobList, this.props.currentPage, this.props.locationParam)}
+                {jobResultsHeadline(this.props.jobList, this.state.currentPage, this.props.locationParam)}
                 {this.buttonActions()}
                 <div id="jobTable">
                     <Table responsive striped>

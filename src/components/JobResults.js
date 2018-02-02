@@ -10,12 +10,11 @@ import infoSpace from '../helper_functions/infoSpace';
 
 /*
 TO:DO:
-always shows 'Displaying 1-25'
 select all jobs
 paginate onclick update url
  */
 //===============================================================================================//
-const queryArr = [];
+let queryArr = [];
 
 class JobResults extends Component {
     constructor() {
@@ -24,7 +23,13 @@ class JobResults extends Component {
             location: '',
             maxDistance: '',
             queryBuilder: queryArr,
-            jobType: ''
+            jobType: '',
+            showAllJobs: true,
+            showSalesJobs: false,
+            showEngineerJobs: false,
+            showInstallerJobs: false,
+            showPMJobs: false,
+            showCSRJobs: false
         };
         this.onUpdateLocation = this.onUpdateLocation.bind(this);
         this.onUpdateMaxDistance = this.onUpdateMaxDistance.bind(this);
@@ -64,21 +69,49 @@ class JobResults extends Component {
     }
 
     onFilterJobRoles(event) {
+        if (event.target.value ==='sales') {
+            this.setState({showSalesJobs: !this.state.showSalesJobs});
+        } if (event.target.value === 'engineer') {
+            this.setState({showEngineerJobs: !this.state.showEngineerJobs});
+        } if (event.target.value === 'installer') {
+            this.setState({ showInstallerJobs: !this.state.showInstallerJobs });
+        } if (event.target.value === 'pm') {
+            this.setState({ showPMJobs: !this.state.showPMJobs });
+        } if (event.target.value === 'csr') {
+            this.setState({showCSRJobs: !this.state.showCSRJobs});
+        }
+
         if (event.target.checked) {
-            queryArr.push(event.target.value);
+            if (event.target.name !== 'default') {
+                queryArr.push(event.target.value);
+                this.setState({showAllJobs: false});
+            } if (event.target.name === 'default') {
+                queryArr = [];
+                this.setState({ showAllJobs: true, showSalesJobs: false, showEngineerJobs: false, showInstallerJobs: false, showPMJobs: false, showCSRJobs: false });
+            }
         } else {
             const index = queryArr.indexOf(event.target.value);
             if (index > -1) {
                 queryArr.splice(index, 1);
             }
         }
-        fetchJobs(this.state.location, this.state.maxDistance, this.props, queryArr, this.state.jobType)
+        // if queryArr is empty, it will change to a default string in external function below
+        fetchJobs(this.state.location, this.state.maxDistance, this.props, queryArr, this.state.jobType);
+        setTimeout(() => {
+            // just for visual purposes so tacked on the end. Default results were already retrieved by this point
+            if (!queryArr.length) {
+                this.setState({showAllJobs: true});
+            }
+        }, 500);
     }
 
     onFilterJobType(event) {
         let query = (this.state.queryBuilder.length ? this.state.queryBuilder: 'solar');
         this.setState({ jobType: event.target.value });
-        fetchJobs(this.state.location, this.state.maxDistance, this.props, query, this.state.jobType)
+        setTimeout(() => {
+            console.log(this.state.jobType);
+            fetchJobs(this.state.location, this.state.maxDistance, this.props, query, this.state.jobType);
+        }, 500);
     }
 
 
@@ -103,7 +136,9 @@ class JobResults extends Component {
                                             placeholder: 'Enter city or leave blank to see all results'
                                         }}
                                         options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
-                                        classNames={{ root: 'placesAutoComplete' }}
+                                        classNames={{
+                                            root: 'placeAutoComplete'
+                                        }}
                                         styles={{ input: {
                                             border: "2px solid #003300",
                                             paddingLeft: "3em",
@@ -138,24 +173,27 @@ class JobResults extends Component {
 
                         <FormGroup id="modifyJobRole">
                             <FormGroup>
-                                <Checkbox inline name="" value="sales" onClick={this.onFilterJobRoles}>
-                                    <a data-tip="Roles that focus more on customer interactions">Field/Sales</a>
+                                <Checkbox inline value="''" name="default" checked={this.state.showAllJobs} onChange={this.onFilterJobRoles}>
+                                    All roles
+                                </Checkbox>
+                                <Checkbox inline value="sales" checked={this.state.showSalesJobs} onChange={this.onFilterJobRoles}>
+                                    <a data-tip="Roles that focus more on the interconnection and sales side of solar systems">Field/Sales</a>
                                     <ReactTooltip place="top" type="dark" effect="float"/>
                                 </Checkbox>
-                                <Checkbox inline name="" value="engineer" onClick={this.onFilterJobRoles}>
-                                    <a data-tip="Technical roles that require deeper understanding about how PV works">Design/Engineer</a>
+                                <Checkbox inline value="engineer" checked={this.state.showEngineerJobs} onChange={this.onFilterJobRoles}>
+                                    <a data-tip="Roles that require deeper technical understanding about how PV works">Design/Engineer</a>
                                     <ReactTooltip place="top" type="dark" effect="float"/>
                                 </Checkbox>
-                                <Checkbox inline name="" value="installer" onClick={this.onFilterJobRoles}>
-                                    <a data-tip="Hands-on roles that deal with the physical solar panels themselves">Installer/Technician</a>
+                                <Checkbox inline value="installer" checked={this.state.showInstallerJobs} onChange={this.onFilterJobRoles}>
+                                    <a data-tip="Hands-on roles that focus with the physical solar panels themselves">Installer/Technician</a>
                                     <ReactTooltip place="top" type="dark" effect="float"/>
                                 </Checkbox>
-                                <Checkbox inline name="" value="pm" onClick={this.onFilterJobRoles}>
-                                    <a data-tip="Roles that deal with the logistics, numbers, and business behind solar">Project Management/Analyst</a>
+                                <Checkbox inline value="pm" checked={this.state.showPMJobs} onChange={this.onFilterJobRoles}>
+                                    <a data-tip="Roles that deal with the logistics, numbers, and business aspects associated with solar">Project Management/Analyst</a>
                                     <ReactTooltip place="top" type="dark" effect="float"/>
                                 </Checkbox>
-                                <Checkbox inline name="" value="csr" onClick={this.onFilterJobRoles}>
-                                    <a data-tip="Roles that interact with customers">Customer Service</a>
+                                <Checkbox inline value="csr" checked={this.state.showCSRJobs} onChange={this.onFilterJobRoles}>
+                                    <a data-tip="Roles that interact with solar customers to ensure they are happy">Customer Service</a>
                                     <ReactTooltip place="top" type="dark" effect="float"/>
                                 </Checkbox>
                             </FormGroup>
@@ -163,19 +201,19 @@ class JobResults extends Component {
 
                         <FormGroup id="modifyJobType">
                             <FormGroup>
-                                <Radio inline name="jobTypeGroup" value='""' onClick={this.onFilterJobType} defaultChecked={true}>
+                                <Radio inline name="jobTypeGroup" value='""' onChange={this.onFilterJobType} defaultChecked={true}>
                                     All job types
                                 </Radio>
-                                <Radio inline name="jobTypeGroup" value="fulltime" onClick={this.onFilterJobType}>
+                                <Radio inline name="jobTypeGroup" value="fulltime" onChange={this.onFilterJobType}>
                                     Full-Time
                                 </Radio>
-                                <Radio inline name="jobTypeGroup" value="parttime" onClick={this.onFilterJobType}>
+                                <Radio inline name="jobTypeGroup" value="parttime" onChange={this.onFilterJobType}>
                                     Part-Time
                                 </Radio>
-                                <Radio inline name="jobTypeGroup" value="contract" onClick={this.onFilterJobType}>
+                                <Radio inline name="jobTypeGroup" value="contract" onChange={this.onFilterJobType}>
                                     Contract
                                 </Radio>
-                                <Radio inline name="jobTypeGroup" value="internship" onClick={this.onFilterJobType}>
+                                <Radio inline name="jobTypeGroup" value="internship" onChange={this.onFilterJobType}>
                                     Internship
                                 </Radio>
                             </FormGroup>
