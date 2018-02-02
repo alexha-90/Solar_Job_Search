@@ -13,22 +13,24 @@ import { FadingCircle } from 'better-react-spinkit';
 
 /*
 TO:DO:
-select all jobs
 paginate onclick update url
  */
 //================================================================================================//
 let openListArr = [];
+let currentPageJobURLs = [];
 
 class PopulateJobList extends Component {
     constructor() {
         super();
         this.state = {
             currentPage: 1,
-            openListArr: []
+            openListArr: [],
         };
+        this.jobsPerPage = 25;
         this.populateTable = this.populateTable.bind(this);
         this.buttonActions = this.buttonActions.bind(this);
         this.gatherOpenList = this.gatherOpenList.bind(this);
+        this.onSelectAllJobs = this.onSelectAllJobs.bind(this);
         this.onOpenMultipleURLs = this.onOpenMultipleURLs.bind(this);
         this.onPagination = this.onPagination.bind(this);
         this.paginateDisplay = this.paginateDisplay.bind(this);
@@ -76,16 +78,23 @@ class PopulateJobList extends Component {
             )
         }
 
-        const jobsPerPage = 25;
-        let currentPageData = this.props.jobList.slice(jobsPerPage * (this.state.currentPage-1), this.state.currentPage * jobsPerPage);
+        let currentPageData = this.props.jobList.slice(this.jobsPerPage * (this.state.currentPage-1), this.state.currentPage * this.jobsPerPage);
 
+
+        let urlArr = [];
         // object to array conversion method from https://stackoverflow.com/questions/38824349/convert-object-to-array-in-javascript
         let jobsArr = Object.keys(currentPageData).map(key => {
+            urlArr.push(currentPageData[key]['url']);
+
             // ID = 0, postDate = 1, company = 2, title = 3, location = 4, summary = 5, URL = 6
             return [key, currentPageData[key]['postDate'], currentPageData[key]['company'], currentPageData[key]['title'],
                 currentPageData[key]['location'], currentPageData[key]['summary'], currentPageData[key]['url']];
         });
 
+        // remove duplicate entries from repeat urlArr pushes
+        currentPageJobURLs = [...new Set(urlArr)];
+
+        // console.log(currentPageJobURLs);
         // console.log(jobsArr);
 
         return (
@@ -96,7 +105,7 @@ class PopulateJobList extends Component {
                         <td>
                             <input
                                 checked={this.state.openListArr.includes(job[6])}
-                                onClick={this.gatherOpenList}
+                                onChange={this.gatherOpenList}
                                 id="checkBox"
                                 type="checkbox"
                                 value={job[6]}/>
@@ -119,6 +128,14 @@ class PopulateJobList extends Component {
         );
     }
 
+    onSelectAllJobs(event) {
+        if (event.target.checked) {
+            this.setState({ openListArr: currentPageJobURLs });
+        } else {
+            this.setState({ openListArr: [] });
+        }
+        console.log(currentPageJobURLs);
+    }
 
     gatherOpenList(event) {
         if (event.target.checked) {
@@ -161,7 +178,7 @@ class PopulateJobList extends Component {
                         id="pageObj"
                         onChange={this.onPagination}
                         current={this.state.currentPage}
-                        defaultPageSize={25}
+                        defaultPageSize={this.jobsPerPage}
                         total={Math.floor(this.props.jobList.length)}
                     />
                     <div>
@@ -185,10 +202,7 @@ class PopulateJobList extends Component {
                         <thead>
                         <tr>
                             <th>
-                                <a data-tip="Select all feature coming soon!">
-                                    <input id="checkBox" type="checkbox"/>
-                                </a>
-                                <ReactTooltip place="top" type="dark" effect="float"/>
+                                <input id="selectAllJobs" type="checkbox" onChange={this.onSelectAllJobs} checked={this.state.openListArr.length === this.jobsPerPage}/>
                             </th>
                             <th>Posted</th>
                             <th>Company</th>
@@ -198,7 +212,6 @@ class PopulateJobList extends Component {
                         </tr>
                         </thead>
                         {this.populateTable()}
-                        {/*{populateTable(this.props.jobList, this.state.currentPage, this.props.urlOpenList)}*/}
                     </Table>
 
                     {this.paginateDisplay()}

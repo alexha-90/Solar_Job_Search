@@ -4,7 +4,7 @@ import store from '../index';
 
 // Note: query manipulation logic not triggered from landing page route. Default 'solar'
 export default function fetchJobs(location, maxDistance, props, query='solar', jobType='fulltime') {
-    
+
     let submittedQuery;
 
     const salesKeywords = 'consultant, sales, canvasser, lead, close';
