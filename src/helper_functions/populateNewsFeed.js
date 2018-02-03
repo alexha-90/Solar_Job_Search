@@ -9,7 +9,7 @@ export default function populateNewsFeed(data, loading) {
 
     for (let i = 0; i < data.length; i++) {
         if (!data[i].urlToImage) {
-            data[i].urlToImage = 'http://clipartix.com/wp-content/uploads/2016/04/Clipart-light-bulb-lit-clipartbold.png'
+            data[i].urlToImage = 'https://png.icons8.com/cotton/50/000000/news.png'
         }
     }
 

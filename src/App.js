@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Landing from './components/Landing';
 import JobResults from './components/JobResults';
 import Footer from './components/Footer';
+import Terms from './components/Terms';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ class App extends Component {
                   <Header />
                   <Route exact path='/' component={Landing} />
                   <Route path='/jobs' component={JobResults} />
+                  <Route exact path='/terms' component={Terms} />
                   <Footer />
               </div>
           </BrowserRouter>
