@@ -35,7 +35,8 @@ Limitations
 
 [x] = addressed, [ ] = work in progress
 ## Known bugs and issues
-- [] Select all jobs does not work
+- [x] Select all jobs does not work
 - [] Positioning can be improved for header jumbotron
 - [] Header needs work
 - [] Need to translate coordinates to city before running
+- [] Upperbound text on job results headline not correct for counts % 25 !==0

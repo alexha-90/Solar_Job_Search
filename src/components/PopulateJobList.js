@@ -36,7 +36,6 @@ class PopulateJobList extends Component {
         this.paginateDisplay = this.paginateDisplay.bind(this);
     }
 
-
     buttonActions() {
         if (this.props.jobList.length) {
             return (
@@ -63,7 +62,7 @@ class PopulateJobList extends Component {
 
     populateTable() {
         // console.log(data);
-        if (!Object.keys(this.props.jobList).length) {
+        if (!Object.keys(this.props.jobList).length || this.props.loadingNewResults) {
             return (
                 <tbody>
                 <tr style={{background: 'none'}}>
@@ -191,7 +190,7 @@ class PopulateJobList extends Component {
 
     render() {
         // console.log(this.state);
-        // console.log(this.props);
+        console.log(this.props);
 
         return (
             <div>
@@ -228,6 +227,7 @@ export default connect(mapStateToProps)(PopulateJobList);
 function mapStateToProps(state) {
     return {
         jobList: state.jobList.jobsList,
+        loadingNewResults: state.jobList.loadingNewResults,
         urlOpenList: state.jobList.urlOpenList,
         locationParam: state.jobList.locationParam,
         locationToLaunch: state.jobList.locationToLaunch,

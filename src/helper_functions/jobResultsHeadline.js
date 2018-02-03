@@ -5,12 +5,20 @@ import React from 'react';
 export default function jobResultsHeadline (jobList, currentPage, location) {
     // function does not run if results have not loaded yet
 
-    const jobsPerPg = 25;
+    console.log(jobList);
+
+
+    let jobsPerPg = 25;
+
+    // if (jobList.length !== jobsPerPg) {
+    //     jobsPerPg = jobList.length;
+    // }
 
     let currentPg = !currentPage ? 1 : currentPage;
 
     let headlineLocation = !location ? 'the USA' : location;
 
+    // let lowerBound = (currentPg - 1) * (jobList.length * (currentPg -1));
     let lowerBound = (currentPg - 1) * jobsPerPg;
     if (lowerBound === 0) {
         lowerBound = 1;

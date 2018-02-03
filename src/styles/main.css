@@ -237,9 +237,9 @@
           .landing .newsFeedContainer #newsFeed #articleContainer #articleContents a {
             font-size: 1.2em; }
 
-.jobResults .modifyGeoSearch {
+.jobResults .modifyJobSearch {
   padding-top: 20px; }
-  .jobResults .modifyGeoSearch #overflowBG {
+  .jobResults .modifyJobSearch #overflowBG {
     position: absolute;
     margin-top: -20px;
     height: 155px;
@@ -249,13 +249,13 @@
     -webkit-box-shadow: -6px 32px 32px -17px #969366;
     -moz-box-shadow: -6px 32px 32px -17px #969366;
     box-shadow: -6px 32px 32px -17px #969366; }
-  .jobResults .modifyGeoSearch .geoUpdateContainer {
+  .jobResults .modifyJobSearch .geoUpdateContainer {
     margin-top: 5px;
     z-index: 100;
     position: relative;
     max-width: 875px;
     width: 70%; }
-    .jobResults .modifyGeoSearch .geoUpdateContainer #updateLocation {
+    .jobResults .modifyJobSearch .geoUpdateContainer #updateLocation {
       position: relative;
       height: 48px; }
 

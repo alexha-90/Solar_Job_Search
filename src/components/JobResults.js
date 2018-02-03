@@ -7,6 +7,7 @@ import PopulateJobList from './PopulateJobList';
 import GoogleMapsModal from './GoogleMapsModal';
 import ReactTooltip from 'react-tooltip'
 import infoSpace from '../helper_functions/infoSpace';
+import store from '../index';
 
 /*
 TO:DO:
@@ -57,18 +58,23 @@ class JobResults extends Component {
     }
 
     onUpdateLocation(location) {
+        loadingNewResults(true);
         let query = (this.state.queryBuilder.length ? this.state.queryBuilder: 'solar');
         this.setState({ location: location });
         fetchJobs(location, this.state.maxDistance, this.props, query, this.state.jobType)
+            .then(() => { loadingNewResults(false) })
     }
 
     onUpdateMaxDistance(event) {
+        loadingNewResults(true);
         let query = (this.state.queryBuilder.length ? this.state.queryBuilder: 'solar');
         this.setState({ maxDistance: event.target.value });
         fetchJobs(this.state.location, this.state.maxDistance, this.props, query, this.state.jobType)
+            .then(() => { loadingNewResults(false) })
     }
 
     onFilterJobRoles(event) {
+        loadingNewResults(true);
         if (event.target.value ==='sales') {
             this.setState({showSalesJobs: !this.state.showSalesJobs});
         } if (event.target.value === 'engineer') {
@@ -96,31 +102,32 @@ class JobResults extends Component {
             }
         }
         // if queryArr is empty, it will change to a default string in external function below
-        fetchJobs(this.state.location, this.state.maxDistance, this.props, queryArr, this.state.jobType);
-        setTimeout(() => {
-            // just for visual purposes so tacked on the end. Default results were already retrieved by this point
-            if (!queryArr.length) {
-                this.setState({showAllJobs: true});
-            }
-        }, 500);
+        fetchJobs(this.state.location, this.state.maxDistance, this.props, queryArr, this.state.jobType)
+            .then(() => {
+                // just for visual purposes so tacked on the end. Default results were already retrieved by this point
+                if (!queryArr.length) {
+                    this.setState({showAllJobs: true});
+                }
+                loadingNewResults(false);
+            });
     }
 
     onFilterJobType(event) {
+        loadingNewResults(true);
         let query = (this.state.queryBuilder.length ? this.state.queryBuilder: 'solar');
         this.setState({ jobType: event.target.value });
         setTimeout(() => {
-            console.log(this.state.jobType);
             fetchJobs(this.state.location, this.state.maxDistance, this.props, query, this.state.jobType);
+            loadingNewResults(false);
         }, 500);
     }
 
 
     render() {
-
             return (
             <section className="jobResults">
+                <div className="modifyJobSearch">
 
-                <div className="modifyGeoSearch">
                     <span id="overflowBG"/>
 
                     <Form>
@@ -244,10 +251,19 @@ export default connect(mapStateToProps)(JobResults);
 function mapStateToProps(state) {
     return {
         jobList: state.jobList.jobsList,
+        loadingNewResults: state.jobList.loadingNewResults,
         locationParam: state.jobList.locationParam,
         maxDistance: state.jobList.maxDistance,
         urlOpenList: state.jobList.urlOpenList,
         locationToLaunch: state.jobList.locationToLaunch,
         currentPage: state.jobList.currentPage
     };
+}
+
+
+function loadingNewResults(status) {
+    store.dispatch({
+        type: 'UPDATING_NEW_JOB_RESULTS',
+        payload: status
+    });
 }
