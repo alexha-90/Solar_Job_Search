@@ -39,7 +39,7 @@
       letter-spacing: 0.05em;
       color: black; }
       .landing #searchContainer #headline h2 span {
-        color: orange; }
+        color: #FFA500; }
   .landing #searchContainer #search {
     height: 40px;
     position: relative;
@@ -64,28 +64,35 @@
         margin: 0 auto 0 auto;
         width: 40%; }
 
-.landing .threeHighlights {
+.landing .threeHighlightsContainer {
+  background-color: #336600;
+  color: #ffdf80;
   display: block;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  padding-top: 40px; }
-  .landing .threeHighlights .threeHighlightsGrid {
-    margin: 40px 0;
-    padding: 0;
-    width: 100%; }
-    .landing .threeHighlights .threeHighlightsGrid #threeHighlightsRow {
-      display: flex;
-      display: -webkit-flex;
-      flex-wrap: wrap;
+  padding: 40px 0; }
+  .landing .threeHighlightsContainer #threeHighlights {
+    margin: 0 auto;
+    width: 80%; }
+    .landing .threeHighlightsContainer #threeHighlights h1 {
+      color: #ffc61a; }
+    .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid {
+      margin: 40px 0;
       padding: 0;
-      margin: 0; }
-      .landing .threeHighlights .threeHighlightsGrid #threeHighlightsRow p {
-        width: 75%;
-        margin: 25px auto 10px auto;
-        letter-spacing: 0.1em; }
-      .landing .threeHighlights .threeHighlightsGrid #threeHighlightsRow h2 {
-        margin-top: 10px;
-        font-size: 1.75em; }
+      width: 100%; }
+      .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid #threeHighlightsRow {
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0; }
+        .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid #threeHighlightsRow p {
+          width: 75%;
+          margin: 25px auto 10px auto;
+          letter-spacing: 0.1em; }
+        .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid #threeHighlightsRow h2 {
+          margin-top: 10px;
+          font-size: 1.75em; }
 
 .landing .mainJumbotron {
   height: 92vh;
@@ -104,71 +111,87 @@
   -o-background-size: cover;
   background-size: cover;
   opacity: 0.6;
-  z-index: -1;
   content: ''; }
 
-.landing .newsFeedAndBlurbGrid {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  color: #f2f2f2; }
-  .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow {
+.landing .solarJobTypesDescription {
+  background-color: #336600;
+  padding: 40px 0;
+  color: #ffdf80; }
+  .landing .solarJobTypesDescription h1 {
+    color: #ffc61a; }
+  .landing .solarJobTypesDescription #jobDescriptionRow {
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap;
-    padding: 0;
-    margin: 0; }
-    .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow h1 {
-      margin: 10px 0;
-      text-align: center; }
-    .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .learnMore {
-      min-height: 575px;
+    padding: 35px 0;
+    width: 88%;
+    margin: 0 auto; }
+    .landing .solarJobTypesDescription #jobDescriptionRow h2 {
+      font-size: 2em;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      margin-bottom: 10px; }
+    .landing .solarJobTypesDescription #jobDescriptionRow p {
+      color: #d9d9d9;
+      margin: 0 auto;
+      width: 100%;
       font-size: 1.2em;
-      text-align: center;
-      background-color: #194d33;
-      border-top: 8px solid #38ad73;
-      border-bottom: 8px solid #38ad73;
-      border-right: 8px solid #669900; }
-      .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .learnMore p {
-        margin: 0 auto;
-        width: 80%; }
-      .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .learnMore Button {
-        margin: 10px 0;
-        width: 200px; }
-    .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed {
-      min-height: 575px;
-      background-color: #194d33;
-      border-top: 8px solid #38ad73;
-      border-bottom: 8px solid #38ad73;
-      border-left: 8px solid #669900; }
-      .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #newsAPICredit {
-        margin-top: -5px;
-        right: 0; }
-      .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #articleContainer {
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 10px;
-        min-height: 50px; }
-        .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #articleContainer #articleImage {
-          position: absolute;
-          width: 10%;
-          height: 50px;
-          margin: 0 2%; }
-          .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #articleContainer #articleImage img {
-            display: block;
-            margin: 0 auto;
-            height: 100%; }
-        .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #articleContainer #articleContents {
-          margin-left: 14%; }
-          .landing .newsFeedAndBlurbGrid #newsFeedAndBlurbRow .rssFeed #articleContainer #articleContents a {
-            font-size: 1.2em; }
+      letter-spacing: 0.01em;
+      font-weight: 300; }
+    .landing .solarJobTypesDescription #jobDescriptionRow img {
+      height: 200px;
+      -webkit-box-shadow: 10px 10px 70px 9px rgba(127, 143, 127, 0.63);
+      -moz-box-shadow: 10px 10px 70px 9px rgba(127, 143, 127, 0.63);
+      box-shadow: 10px 10px 70px 9px rgba(127, 143, 127, 0.63); }
+    .landing .solarJobTypesDescription #jobDescriptionRow #jobDescriptionRight div, .landing .solarJobTypesDescription #jobDescriptionRow #jobDescriptionLeft div {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); }
+
+.landing .newsFeedContainer {
+  padding: 40px 0; }
+  .landing .newsFeedContainer h1 {
+    margin-bottom: 35px;
+    color: #4d4d4d; }
+  .landing .newsFeedContainer hr {
+    border-top: 1px solid #ffffff;
+    margin-bottom: 5px; }
+  .landing .newsFeedContainer #newsFeed {
+    text-align: left;
+    margin: 0 auto;
+    width: 50%; }
+    .landing .newsFeedContainer #newsFeed #newsAPICredit {
+      margin-top: -5px;
+      right: 0;
+      color: #808080; }
+    .landing .newsFeedContainer #newsFeed #articleContainer {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 10px;
+      min-height: 50px; }
+      .landing .newsFeedContainer #newsFeed #articleContainer #articleImage {
+        position: absolute;
+        width: 10%;
+        height: 50px;
+        margin: 0 2%; }
+        .landing .newsFeedContainer #newsFeed #articleContainer #articleImage img {
+          display: block;
+          margin: 0 auto;
+          height: 100%; }
+      .landing .newsFeedContainer #newsFeed #articleContainer #articleContents {
+        margin-left: 30%; }
+        .landing .newsFeedContainer #newsFeed #articleContainer #articleContents a {
+          font-size: 1.2em; }
 
 .landing {
-  text-align: center; }
+  text-align: center;
+  /* Background pattern from Subtle Patterns */
+  background-image: url("https://i.imgur.com/q4MTfbu.png"); }
   .landing h1 {
     font-size: 3em;
     letter-spacing: 0.1em; }
+  .landing img:hover {
+    opacity: 0.6; }
   .landing .loadingJobsSpinner {
     position: absolute;
     width: 100%;
@@ -182,60 +205,15 @@
       transform: translateY(-75%); }
   .landing #whySolar {
     width: 100%;
-    padding-bottom: 25px; }
+    padding: 40px 0;
+    color: #595959; }
+    .landing #whySolar h1 {
+      color: #4d4d4d; }
     .landing #whySolar p {
+      font-weight: 300;
       font-size: 1.5em;
       margin: 20px auto 0 auto;
       width: 72%; }
-  .landing .solarJobDescription #jobDescriptionRow {
-    display: flex;
-    display: -webkit-flex;
-    flex-wrap: wrap;
-    padding: 35px 0;
-    width: 88%;
-    margin: 0 auto; }
-    .landing .solarJobDescription #jobDescriptionRow h2 {
-      font-size: 2em;
-      letter-spacing: 0.2em;
-      margin-bottom: 10px; }
-    .landing .solarJobDescription #jobDescriptionRow p {
-      margin: 0 auto;
-      width: 100%;
-      font-size: 1.4em;
-      letter-spacing: 0.1em; }
-    .landing .solarJobDescription #jobDescriptionRow img {
-      height: 200px; }
-    .landing .solarJobDescription #jobDescriptionRow #jobDescriptionRight div, .landing .solarJobDescription #jobDescriptionRow #jobDescriptionLeft div {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%); }
-  .landing .newsFeedContainer {
-    height: 50px; }
-    .landing .newsFeedContainer #newsFeed {
-      margin: 0 auto;
-      height: 50px;
-      width: 50%; }
-      .landing .newsFeedContainer #newsFeed #newsAPICredit {
-        margin-top: -5px;
-        right: 0; }
-      .landing .newsFeedContainer #newsFeed #articleContainer {
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 10px;
-        min-height: 50px; }
-        .landing .newsFeedContainer #newsFeed #articleContainer #articleImage {
-          position: absolute;
-          width: 10%;
-          height: 50px;
-          margin: 0 2%; }
-          .landing .newsFeedContainer #newsFeed #articleContainer #articleImage img {
-            display: block;
-            margin: 0 auto;
-            height: 100%; }
-        .landing .newsFeedContainer #newsFeed #articleContainer #articleContents {
-          margin-left: 14%; }
-          .landing .newsFeedContainer #newsFeed #articleContainer #articleContents a {
-            font-size: 1.2em; }
 
 .jobResults .modifyJobSearch {
   padding-top: 20px; }
@@ -397,20 +375,18 @@ body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-f
 
 .footer {
   clear: both;
-  background-color: #444422;
+  background-color: #004d00;
   text-align: center;
   padding: 20px 0;
-  color: #f2f2f2;
-  /* Add a hover effect if you want */
-  /* Set a specific color for each brand */
-  /* Facebook */ }
+  color: #f2f2f2; }
   .footer .fa {
     padding: 0.25em;
     font-size: 1em;
     width: 1.5em;
     height: 1.5em;
     text-align: center;
-    text-decoration: none; }
+    text-decoration: none;
+    margin-bottom: 5px; }
   .footer .fa:hover {
     opacity: 0.7; }
   .footer .fa-facebook {

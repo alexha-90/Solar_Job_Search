@@ -1,14 +1,21 @@
 @import 'landing/_searchContainer';
 @import 'landing/__threeHighlights';
 @import 'landing/_jumbotron';
-@import 'landing/_newsFeedAndBlurb';
+@import 'landing/_solarJobTypesDescription';
+@import'landing/_newsFeedContainer';
+
 
 .landing {
   text-align: center;
+  /* Background pattern from Subtle Patterns */
+  background-image: url("https://i.imgur.com/q4MTfbu.png");
 
   h1 {
     font-size: 3em;
     letter-spacing: 0.1em;
+  }
+  img:hover {
+    opacity: 0.6;
   }
 
   .loadingJobsSpinner {
@@ -27,92 +34,17 @@
 
   #whySolar {
     width: 100%;
-    padding-bottom: 25px;
+    padding: 40px 0;
+    color: #595959;
+    h1 {
+      color: #4d4d4d;
+
+    }
     p {
+      font-weight: 300;
       font-size: 1.5em;
       margin: 20px auto 0 auto;
       width: 72%;
-    }
-  }
-
-  .solarJobDescription {
-    #jobDescriptionRow {
-      // flex method: https://stackoverflow.com/questions/19695784/how-can-i-make-bootstrap-columns-all-the-same-height
-      display: flex;
-      display: -webkit-flex;
-      flex-wrap: wrap;
-      padding: 35px 0;
-      //background-color: green;
-      width: 88%;
-      margin: 0 auto;
-      h2 {
-        font-size: 2em;
-        letter-spacing: 0.2em;
-        margin-bottom: 10px;
-      }
-      p {
-        margin: 0 auto;
-        width: 100%;
-        font-size: 1.4em;
-        letter-spacing: 0.1em;
-      }
-      img {
-        height: 200px;
-      }
-
-      #jobImageLeft {
-      }
-
-      #jobDescriptionRight, #jobDescriptionLeft {
-        div {
-          position: relative;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-      }
-    }
-  }
-
-  .newsFeedContainer {
-    //background-color: red;
-    height: 50px;
-    #newsFeed {
-      margin: 0 auto;
-      height: 50px;
-      width: 50%;
-      //background-color: green;
-      #newsAPICredit {
-        margin-top: -5px;
-        right: 0;
-      }
-
-      #articleContainer {
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 10px;
-        min-height: 50px;
-
-        #articleImage{
-          position: absolute;
-          width: 10%;
-          height: 50px;
-          margin: 0 2%;
-
-          img {
-            display: block;
-            margin: 0 auto;
-            height: 100%;
-          }
-        }
-
-        #articleContents {
-          margin-left: 14%;
-          a {
-            font-size: 1.2em;
-          }
-        }
-      }
-
     }
   }
 }

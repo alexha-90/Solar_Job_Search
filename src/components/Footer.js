@@ -15,13 +15,12 @@ class Footer extends Component {
                             &nbsp;&nbsp;|&nbsp;&nbsp;
                             <a href="/terms">Terms of Use</a>
                             <br />
-                            <div id="footerLicensing">
-                                <a href="https://icons8.com">Icon pack by Icons8</a>
-                            </div>
                             Follow us on social media:&nbsp;
                             <a href="https://www.facebook.com/SolarJobSearch/" className="fa fa-facebook"> </a>
-                            <hr/>
-                            © 2018 SolarJobSearch.com
+                            <br/>
+                            <span style={{textDecoration: "overline" }}>
+                                © 2018 SolarJobSearch.com
+                            </span>
                         </Col>
                         <Col sm={2} md={2}>{' '}</Col>
                     </Row>

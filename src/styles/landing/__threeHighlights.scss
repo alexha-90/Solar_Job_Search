@@ -1,38 +1,44 @@
  .landing {
-   .threeHighlights {
-     //background-color: red;
+   .threeHighlightsContainer {
+     background-color: #336600;
+     color: #ffdf80;
      display: block;
-     width: 80%;
+     width: 100%;
      margin: 0 auto;
-     padding-top: 40px;
-     .threeHighlightsGrid {
-       margin: 40px 0;
-       padding: 0;
-       width: 100%;
-       #threeHighlightsRow {
-         // flex method: https://stackoverflow.com/questions/19695784/how-can-i-make-bootstrap-columns-all-the-same-height
-         display: flex;
-         display: -webkit-flex;
-         flex-wrap: wrap;
+     padding: 40px 0;
+
+     #threeHighlights {
+       margin: 0 auto;
+       width: 80%;
+       h1 {
+         color: #ffc61a;
+       }
+       .threeHighlightsGrid {
+         margin: 40px 0;
          padding: 0;
-         margin: 0;
-         p {
-           width: 75%;
-           margin: 25px auto 10px auto;
-           letter-spacing: 0.1em;
-         }
-         h2 {
-           margin-top: 10px;
-           font-size: 1.75em;
-         }
-         .blurb-specific {
-           //background-color: blue;
-         }
-         .blurb-map {
-           //background-color: silver;
-         }
-         .blurb-efficiency {
-           //background-color: gray;
+         width: 100%;
+         #threeHighlightsRow {
+           // flex method: https://stackoverflow.com/questions/19695784/how-can-i-make-bootstrap-columns-all-the-same-height
+           display: flex;
+           display: -webkit-flex;
+           flex-wrap: wrap;
+           padding: 0;
+           margin: 0;
+           p {
+             width: 75%;
+             margin: 25px auto 10px auto;
+             letter-spacing: 0.1em;
+           }
+           h2 {
+             margin-top: 10px;
+             font-size: 1.75em;
+           }
+           .blurb-specific {
+           }
+           .blurb-map {
+           }
+           .blurb-efficiency {
+           }
          }
        }
      }

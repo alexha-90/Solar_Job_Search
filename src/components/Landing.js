@@ -7,7 +7,6 @@ import fetchJobs from '../helper_functions/fetchJobs';
 import populateNewsFeed from '../helper_functions/populateNewsFeed';
 import PlacesAutocomplete from 'react-places-autocomplete'
 import { Redirect } from 'react-router-dom';
-import Typist from 'react-typist';
 import ReactTooltip from 'react-tooltip'
 import { ChasingDots } from 'better-react-spinkit';
 
@@ -50,6 +49,7 @@ class Landing extends Component {
                 if (!res) {
                     return <div>Something went wrong... unable to retrieve solar related news feed.</div>
                 }
+                console.log(res.articles);
                 this.articlesArr = res.articles;
                 return this.setState({ loadingFeed: false });
         });
@@ -122,11 +122,9 @@ class Landing extends Component {
 
                     <div id="searchContainer" className="animated fadeIn">
                         <div id="headline">
-                            <Typist cursor={{ show: false }}>
-                                <h2>
-                                    Power your life with sunshine <span>&#9788;</span>
-                                </h2>
-                            </Typist>
+                            <h2>
+                                Power your life with sunshine <span>&#9788;</span>
+                            </h2>
                         </div>
                         <div id="search">
                             <Form>
@@ -194,46 +192,49 @@ class Landing extends Component {
                     </div>
                 </div>
 
-                <div className='threeHighlights'>
-                    <h1>
-                        Solar job searching made easy...
-                    </h1>
-                    <Grid className='threeHighlightsGrid'>
-                        <Row id='threeHighlightsRow'>
-                            <Col lg={4} xs={12} className="blurb-specific">
-                                <img alt="blurb-specific-img" src="https://png.icons8.com/dusk/100/000000/natural-food.png"/>
-                                <p>
-                                    ed dignissim fermentum dolor sed sodales. Pellentesque sapien sapien, posuere nec arcu dictum, bibendum suscipit purus. Integer non odio a metus tincidunt blandit.
-                                </p>
-                            </Col>
-                            <Col lg={4} xs={12} className="blurb-map">
-                                <img alt="blurb-map-img" src="https://png.icons8.com/dusk/100/000000/worldwide-location.png" />
-                                <p>
-                                    ed dignissim fermentum dolor sed sodales. Pellentesque sapien sapien, posuere nec arcu dictum, bibendum suscipit purus. Integer non odio a metus tincidunt blandit.
-                                </p>
-                            </Col>
-                            <Col lg={4} xs={12} className="blurb-efficiency">
-                                <img alt="blurb-efficiency" src="https://png.icons8.com/cotton/100/000000/gears.png" />
-                                <p>
-                                    ed dignissim fermentum dolor sed sodales. Pellentesque sapien sapien, posuere nec arcu dictum, bibendum suscipit purus. Integer non odio a metus tincidunt blandit.
-                                </p>
-                            </Col>
-                        </Row>
-                        <Row id='threeHighlightsRow'>
-                            <Col lg={4} xs={12} className="blurb-specific">
-                                <h2>Specific</h2>
-                            </Col>
-                            <Col lg={4} xs={12} className="blurb-specific">
-                                <h2>Visual</h2>
-                            </Col>
-                            <Col lg={4} xs={12} className="blurb-specific">
-                                <h2>Efficient</h2>
-                            </Col>
-                        </Row>
-                    </Grid>
+                <div className='threeHighlightsContainer'>
+                    <div id="threeHighlights">
+                        <h1>
+                            Solar job searching made easy...
+                        </h1>
+                        <Grid className='threeHighlightsGrid'>
+                            <Row id='threeHighlightsRow'>
+                                <Col lg={4} xs={12} className="blurb-specific">
+                                    <img alt="blurb-specific-img" src="https://png.icons8.com/dusk/100/000000/natural-food.png"/>
+                                    <p>
+                                        This website only displays jobs that are relevant for the solar industry.
+                                        You don't have to sort through irrelevant results like on typical job boards.
+                                    </p>
+                                </Col>
+                                <Col lg={4} xs={12} className="blurb-map">
+                                    <img alt="blurb-map-img" src="https://png.icons8.com/dusk/100/000000/worldwide-location.png" />
+                                    <p>
+                                        You can instantly preview a job's location by clicking on an automatically generated
+                                        link. Great for quick referencing.
+                                    </p>
+                                </Col>
+                                <Col lg={4} xs={12} className="blurb-efficiency">
+                                    <img alt="blurb-efficiency" src="https://png.icons8.com/cotton/100/000000/gears.png" />
+                                    <p>
+                                        Job results are posted in table format for easy viewing. You can catalog multiple job
+                                        listings and open links for each them at the same time!
+                                    </p>
+                                </Col>
+                            </Row>
+                            <Row id='threeHighlightsRow'>
+                                <Col lg={4} xs={12} className="blurb-specific">
+                                    <h2>Specific</h2>
+                                </Col>
+                                <Col lg={4} xs={12} className="blurb-specific">
+                                    <h2>Visual</h2>
+                                </Col>
+                                <Col lg={4} xs={12} className="blurb-specific">
+                                    <h2>Efficient</h2>
+                                </Col>
+                            </Row>
+                        </Grid>
+                    </div>
                 </div>
-
-                <hr/>
 
                 <div id='whySolar'>
                     <h1>Why solar?</h1>
@@ -246,8 +247,7 @@ class Landing extends Component {
                     </p>
                 </div>
 
-                <hr/>
-                <div className="solarJobDescription">
+                <div className="solarJobTypesDescription">
                     <h1>Types of solar jobs</h1>
                     <Grid className="jobDescriptionGrid">
                         <Row id='jobDescriptionRow'>
@@ -334,49 +334,17 @@ class Landing extends Component {
                     </Grid>
                 </div>
 
-                <hr/>
-
                 <div className="newsFeedContainer">
                     <h1>Solar news</h1>
                     <div id='newsFeed'>
                         {populateNewsFeed(this.articlesArr, this.state.loadingFeed)}
                         <hr/>
                         <span id="newsAPICredit" style={{float: 'right'}}>
-                            RSS feed courtesy of <a href="https://newsapi.org">News API</a>.
+                            Icon pack by<a href="https://icons8.com">Icons8</a>. RSS feed courtesy of <a href="https://newsapi.org">News API</a>.
                         </span>
                     </div>
                 </div>
 
-
-
-
-
-
-                {/*<Grid className="newsFeedAndBlurbGrid">*/}
-                    {/*<Row id='newsFeedAndBlurbRow'>*/}
-                        {/*<Col md={12} lg={6} className="learnMore">*/}
-                            {/*<h1>Why solar?</h1>*/}
-                            {/*<p>*/}
-                                {/*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas semper urna, a blandit urna bibendum eu. Fusce lobortis sapien non dui feugiat varius. Aliquam erat volutpat. Mauris accumsan ex vitae dolor mollis, et hendrerit erat porta. Aliquam eu ante nunc. Maecenas fringilla hendrerit justo vitae luctus. Vestibulum a tincidunt diam. Cras in tincidunt metus. Curabitur lacinia, lacus et mattis blandit, sapien lorem fermentum massa, in pharetra turpis lorem ac ante. Suspendisse at est lorem. Praesent a rutrum nibh. Ut consectetur sit amet est quis hendrerit. Pellentesque in nibh ante. Phasellus dictum velit in nulla ullamcorper tincidunt. Sed ut sagittis nunc.*/}
-                                {/*Donec aliquet dolor non posuere fringilla. Pellentesque eget posuere velit. Mauris eget accumsan metus. In eu aliquet tellus. Pellentesque eros nibh, tristique ut elit non, gravida gravida neque. Integer malesuada justo urna, a ornare ante malesuada ut. Nam pulvinar pharetra dui et mattis. In pharetra euismod augue, sit amet consectetur lectus. Donec facilisis ligula sapien, et lacinia ipsum egestas ut. Nam magna turpis, venenatis sed mi non, faucibus rutrum metus. Cras vel ipsum fermentum, blandit dolor eu, feugiat arcu. Nulla tincidunt tincidunt mauris quis dictum.*/}
-                            {/*</p>*/}
-
-                            {/*<Button bsStyle="info" id="learnMoreButton">Learn more</Button>*/}
-                            {/*&nbsp;*/}
-                            {/*&nbsp;*/}
-                            {/*<Button bsStyle="primary" id="trainingButton">Get training</Button>*/}
-
-                        {/*</Col>*/}
-                        {/*<Col md={12} lg={6} className="rssFeed">*/}
-                            {/*<h1>Solar News</h1>*/}
-                            {/*{populateNewsFeed(this.articlesArr, this.state.loadingFeed)}*/}
-                            {/*<hr/>*/}
-                            {/*<span id="newsAPICredit" style={{float: 'right'}}>*/}
-                                {/*RSS feed courtesy of <a href="https://newsapi.org">News API</a>.*/}
-                            {/*</span>*/}
-                        {/*</Col>*/}
-                    {/*</Row>*/}
-                {/*</Grid>*/}
 
                 {/*<ScrollToTop showUnder={160}>*/}
                     {/*<span>UP</span>*/}

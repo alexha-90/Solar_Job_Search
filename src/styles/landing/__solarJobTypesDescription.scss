@@ -1,0 +1,51 @@
+.landing {
+  .solarJobTypesDescription {
+    background-color: #336600;
+    padding: 40px 0;
+    color: #ffdf80;
+    h1 {
+      color: #ffc61a;
+    }
+    #jobDescriptionRow {
+      // flex method: https://stackoverflow.com/questions/19695784/how-can-i-make-bootstrap-columns-all-the-same-height
+      display: flex;
+      display: -webkit-flex;
+      flex-wrap: wrap;
+      padding: 35px 0;
+      //background-color: green;
+      width: 88%;
+      margin: 0 auto;
+      h2 {
+        font-size: 2em;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #d9d9d9;
+        margin: 0 auto;
+        width: 100%;
+        font-size: 1.2em;
+        letter-spacing: 0.01em;
+        font-weight: 300;
+      }
+      img {
+        height: 200px;
+        -webkit-box-shadow: 10px 10px 70px 9px rgba(127,143,127,0.63);
+        -moz-box-shadow: 10px 10px 70px 9px rgba(127,143,127,0.63);
+        box-shadow: 10px 10px 70px 9px rgba(127,143,127,0.63);
+      }
+
+      #jobImageLeft {
+      }
+
+      #jobDescriptionRight, #jobDescriptionLeft {
+        div {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

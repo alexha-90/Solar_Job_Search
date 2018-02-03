@@ -1,6 +1,6 @@
 .footer {
   clear: both;
-  background-color: #444422;
+  background-color: #004d00;
   text-align: center;
   padding: 20px 0;
   color: #f2f2f2;
@@ -13,16 +13,13 @@
     height: 1.5em;
     text-align: center;
     text-decoration: none;
+    margin-bottom: 5px;
   }
 
-  /* Add a hover effect if you want */
   .fa:hover {
     opacity: 0.7;
   }
 
-  /* Set a specific color for each brand */
-
-  /* Facebook */
   .fa-facebook {
     background: #3B5998;
     color: white;

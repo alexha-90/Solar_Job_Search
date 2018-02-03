@@ -6,8 +6,8 @@ export default function fetchNewsFeeds() {
 
     return newsAPI.v2.everything({
         q: 'solar AND (energy, cells or cell or panel or panels or technology or cost or price or company or industry) OR photovoltaic OR photovoltaics',
-        sources: 'the-new-york-times, abc-news, google-news',
-        domains: 'http://www.nytimes.com, http://abcnews.go.com, https://news.google.com',
+        sources: 'the-new-york-times, abc-news',
+        domains: 'http://www.nytimes.com, http://abcnews.go.com',
         language: 'en',
         sortBy: 'publishedAt',
         pageSize: 7,
