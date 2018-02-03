@@ -5,6 +5,7 @@ $mainHeight: 92vh;
 
 .landing {
   #searchContainer {
+    text-align: left;
     -webkit-animation-duration: $animationSpeed;
     -moz-animation-duration: $animationSpeed;
     -ms-transition-animation-duration: $animationSpeed;

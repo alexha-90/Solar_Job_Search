@@ -195,7 +195,7 @@ class Landing extends Component {
                 </div>
 
                 <div className='threeHighlights'>
-                    <h1 style={{textAlign: 'center'}}>
+                    <h1>
                         Solar job searching made easy...
                     </h1>
                     <Grid className='threeHighlightsGrid'>
@@ -232,31 +232,151 @@ class Landing extends Component {
                         </Row>
                     </Grid>
                 </div>
-                <Grid className="newsFeedAndBlurbGrid">
-                    <Row id='newsFeedAndBlurbRow'>
-                        <Col md={12} lg={6} className="learnMore">
-                            <h1>Why solar?</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas semper urna, a blandit urna bibendum eu. Fusce lobortis sapien non dui feugiat varius. Aliquam erat volutpat. Mauris accumsan ex vitae dolor mollis, et hendrerit erat porta. Aliquam eu ante nunc. Maecenas fringilla hendrerit justo vitae luctus. Vestibulum a tincidunt diam. Cras in tincidunt metus. Curabitur lacinia, lacus et mattis blandit, sapien lorem fermentum massa, in pharetra turpis lorem ac ante. Suspendisse at est lorem. Praesent a rutrum nibh. Ut consectetur sit amet est quis hendrerit. Pellentesque in nibh ante. Phasellus dictum velit in nulla ullamcorper tincidunt. Sed ut sagittis nunc.
-                                Donec aliquet dolor non posuere fringilla. Pellentesque eget posuere velit. Mauris eget accumsan metus. In eu aliquet tellus. Pellentesque eros nibh, tristique ut elit non, gravida gravida neque. Integer malesuada justo urna, a ornare ante malesuada ut. Nam pulvinar pharetra dui et mattis. In pharetra euismod augue, sit amet consectetur lectus. Donec facilisis ligula sapien, et lacinia ipsum egestas ut. Nam magna turpis, venenatis sed mi non, faucibus rutrum metus. Cras vel ipsum fermentum, blandit dolor eu, feugiat arcu. Nulla tincidunt tincidunt mauris quis dictum.
-                            </p>
 
-                            <Button bsStyle="info" id="learnMoreButton">Learn more</Button>
-                            &nbsp;
-                            &nbsp;
-                            <Button bsStyle="primary" id="trainingButton">Get training</Button>
+                <hr/>
 
-                        </Col>
-                        <Col md={12} lg={6} className="rssFeed">
-                            <h1>Solar News</h1>
-                            {populateNewsFeed(this.articlesArr, this.state.loadingFeed)}
-                            <hr/>
-                            <span id="newsAPICredit" style={{float: 'right'}}>
-                                RSS feed courtesy of <a href="https://newsapi.org">News API</a>.
-                            </span>
-                        </Col>
-                    </Row>
-                </Grid>
+                <div id='whySolar'>
+                    <h1>Why solar?</h1>
+                    <p>
+                        Solar employment expanded last year 17 times faster than the total US economy, according to
+                        an International Renewable Energy Agency report published on Wednesday that cited data from
+                        the Solar Foundation. Overall, more than 260,000 people work in the solar industry, up by 24% from 2015.
+                        The solar business has benefited from the falling cost of solar energy and generous federal tax credits
+                        that make it more affordable for businesses and homeowners to install solar panels.
+                    </p>
+                </div>
+
+                <hr/>
+                <div className="solarJobDescription">
+                    <h1>Types of solar jobs</h1>
+                    <Grid className="jobDescriptionGrid">
+                        <Row id='jobDescriptionRow'>
+                            <Col sm={12} lg={4} id="jobImageLeft">
+                                <img src="https://images.pexels.com/photos/630839/pexels-photo-630839.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                            </Col>
+                            <Col sm={12} lg={1} />
+                            <Col sm={12} lg={7} id="jobDescriptionRight">
+                                <div>
+                                    <h2>Field/Sales</h2>
+                                    <p>
+                                        Roles that engage more with customers. Talk with them to sign up for PV.
+                                        Go in the field and make sure things are working properly. Being comfortable
+                                        understanding customer demands and being personalable are essential traits.
+                                    </p>
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row id='jobDescriptionRow'>
+                            <Col sm={12} lg={7} id="jobDescriptionLeft">
+                                <div>
+                                    <h2>Design/Engineering</h2>
+                                    <p>
+                                        Roles that require deeper technical understanding about how PV works. Technical aspects
+                                        on where panels should go, their productivity, electrical conduit runs, racking. Roof type
+                                        and structural considerations.
+                                    </p>
+                                </div>
+                            </Col>
+                            <Col sm={12} lg={1} />
+                            <Col sm={12} lg={4} id="jobImageRight">
+                                <img src="https://images.pexels.com/photos/313691/pexels-photo-313691.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                            </Col>
+                        </Row>
+                        <Row id='jobDescriptionRow'>
+                            <Col sm={12} lg={4} id="jobImageLeft">
+                                <img src="https://cdn.pixabay.com/photo/2015/09/18/15/34/solar-panels-945801_960_720.jpg"/>
+                            </Col>
+                            <Col sm={12} lg={1} />
+                            <Col sm={12} lg={7} id="jobDescriptionRight">
+                                <div>
+                                    <h2>Installation/Technician</h2>
+                                    <p>
+                                        Hands-on roles that focus with the physical solar panels themselves. Go on-site and
+                                        use your knowledge to install solar panels and diagnose potential production problems.
+                                        The rewarding position that lets you physically see the system get interconnected.
+                                    </p>
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row id='jobDescriptionRow'>
+                            <Col sm={12} lg={7} id="jobDescriptionLeft">
+                                <div>
+                                    <h2>Project Management/Analytics</h2>
+                                    <p>
+                                        Roles that deal with the logistics, numbers, and business aspects associated with solar. It is
+                                        up to you to make sure the panels are installed as scheduled with proper inventory. See why
+                                        panels are producing poorly and make sense of all the dynamic parts involved with a solar system.
+                                    </p>
+                                </div>
+                            </Col>
+                            <Col sm={12} lg={1} />
+                            <Col sm={12} lg={4} id="jobImageRight">
+                                <img src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                            </Col>
+                        </Row>
+                        <Row id='jobDescriptionRow'>
+                            <Col sm={12} lg={4} id="jobImageLeft">
+                                <img src="https://images.pexels.com/photos/6384/woman-hand-desk-office.jpg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                            </Col>
+                            <Col sm={12} lg={1} />
+                            <Col sm={12} lg={7} id="jobDescriptionRight">
+                                <div>
+                                    <h2>Customer Service</h2>
+                                    <p>
+                                        Roles that interact with solar customers to ensure they are happy. Explain referral
+                                        processes and help customers when things don't go as planned. You should be personable
+                                        and level-headed.
+                                    </p>
+                                </div>
+                            </Col>
+                        </Row>
+
+                    </Grid>
+                </div>
+
+                <hr/>
+
+                <div className="newsFeedContainer">
+                    <h1>Solar news</h1>
+                    <div id='newsFeed'>
+                        {populateNewsFeed(this.articlesArr, this.state.loadingFeed)}
+                        <hr/>
+                        <span id="newsAPICredit" style={{float: 'right'}}>
+                            RSS feed courtesy of <a href="https://newsapi.org">News API</a>.
+                        </span>
+                    </div>
+                </div>
+
+
+
+
+
+
+                {/*<Grid className="newsFeedAndBlurbGrid">*/}
+                    {/*<Row id='newsFeedAndBlurbRow'>*/}
+                        {/*<Col md={12} lg={6} className="learnMore">*/}
+                            {/*<h1>Why solar?</h1>*/}
+                            {/*<p>*/}
+                                {/*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas semper urna, a blandit urna bibendum eu. Fusce lobortis sapien non dui feugiat varius. Aliquam erat volutpat. Mauris accumsan ex vitae dolor mollis, et hendrerit erat porta. Aliquam eu ante nunc. Maecenas fringilla hendrerit justo vitae luctus. Vestibulum a tincidunt diam. Cras in tincidunt metus. Curabitur lacinia, lacus et mattis blandit, sapien lorem fermentum massa, in pharetra turpis lorem ac ante. Suspendisse at est lorem. Praesent a rutrum nibh. Ut consectetur sit amet est quis hendrerit. Pellentesque in nibh ante. Phasellus dictum velit in nulla ullamcorper tincidunt. Sed ut sagittis nunc.*/}
+                                {/*Donec aliquet dolor non posuere fringilla. Pellentesque eget posuere velit. Mauris eget accumsan metus. In eu aliquet tellus. Pellentesque eros nibh, tristique ut elit non, gravida gravida neque. Integer malesuada justo urna, a ornare ante malesuada ut. Nam pulvinar pharetra dui et mattis. In pharetra euismod augue, sit amet consectetur lectus. Donec facilisis ligula sapien, et lacinia ipsum egestas ut. Nam magna turpis, venenatis sed mi non, faucibus rutrum metus. Cras vel ipsum fermentum, blandit dolor eu, feugiat arcu. Nulla tincidunt tincidunt mauris quis dictum.*/}
+                            {/*</p>*/}
+
+                            {/*<Button bsStyle="info" id="learnMoreButton">Learn more</Button>*/}
+                            {/*&nbsp;*/}
+                            {/*&nbsp;*/}
+                            {/*<Button bsStyle="primary" id="trainingButton">Get training</Button>*/}
+
+                        {/*</Col>*/}
+                        {/*<Col md={12} lg={6} className="rssFeed">*/}
+                            {/*<h1>Solar News</h1>*/}
+                            {/*{populateNewsFeed(this.articlesArr, this.state.loadingFeed)}*/}
+                            {/*<hr/>*/}
+                            {/*<span id="newsAPICredit" style={{float: 'right'}}>*/}
+                                {/*RSS feed courtesy of <a href="https://newsapi.org">News API</a>.*/}
+                            {/*</span>*/}
+                        {/*</Col>*/}
+                    {/*</Row>*/}
+                {/*</Grid>*/}
 
                 {/*<ScrollToTop showUnder={160}>*/}
                     {/*<span>UP</span>*/}

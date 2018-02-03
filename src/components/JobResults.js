@@ -10,7 +10,7 @@ import infoSpace from '../helper_functions/infoSpace';
 
 /*
 TO:DO:
-select all jobs
+// display 1-25.. etc can be messed up if there are less than intervals of 25 results
 paginate onclick update url
  */
 //===============================================================================================//

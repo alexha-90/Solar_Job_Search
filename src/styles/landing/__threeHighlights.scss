@@ -9,7 +9,6 @@
        margin: 40px 0;
        padding: 0;
        width: 100%;
-       text-align: center;
        #threeHighlightsRow {
          // flex method: https://stackoverflow.com/questions/19695784/how-can-i-make-bootstrap-columns-all-the-same-height
          display: flex;
@@ -21,9 +20,6 @@
            width: 75%;
            margin: 25px auto 10px auto;
            letter-spacing: 0.1em;
-         }
-         h1 {
-           letter-spacing: 0.2em;
          }
          h2 {
            margin-top: 10px;
