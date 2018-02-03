@@ -61,10 +61,8 @@ class GoogleMapsModal extends Component {
                             {this.props.locationToLaunch[5]}
                         </span>
                         <br/>
-                        <Button id="viewJobButton" bsStyle="primary">
-                            <a href={this.props.locationToLaunch[6]} target='_blank'>
-                                View Job
-                            </a>
+                        <Button id="viewJobButton" bsStyle="primary" onClick={() => window.open(this.props.locationToLaunch[6])}>
+                            View Job
                         </Button>
                         <Button bsStyle="danger" onClick={this.closeModal}>
                             Close

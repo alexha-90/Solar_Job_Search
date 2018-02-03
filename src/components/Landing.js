@@ -9,19 +9,16 @@ import PlacesAutocomplete from 'react-places-autocomplete'
 import { Redirect } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip'
 import { ChasingDots } from 'better-react-spinkit';
-
+import axios from 'axios';
 
 //TO-DO:
 // maybe not load newsfeed for mobiel devices
 // can't get getNewsFeed catch statement to trigger properly
-// integrate redux so entirety of Landing is not passed into result
 // remove duplicate articles if present
 // error handling for location
-// get local time based on client location
-// custom styling for auto complete: https://www.npmjs.com/package/react-places-autocomplete#geocode-by-place-id
+// create new and mask api keys
 
 //loader can get stuck in a loop if no results
-//coordinates to city encoding
 
 //===============================================================================================//
 
@@ -61,13 +58,19 @@ class Landing extends Component {
 
     onGetGeolocation() {
         if (navigator.geolocation) {
+            this.setState({ location: 'Identifying your location...'});
             navigator.geolocation.getCurrentPosition(position => {
                 setTimeout(() => {
                     let latitude = position.coords.latitude.toString().slice(0,7);
                     let longitude = position.coords.longitude.toString().slice(0,9);
-                    this.setState({ location: latitude + ', ' + longitude });
-                }, 500)
-                // then convert to address
+                    const mapKey = 'AIzaSyCX5D7_oHfZASpq8-cv16MBy5G68yeRe6E';
+                    let decodeURL = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=' + mapKey;
+                    axios.get(decodeURL)
+                        .then(data => {
+                            // console.log(data.data.results[2].formatted_address);
+                            this.setState({ location: data.data.results[2].formatted_address });
+                        })
+                }, 1000);
             });
         } else {
             return alert('You must allow geolocation permission for us to retrieve your location.');
@@ -130,7 +133,7 @@ class Landing extends Component {
                             <Form>
                                 <Button onClick={this.onGetGeolocation} bsStyle="warning" id="homeIcon">
                                     <a data-tip="Locate me!">
-                                        <Glyphicon glyph="home"/>
+                                        <Glyphicon glyph="home" style={{color: '#4d4d4d'}}/>
                                     </a>
                                     <ReactTooltip place="top" type="dark" effect="float"/>
                                 </Button>

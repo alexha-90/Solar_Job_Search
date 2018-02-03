@@ -75,7 +75,7 @@
     margin: 0 auto;
     width: 80%; }
     .landing .threeHighlightsContainer #threeHighlights h1 {
-      color: #ffc61a; }
+      color: #FFA500; }
     .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid {
       margin: 40px 0;
       padding: 0;
@@ -118,7 +118,7 @@
   padding: 40px 0;
   color: #ffdf80; }
   .landing .solarJobTypesDescription h1 {
-    color: #ffc61a; }
+    color: #FFA500; }
   .landing .solarJobTypesDescription #jobDescriptionRow {
     display: flex;
     display: -webkit-flex;
@@ -299,6 +299,7 @@
   height: 40px;
   padding-right: 40px; }
   #updateMaxDistance #radiusIcon {
+    color: #4d4d4d;
     z-index: 999;
     position: absolute;
     font-size: 1.75em;
@@ -325,6 +326,7 @@
   width: 50%;
   margin-left: 10px; }
   #updateLocation #searchIcon {
+    color: #4d4d4d;
     z-index: 999;
     position: absolute;
     font-size: 1.75em;
