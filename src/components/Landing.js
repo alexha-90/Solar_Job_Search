@@ -96,7 +96,7 @@ class Landing extends Component {
         if (this.state.loadingJobs) {
             return (
                 <div className="loadingJobsSpinner">
-                    <div>
+                    <div style = {{zIndex: '100'}}>
                         <ChasingDots
                             size = {100}
                             color = {'orange'}
@@ -217,7 +217,7 @@ class Landing extends Component {
                                     </p>
                                 </Col>
                                 <Col lg={4} xs={12} className="blurb-efficiency">
-                                    <img alt="blurb-efficiency" src="https://png.icons8.com/cotton/100/000000/gears.png" />
+                                    <img alt="blurb-efficiency" src="https://i.imgur.com/t7tRlLD.png" />
                                     <p>
                                         Job results are posted in table format for easy viewing. You can catalog multiple job
                                         listings and open links for each them at the same time!

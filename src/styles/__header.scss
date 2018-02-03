@@ -2,18 +2,21 @@
   nav {
     border-radius: 0;
     margin-bottom: 0;
-    color: #f2f2f2;
-    div > div.navbar-collapse.collapse > ul > li > a {
-      color: #f2f2f2;
-      font-size: 1.25em;
+    font-size: 1.25em;
+    div > div.navbar-collapse.collapse > ul {
+      li > a {
+        color: #f2f2f2;
+      }
+      li > a:hover {
+        color: #bfbfbf;
+        background-color: #003300;
+      }
     }
   }
 
 
-
-
   .headerContainer {
-    background-color: #004d00;
+    background: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png") #284700;
     border: none;
     height: 50px;
     // this is for logo
@@ -23,3 +26,6 @@
   }
 }
 
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: #003300;
+}

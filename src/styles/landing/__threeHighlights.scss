@@ -1,6 +1,7 @@
  .landing {
    .threeHighlightsContainer {
-     background-color: #336600;
+     //background: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png") #284700;
+
      color: #ffdf80;
      display: block;
      width: 100%;
@@ -32,6 +33,7 @@
            h2 {
              margin-top: 10px;
              font-size: 1.75em;
+             font-weight: 600;
            }
            .blurb-specific {
            }

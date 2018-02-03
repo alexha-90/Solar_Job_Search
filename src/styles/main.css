@@ -1,17 +1,22 @@
 .header nav {
   border-radius: 0;
   margin-bottom: 0;
-  color: #f2f2f2; }
-  .header nav div > div.navbar-collapse.collapse > ul > li > a {
-    color: #f2f2f2;
-    font-size: 1.25em; }
+  font-size: 1.25em; }
+  .header nav div > div.navbar-collapse.collapse > ul li > a {
+    color: #f2f2f2; }
+  .header nav div > div.navbar-collapse.collapse > ul li > a:hover {
+    color: #bfbfbf;
+    background-color: #003300; }
 
 .header .headerContainer {
-  background-color: #004d00;
+  background: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png") #284700;
   border: none;
   height: 50px; }
   .header .headerContainer a {
     color: #f2f2f2; }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+  background-color: #003300; }
 
 .landing #searchContainer {
   text-align: left;
@@ -65,7 +70,6 @@
         width: 40%; }
 
 .landing .threeHighlightsContainer {
-  background-color: #336600;
   color: #ffdf80;
   display: block;
   width: 100%;
@@ -92,7 +96,8 @@
           letter-spacing: 0.1em; }
         .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid #threeHighlightsRow h2 {
           margin-top: 10px;
-          font-size: 1.75em; }
+          font-size: 1.75em;
+          font-weight: 600; }
 
 .landing .mainJumbotron {
   height: 92vh;
@@ -110,11 +115,10 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  opacity: 0.6;
+  opacity: 0.7;
   content: ''; }
 
 .landing .solarJobTypesDescription {
-  background-color: #336600;
   padding: 40px 0;
   color: #ffdf80; }
   .landing .solarJobTypesDescription h1 {
@@ -140,9 +144,9 @@
       font-weight: 300; }
     .landing .solarJobTypesDescription #jobDescriptionRow img {
       height: 200px;
-      -webkit-box-shadow: 10px 10px 70px 9px rgba(127, 143, 127, 0.63);
-      -moz-box-shadow: 10px 10px 70px 9px rgba(127, 143, 127, 0.63);
-      box-shadow: 10px 10px 70px 9px rgba(127, 143, 127, 0.63); }
+      -webkit-box-shadow: 7px 9px 45px -8px #a2b89e;
+      -moz-box-shadow: 7px 9px 45px -8px #a2b89e;
+      box-shadow: 7px 9px 45px -8px #a2b89e; }
     .landing .solarJobTypesDescription #jobDescriptionRow #jobDescriptionRight div, .landing .solarJobTypesDescription #jobDescriptionRow #jobDescriptionLeft div {
       position: relative;
       top: 50%;
@@ -185,11 +189,14 @@
 
 .landing {
   text-align: center;
-  /* Background pattern from Subtle Patterns */
-  background-image: url("https://i.imgur.com/q4MTfbu.png"); }
+  background: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png") #284700; }
+  .landing #whySolar, .landing .newsFeedContainer {
+    /* Background pattern from Subtle Patterns */
+    background-image: url("https://i.imgur.com/q4MTfbu.png"); }
   .landing h1 {
     font-size: 3em;
-    letter-spacing: 0.1em; }
+    letter-spacing: 0.1em;
+    font-weight: 700; }
   .landing img:hover {
     opacity: 0.6; }
   .landing .loadingJobsSpinner {
@@ -222,7 +229,8 @@
     margin-top: -20px;
     height: 155px;
     width: 100%;
-    background-color: orange;
+    background-color: #FFA500;
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     left: 0;
     -webkit-box-shadow: -6px 32px 32px -17px #969366;
     -moz-box-shadow: -6px 32px 32px -17px #969366;
@@ -280,7 +288,7 @@
 .jobResults #infoSpace {
   background-color: #d9d9d9;
   float: right;
-  margin-left: 40px;
+  margin: 0 0 40px 40px;
   width: 320px; }
 
 .jobResults #mockAd {
@@ -377,10 +385,15 @@ body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-f
 
 .footer {
   clear: both;
-  background-color: #004d00;
+  background: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png") #284700;
   text-align: center;
   padding: 20px 0;
   color: #f2f2f2; }
+  .footer a {
+    color: #FFA500; }
+  .footer #copyright {
+    text-decoration: overline;
+    font-size: 1.25em; }
   .footer .fa {
     padding: 0.25em;
     font-size: 1em;

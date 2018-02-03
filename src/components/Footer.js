@@ -18,7 +18,7 @@ class Footer extends Component {
                             Follow us on social media:&nbsp;
                             <a href="https://www.facebook.com/SolarJobSearch/" className="fa fa-facebook"> </a>
                             <br/>
-                            <span style={{textDecoration: "overline" }}>
+                            <span id='copyright'>
                                 © 2018 SolarJobSearch.com
                             </span>
                         </Col>

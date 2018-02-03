@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, NavItem, Nav } from 'react-bootstrap';
-
+//===============================================================================================//
 
 class Header extends Component {
     render() {
@@ -15,12 +15,12 @@ class Header extends Component {
                     </Navbar.Header>
                     <Navbar.Collapse>
                         <Nav pullRight>
-                            <NavItem eventKey={1} href="#">
+                            <NavItem active eventKey={1} href="/">
                                 Find Jobs
                             </NavItem>
-                            <NavItem divider="true" />
-                            <NavItem eventKey={2} href="#">
-                                Get Training
+                            {/*<NavItem divider="true" />*/}
+                            <NavItem disabled eventKey={2} href="#">
+                                Training (TBD)
                             </NavItem>
                         </Nav>
                     </Navbar.Collapse>

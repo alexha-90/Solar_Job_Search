@@ -1,9 +1,18 @@
 .footer {
   clear: both;
-  background-color: #004d00;
+  background: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png") #284700;
   text-align: center;
   padding: 20px 0;
   color: #f2f2f2;
+
+  a {
+    color: #FFA500;
+  }
+
+  #copyright {
+    text-decoration: overline;
+    font-size: 1.25em;
+  }
 
   // icon method from: https://www.w3schools.com/howto/howto_css_social_media_buttons.asp
   .fa {

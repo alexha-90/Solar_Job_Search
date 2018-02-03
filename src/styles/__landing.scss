@@ -7,12 +7,19 @@
 
 .landing {
   text-align: center;
-  /* Background pattern from Subtle Patterns */
-  background-image: url("https://i.imgur.com/q4MTfbu.png");
+
+  // for .threeHighlightsContainer, , and any potential overflow
+  background: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png") #284700;
+
+  #whySolar, .newsFeedContainer {
+    /* Background pattern from Subtle Patterns */
+    background-image: url("https://i.imgur.com/q4MTfbu.png");
+  }
 
   h1 {
     font-size: 3em;
     letter-spacing: 0.1em;
+    font-weight: 700;
   }
   img:hover {
     opacity: 0.6;
