@@ -17,9 +17,18 @@ $geoHeight: 48px;
       -webkit-box-shadow: -6px 32px 32px -17px rgba(150,147,102,1);
       -moz-box-shadow: -6px 32px 32px -17px rgba(150,147,102,1);
       box-shadow: -6px 32px 32px -17px rgba(150,147,102,1);
+
+      @media screen and (max-width: 900px) {
+        height: 180px;
+      }
+
+      @media screen and (max-width: 565px) {
+        height: 230px;
+      }
     }
 
     .geoUpdateContainer {
+      display: block;
       margin-top: 5px;
       z-index: 100;
       position: relative;
@@ -27,15 +36,18 @@ $geoHeight: 48px;
       max-width: 875px;
       width: 70%;
 
-      $geoHeight: 48px;
-
-
       #updateLocation {
         position: relative;
         height: $geoHeight;
       }
 
       #updateMaxDistance {
+      }
+
+      @media screen and (max-width: 1000px) {
+        #updateMaxDistance {
+          margin-left: 5px;
+        }
       }
     }
   }

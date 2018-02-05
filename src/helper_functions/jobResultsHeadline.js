@@ -28,7 +28,7 @@ export default function jobResultsHeadline (jobList, currentPage, location) {
 
     if (jobList.length) {
         return (
-            <div>
+            <div className='jobResultsHeadline'>
                 <h2>
                     Displaying {lowerBound + '-' + upperBound + ' of ' + jobList.length} recently posted
                     <br/>

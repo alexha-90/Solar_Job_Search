@@ -41,6 +41,11 @@
   top: 46vh;
   transform: translateY(-50%);
   border-radius: 10px; }
+  @media screen and (max-width: 650px) {
+    .landing #searchContainer {
+      top: 20vh; }
+      .landing #searchContainer #headline h2 {
+        display: none; } }
   .landing #searchContainer #headline {
     position: absolute;
     width: 100%;
@@ -63,12 +68,14 @@
     padding-left: 1em; }
     .landing #searchContainer #search #homeIcon {
       display: inline-block;
-      height: 40px; }
+      height: 40px;
+      margin-right: 10px; }
     .landing #searchContainer #search #updateLocation {
       background-color: green;
       width: 70%;
       height: 40px; }
     .landing #searchContainer #search #updateMaxDistance {
+      display: block;
       right: 0;
       margin-right: 1em; }
     .landing #searchContainer #search #submitButton {
@@ -78,6 +85,17 @@
         display: block;
         margin: 0 auto 0 auto;
         width: 40%; }
+  @media screen and (max-width: 1000px) {
+    .landing #searchContainer {
+      margin: 0 15%;
+      width: 70%;
+      height: 120px; }
+      .landing #searchContainer #search #homeIcon {
+        display: none; }
+      .landing #searchContainer #search #submitButton {
+        padding-top: 50px; }
+        .landing #searchContainer #search #submitButton Button {
+          width: 200px; } }
 
 .landing .threeHighlightsContainer {
   color: #ffdf80;
@@ -125,6 +143,9 @@
 .landing .mainJumbotron {
   height: 92vh;
   position: relative; }
+  @media screen and (max-width: 650px) {
+    .landing .mainJumbotron {
+      height: 40vh; } }
 
 .landing .mainJumbotron::before {
   height: 92vh;
@@ -140,6 +161,9 @@
   background-size: cover;
   opacity: 0.7;
   content: ''; }
+  @media screen and (max-width: 650px) {
+    .landing .mainJumbotron::before {
+      height: 40vh; } }
 
 .landing .solarJobTypesDescription {
   padding: 40px 0;
@@ -272,7 +296,14 @@
     -webkit-box-shadow: -6px 32px 32px -17px #969366;
     -moz-box-shadow: -6px 32px 32px -17px #969366;
     box-shadow: -6px 32px 32px -17px #969366; }
+    @media screen and (max-width: 900px) {
+      .jobResults .modifyJobSearch #overflowBG {
+        height: 180px; } }
+    @media screen and (max-width: 565px) {
+      .jobResults .modifyJobSearch #overflowBG {
+        height: 230px; } }
   .jobResults .modifyJobSearch .geoUpdateContainer {
+    display: block;
     margin-top: 5px;
     z-index: 100;
     position: relative;
@@ -281,6 +312,9 @@
     .jobResults .modifyJobSearch .geoUpdateContainer #updateLocation {
       position: relative;
       height: 48px; }
+    @media screen and (max-width: 1000px) {
+      .jobResults .modifyJobSearch .geoUpdateContainer #updateMaxDistance {
+        margin-left: 5px; } }
 
 .jobResults #modifyJobRole {
   z-index: 1;
@@ -311,6 +345,7 @@
 
 @media screen and (max-width: 565px) {
   .jobResults .modifyJobRoleAndType {
+    clear: both;
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap; }
@@ -326,8 +361,7 @@
         margin-top: 0; }
     .jobResults .modifyJobRoleAndType #jobType {
       display: inline-block;
-      width: 38%;
-      color: white; } }
+      width: 38%; } }
 
 .jobResults #jobTable {
   margin-top: 20px;
@@ -338,6 +372,7 @@
     cursor: pointer;
     color: #337ab7; }
   .jobResults #jobTable #pager {
+    margin-bottom: 30px;
     display: block;
     position: relative;
     width: 100%;
@@ -414,8 +449,7 @@
 #updateLocation {
   display: inline-block;
   position: absolute;
-  width: 50%;
-  margin-left: 10px; }
+  width: 50%; }
   #updateLocation #searchIcon {
     color: #4d4d4d;
     z-index: 999;
@@ -425,6 +459,10 @@
   #updateLocation .placeAutoComplete {
     height: 40px;
     width: 600px; }
+  @media screen and (max-width: 1000px) {
+    #updateLocation {
+      display: block;
+      width: 70%; } }
 
 #googleMapFrame {
   height: 50vh; }
@@ -457,6 +495,10 @@ body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-f
 @media screen and (max-width: 1300px) {
   .jobResults {
     margin: 0 30px; } }
+
+@media screen and (max-width: 565px) {
+  .jobResults .jobResultsHeadline {
+    margin-top: 40px; } }
 
 .form-group,
 .form-group label,

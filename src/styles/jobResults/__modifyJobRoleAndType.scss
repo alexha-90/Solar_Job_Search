@@ -1,4 +1,5 @@
 $buttonSpacing: 10px;
+
 .jobResults {
   #modifyJobRole {
     z-index: 1;
@@ -22,7 +23,6 @@ $buttonSpacing: 10px;
       div > label:nth-child(3) {
         margin-right: 0;
       }
-
       #smallSeparator {
         display: block;
       }
@@ -46,6 +46,7 @@ $buttonSpacing: 10px;
 
   @media screen and (max-width: 565px) {
     .modifyJobRoleAndType {
+      clear: both;
       display: flex;
       display: -webkit-flex;
       flex-wrap: wrap;
@@ -65,7 +66,6 @@ $buttonSpacing: 10px;
       #jobType {
         display: inline-block;
         width: 38%;
-        color: white;
       }
     }
   }

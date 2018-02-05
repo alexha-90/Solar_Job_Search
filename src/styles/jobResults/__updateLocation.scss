@@ -3,7 +3,6 @@
   display: inline-block;
   position: absolute;
   width: 50%;
-  margin-left: 10px;
   #searchIcon {
     color: #4d4d4d;
     z-index: 999;
@@ -14,5 +13,11 @@
   .placeAutoComplete {
     height: 40px;
     width: 600px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    display: block;
+    //background-color: orange;
+    width: 70%;
   }
 }

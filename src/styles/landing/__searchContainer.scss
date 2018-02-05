@@ -2,6 +2,7 @@ $animationSpeed: 2s;
 $inputHeight: 40px;
 $geoHeight: 100px;
 $mainHeight: 92vh;
+$mobileHeight: 40vh;
 
 .landing {
   #searchContainer {
@@ -17,6 +18,16 @@ $mainHeight: 92vh;
     top: $mainHeight/2;
     transform: translateY(-50%);
     border-radius: 10px;
+
+    @media screen and (max-width: 650px) {
+      top: $mobileHeight/2;
+      #headline {
+        h2 {
+          display: none;
+        }
+      }
+    }
+
 
     #headline {
       position: absolute;
@@ -49,6 +60,7 @@ $mainHeight: 92vh;
       #homeIcon {
         display: inline-block;
         height: $inputHeight;
+        margin-right: 10px;
       }
 
       #updateLocation {
@@ -60,6 +72,7 @@ $mainHeight: 92vh;
       }
 
       #updateMaxDistance {
+        display :block;
         right: 0;
         margin-right: 1em;
       }
@@ -74,6 +87,24 @@ $mainHeight: 92vh;
         }
       }
 
+    }
+
+    @media screen and (max-width: 1000px) {
+      margin: 0 15%; // left: 15% + width: 70% + right: 15%
+      width: 70%;
+      height: $geoHeight + 20px;
+
+      #search {
+        #homeIcon {
+          display: none;
+        }
+        #submitButton {
+          padding-top: 50px;
+          Button {
+            width: 200px;
+          }
+        }
+      }
     }
   }
 }

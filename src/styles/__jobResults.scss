@@ -1,5 +1,5 @@
 @import 'jobResults/_modifyJobSearch';
-@import 'jobResults/_modifyJob';
+@import 'jobResults/_modifyJobRoleAndType';
 @import 'jobResults/_jobTable';
 @import 'jobResults/_infoSpace';
 
@@ -18,6 +18,15 @@
     margin: 0 30px;
   }
 }
+
+@media screen and (max-width: 565px) {
+  .jobResults {
+    .jobResultsHeadline {
+      margin-top: 40px;
+    }
+  }
+}
+
 
 // inline bootstrap label method from: https://stackoverflow.com/questions/18404003/label-on-the-left-side-instead-above-an-input-field
 .form-group,

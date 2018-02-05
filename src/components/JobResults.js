@@ -155,6 +155,7 @@ class JobResults extends Component {
                                     />
                                 </FormGroup>
                             </div>
+
                             <div id="updateMaxDistance">
                                 <Glyphicon glyph="map-marker" bsStyle='large' id="radiusIcon"/>
 
@@ -179,102 +180,56 @@ class JobResults extends Component {
                         </div>
 
                         <div className='modifyJobRoleAndType'>
-                        <div id="jobRole">
-                            <FormGroup id="modifyJobRole">
-                                <FormGroup>
-                                    <Checkbox inline value="''" name="default" checked={this.state.showAllJobs} onChange={this.onFilterJobRoles}>
-                                        All roles
-                                    </Checkbox>
-                                    <Checkbox inline value="sales" checked={this.state.showSalesJobs} onChange={this.onFilterJobRoles}>
-                                        <a data-tip="Roles that focus more on the interconnection and sales side of solar systems">Field / Sales</a>
-                                        {/*rule below applies for all tooltips*/}
-                                        <ReactTooltip place="top" type="dark" effect="float"/>
-                                    </Checkbox>
-                                    <Checkbox inline value="engineer" checked={this.state.showEngineerJobs} onChange={this.onFilterJobRoles}>
-                                        <a data-tip="Roles that require deeper technical understanding about how PV works">Design / Engineering</a>
-                                    </Checkbox>
-                                    <br id='smallSeparator'/>
-                                    <Checkbox inline value="installer" checked={this.state.showInstallerJobs} onChange={this.onFilterJobRoles}>
-                                        <a data-tip="Hands-on roles that focus with the physical solar panels themselves">Installer / Technician</a>
-                                    </Checkbox>
-                                    <Checkbox inline value="pm" checked={this.state.showPMJobs} onChange={this.onFilterJobRoles}>
-                                        <a data-tip="Roles that deal with the logistics, numbers, and business aspects associated with solar">Project Management / Analyst</a>
-                                    </Checkbox>
-                                    <Checkbox inline value="csr" checked={this.state.showCSRJobs} onChange={this.onFilterJobRoles}>
-                                        <a data-tip="Roles that interact with solar customers to ensure they are happy">Customer Service</a>
-                                    </Checkbox>
+                            <div id="jobRole">
+                                <FormGroup id="modifyJobRole">
+                                    <FormGroup>
+                                        <Checkbox inline value="''" name="default" checked={this.state.showAllJobs} onChange={this.onFilterJobRoles}>
+                                            All roles
+                                        </Checkbox>
+                                        <Checkbox inline value="sales" checked={this.state.showSalesJobs} onChange={this.onFilterJobRoles}>
+                                            <a data-tip="Roles that focus more on the interconnection and sales side of solar systems">Field / Sales</a>
+                                            {/*rule below applies for all tooltips*/}
+                                            <ReactTooltip place="top" type="dark" effect="float"/>
+                                        </Checkbox>
+                                        <Checkbox inline value="engineer" checked={this.state.showEngineerJobs} onChange={this.onFilterJobRoles}>
+                                            <a data-tip="Roles that require deeper technical understanding about how PV works">Design / Engineering</a>
+                                        </Checkbox>
+                                        <br id='smallSeparator'/>
+                                        <Checkbox inline value="installer" checked={this.state.showInstallerJobs} onChange={this.onFilterJobRoles}>
+                                            <a data-tip="Hands-on roles that focus with the physical solar panels themselves">Installer / Technician</a>
+                                        </Checkbox>
+                                        <Checkbox inline value="pm" checked={this.state.showPMJobs} onChange={this.onFilterJobRoles}>
+                                            <a data-tip="Roles that deal with the logistics, numbers, and business aspects associated with solar">Project Management / Analyst</a>
+                                        </Checkbox>
+                                        <Checkbox inline value="csr" checked={this.state.showCSRJobs} onChange={this.onFilterJobRoles}>
+                                            <a data-tip="Roles that interact with solar customers to ensure they are happy">Customer Service</a>
+                                        </Checkbox>
+                                    </FormGroup>
                                 </FormGroup>
-                            </FormGroup>
-                        </div>
+                            </div>
 
-                        <div id="jobType">
-                            <FormGroup id="modifyJobType">
-                                <FormGroup>
-                                    <Radio inline name="jobTypeGroup" value='""' onChange={this.onFilterJobType} defaultChecked={true}>
-                                        All job types
-                                    </Radio>
-                                    <Radio inline name="jobTypeGroup" value="fulltime" onChange={this.onFilterJobType}>
-                                        Full-Time
-                                    </Radio>
-                                    <Radio inline name="jobTypeGroup" value="parttime" onChange={this.onFilterJobType}>
-                                        Part-Time
-                                    </Radio>
-                                    <Radio inline name="jobTypeGroup" value="contract" onChange={this.onFilterJobType}>
-                                        Contract
-                                    </Radio>
-                                    <Radio inline name="jobTypeGroup" value="internship" onChange={this.onFilterJobType}>
-                                        Internship
-                                    </Radio>
+                            <div id="jobType">
+                                <FormGroup id="modifyJobType">
+                                    <FormGroup>
+                                        <Radio inline name="jobTypeGroup" value='""' onChange={this.onFilterJobType} defaultChecked={true}>
+                                            All job types
+                                        </Radio>
+                                        <Radio inline name="jobTypeGroup" value="fulltime" onChange={this.onFilterJobType}>
+                                            Full-Time
+                                        </Radio>
+                                        <Radio inline name="jobTypeGroup" value="parttime" onChange={this.onFilterJobType}>
+                                            Part-Time
+                                        </Radio>
+                                        <Radio inline name="jobTypeGroup" value="contract" onChange={this.onFilterJobType}>
+                                            Contract
+                                        </Radio>
+                                        <Radio inline name="jobTypeGroup" value="internship" onChange={this.onFilterJobType}>
+                                            Internship
+                                        </Radio>
+                                    </FormGroup>
                                 </FormGroup>
-                            </FormGroup>
+                            </div>
                         </div>
-                        </div>
-
-                        {/*<FormGroup id="modifyJobRole">*/}
-                            {/*<FormGroup>*/}
-                                {/*<Checkbox inline value="''" name="default" checked={this.state.showAllJobs} onChange={this.onFilterJobRoles}>*/}
-                                    {/*All roles*/}
-                                {/*</Checkbox>*/}
-                                {/*<Checkbox inline value="sales" checked={this.state.showSalesJobs} onChange={this.onFilterJobRoles}>*/}
-                                    {/*<a data-tip="Roles that focus more on the interconnection and sales side of solar systems">Field / Sales</a>*/}
-                                    {/*/!*rule below applies for all tooltips*!/*/}
-                                    {/*<ReactTooltip place="top" type="dark" effect="float"/>*/}
-                                {/*</Checkbox>*/}
-                                {/*<Checkbox inline value="engineer" checked={this.state.showEngineerJobs} onChange={this.onFilterJobRoles}>*/}
-                                    {/*<a data-tip="Roles that require deeper technical understanding about how PV works">Design / Engineering</a>*/}
-                                {/*</Checkbox>*/}
-                                {/*<br id='smallSeparator'/>*/}
-                                {/*<Checkbox inline value="installer" checked={this.state.showInstallerJobs} onChange={this.onFilterJobRoles}>*/}
-                                    {/*<a data-tip="Hands-on roles that focus with the physical solar panels themselves">Installer / Technician</a>*/}
-                                {/*</Checkbox>*/}
-                                {/*<Checkbox inline value="pm" checked={this.state.showPMJobs} onChange={this.onFilterJobRoles}>*/}
-                                    {/*<a data-tip="Roles that deal with the logistics, numbers, and business aspects associated with solar">Project Management / Analyst</a>*/}
-                                {/*</Checkbox>*/}
-                                {/*<Checkbox inline value="csr" checked={this.state.showCSRJobs} onChange={this.onFilterJobRoles}>*/}
-                                    {/*<a data-tip="Roles that interact with solar customers to ensure they are happy">Customer Service</a>*/}
-                                {/*</Checkbox>*/}
-                            {/*</FormGroup>*/}
-                        {/*</FormGroup>*/}
-
-                        {/*<FormGroup id="modifyJobType">*/}
-                            {/*<FormGroup>*/}
-                                {/*<Radio inline name="jobTypeGroup" value='""' onChange={this.onFilterJobType} defaultChecked={true}>*/}
-                                    {/*All job types*/}
-                                {/*</Radio>*/}
-                                {/*<Radio inline name="jobTypeGroup" value="fulltime" onChange={this.onFilterJobType}>*/}
-                                    {/*Full-Time*/}
-                                {/*</Radio>*/}
-                                {/*<Radio inline name="jobTypeGroup" value="parttime" onChange={this.onFilterJobType}>*/}
-                                    {/*Part-Time*/}
-                                {/*</Radio>*/}
-                                {/*<Radio inline name="jobTypeGroup" value="contract" onChange={this.onFilterJobType}>*/}
-                                    {/*Contract*/}
-                                {/*</Radio>*/}
-                                {/*<Radio inline name="jobTypeGroup" value="internship" onChange={this.onFilterJobType}>*/}
-                                    {/*Internship*/}
-                                {/*</Radio>*/}
-                            {/*</FormGroup>*/}
-                        {/*</FormGroup>*/}
                     </Form>
                     <div style={{clear: "both", marginBottom: '20px'}}/>
                 </div>
