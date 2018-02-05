@@ -208,6 +208,9 @@ class Landing extends Component {
                                         This website only displays jobs that are relevant for the solar industry.
                                         You don't have to sort through irrelevant results like on typical job boards.
                                     </p>
+                                    <h2 id="smallScreenHeadline">
+                                        Specific
+                                    </h2>
                                 </Col>
                                 <Col lg={4} xs={12} className="blurb-map">
                                     <img alt="blurb-map-img" src="https://png.icons8.com/dusk/100/000000/worldwide-location.png" />
@@ -215,6 +218,9 @@ class Landing extends Component {
                                         You can instantly preview a job's location by clicking on an automatically generated
                                         link. Great for quick referencing.
                                     </p>
+                                    <h2 id="smallScreenHeadline">
+                                        Visual
+                                    </h2>
                                 </Col>
                                 <Col lg={4} xs={12} className="blurb-efficiency">
                                     <img alt="blurb-efficiency" src="https://i.imgur.com/t7tRlLD.png" />
@@ -222,17 +228,20 @@ class Landing extends Component {
                                         Job results are posted in table format for easy viewing. You can catalog multiple job
                                         listings and open links for each them at the same time!
                                     </p>
+                                    <h2 id="smallScreenHeadline">
+                                        Efficient
+                                    </h2>
                                 </Col>
                             </Row>
                             <Row id='threeHighlightsRow'>
                                 <Col lg={4} xs={12} className="blurb-specific">
-                                    <h2>Specific</h2>
+                                    <h2 id='largerScreenHeadline'>Specific</h2>
                                 </Col>
                                 <Col lg={4} xs={12} className="blurb-specific">
-                                    <h2>Visual</h2>
+                                    <h2 id='largerScreenHeadline'>Visual</h2>
                                 </Col>
                                 <Col lg={4} xs={12} className="blurb-specific">
-                                    <h2>Efficient</h2>
+                                    <h2 id='largerScreenHeadline'>Efficient</h2>
                                 </Col>
                             </Row>
                         </Grid>

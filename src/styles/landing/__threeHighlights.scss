@@ -8,6 +8,11 @@
      margin: 0 auto;
      padding: 40px 0;
 
+     @media screen and (max-width: 1200px) {
+       padding-bottom: 0;
+     }
+
+
      #threeHighlights {
        margin: 0 auto;
        width: 80%;
@@ -25,6 +30,11 @@
            flex-wrap: wrap;
            padding: 0;
            margin: 0;
+           #smallScreenHeadline {
+             margin-bottom: 40px;
+             font-size: 2.5em;
+           }
+
            p {
              width: 75%;
              margin: 25px auto 10px auto;
@@ -41,6 +51,19 @@
            }
            .blurb-efficiency {
            }
+
+           #smallScreenHeadline {
+             display: none;
+           }
+           @media screen and (max-width: 1200px) {
+             #smallScreenHeadline {
+               display: block;
+             }
+
+             #largerScreenHeadline {
+               display: none;
+             }
+          }
          }
        }
      }

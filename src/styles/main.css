@@ -85,6 +85,9 @@
   width: 100%;
   margin: 0 auto;
   padding: 40px 0; }
+  @media screen and (max-width: 1200px) {
+    .landing .threeHighlightsContainer {
+      padding-bottom: 0; } }
   .landing .threeHighlightsContainer #threeHighlights {
     margin: 0 auto;
     width: 80%; }
@@ -100,6 +103,9 @@
         flex-wrap: wrap;
         padding: 0;
         margin: 0; }
+        .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid #threeHighlightsRow #smallScreenHeadline {
+          margin-bottom: 40px;
+          font-size: 2.5em; }
         .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid #threeHighlightsRow p {
           width: 75%;
           margin: 25px auto 10px auto;
@@ -108,6 +114,13 @@
           margin-top: 10px;
           font-size: 1.75em;
           font-weight: 600; }
+        .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid #threeHighlightsRow #smallScreenHeadline {
+          display: none; }
+        @media screen and (max-width: 1200px) {
+          .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid #threeHighlightsRow #smallScreenHeadline {
+            display: block; }
+          .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid #threeHighlightsRow #largerScreenHeadline {
+            display: none; } }
 
 .landing .mainJumbotron {
   height: 92vh;
@@ -207,6 +220,9 @@
         margin-left: 30%; }
         .landing .newsFeedContainer #newsFeed #articleContainer #articleContents a {
           font-size: 1.2em; }
+  @media screen and (max-width: 991px) {
+    .landing .newsFeedContainer #newsFeed {
+      width: 70%; } }
 
 .landing {
   text-align: center;
@@ -273,6 +289,18 @@
   margin-bottom: 0; }
   .jobResults #modifyJobRole #jobRoleLabel {
     width: 105px; }
+  .jobResults #modifyJobRole #smallSeparator {
+    display: none; }
+  .jobResults #modifyJobRole div > label:nth-child(3) {
+    margin-right: 10px; }
+  @media screen and (max-width: 900px) {
+    .jobResults #modifyJobRole div > label:nth-child(3) {
+      margin-right: 0; }
+    .jobResults #modifyJobRole #smallSeparator {
+      display: block; } }
+  @media screen and (max-width: 565px) {
+    .jobResults #modifyJobRole #smallSeparator {
+      display: none; } }
 
 .jobResults #modifyJobType {
   z-index: 1;
@@ -280,6 +308,26 @@
   clear: both; }
   .jobResults #modifyJobType #jobTypeLabel {
     width: 105px; }
+
+@media screen and (max-width: 565px) {
+  .jobResults .modifyJobRoleAndType {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap; }
+    .jobResults .modifyJobRoleAndType label {
+      margin-left: 0;
+      padding-left: 20px;
+      display: block;
+      float: none; }
+    .jobResults .modifyJobRoleAndType #jobRole {
+      display: inline-block;
+      width: 62%; }
+      .jobResults .modifyJobRoleAndType #jobRole #modifyJobRole {
+        margin-top: 0; }
+    .jobResults .modifyJobRoleAndType #jobType {
+      display: inline-block;
+      width: 38%;
+      color: white; } }
 
 .jobResults #jobTable {
   margin-top: 20px;
@@ -306,6 +354,16 @@
       text-align: center;
       font-size: 0.75em; }
 
+@media screen and (max-width: 1275px) {
+  .jobResults #jobTable {
+    width: 59%;
+    max-width: none; } }
+
+@media screen and (max-width: 995px) {
+  .jobResults #jobTable {
+    width: 100%;
+    max-width: none; } }
+
 .jobResults #infoSpace {
   background-color: #d9d9d9;
   float: right;
@@ -316,6 +374,10 @@
   margin: 10px;
   width: 300px;
   height: 250px; }
+
+@media screen and (max-width: 995px) {
+  .jobResults #infoSpace {
+    display: none; } }
 
 #updateMaxDistance {
   top: 0;
@@ -391,6 +453,10 @@ body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-f
 .jobResults {
   margin: 0 auto;
   max-width: 1250px; }
+
+@media screen and (max-width: 1300px) {
+  .jobResults {
+    margin: 0 30px; } }
 
 .form-group,
 .form-group label,

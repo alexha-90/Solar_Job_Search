@@ -1,11 +1,37 @@
+$buttonSpacing: 10px;
 .jobResults {
   #modifyJobRole {
     z-index: 1;
     position: relative;
-    margin-top: 10px;
+    margin-top: $buttonSpacing;
     margin-bottom: 0;
+
     #jobRoleLabel {
       width: 105px;
+    }
+    #smallSeparator {
+      display: none;
+    }
+
+    // engineeringCheckbox
+    div > label:nth-child(3) {
+      margin-right: $buttonSpacing;
+    }
+
+    @media screen and (max-width: 900px) {
+      div > label:nth-child(3) {
+        margin-right: 0;
+      }
+
+      #smallSeparator {
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 565px) {
+      #smallSeparator {
+        display: none;
+      }
     }
   }
 
@@ -15,6 +41,32 @@
     clear: both;
     #jobTypeLabel {
       width: 105px;
+    }
+  }
+
+  @media screen and (max-width: 565px) {
+    .modifyJobRoleAndType {
+      display: flex;
+      display: -webkit-flex;
+      flex-wrap: wrap;
+      label {
+        margin-left: 0;
+        padding-left: 20px;
+        display: block;
+        float: none;
+      }
+      #jobRole {
+        display: inline-block;
+        width: 62%;
+        #modifyJobRole {
+          margin-top: 0;
+        }
+      }
+      #jobType {
+        display: inline-block;
+        width: 38%;
+        color: white;
+      }
     }
   }
 }

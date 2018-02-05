@@ -31,4 +31,19 @@
       }
     }
   }
+
+  @media screen and (max-width: 1275px) {
+    #jobTable {
+      width: 59%;
+      max-width: none;
+    }
+  }
+
+  @media screen and (max-width: 995px) {
+    #jobTable {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
 }

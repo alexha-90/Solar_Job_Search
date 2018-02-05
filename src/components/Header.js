@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Navbar, NavItem, Nav } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
+// import { Navbar, NavItem, Nav } from 'react-bootstrap';
+
+// NOTE: Simplistic header for now. Commented code below is for training section expansion
 //===============================================================================================//
 
 class Header extends Component {
@@ -14,19 +17,19 @@ class Header extends Component {
                                 <img src="https://i.imgur.com/SgjhNKQ.png" alt="SolarJobSearch_AltLogo" id="color2Logo"/>
                             </a>
                         </Navbar.Brand>
-                        <Navbar.Toggle />
+                        {/*<Navbar.Toggle />*/}
                     </Navbar.Header>
-                    <Navbar.Collapse>
-                        <Nav pullRight>
-                            <NavItem active eventKey={1} href="/">
-                                Find Jobs
-                            </NavItem>
-                            {/*<NavItem divider="true" />*/}
-                            <NavItem className="disabled" eventKey={2} href="#">
-                                Training (TBD)
-                            </NavItem>
-                        </Nav>
-                    </Navbar.Collapse>
+                    {/*<Navbar.Collapse>*/}
+                        {/*<Nav pullRight>*/}
+                            {/*<NavItem active eventKey={1} href="/">*/}
+                                {/*Find Jobs*/}
+                            {/*</NavItem>*/}
+                            {/*/!*<NavItem divider="true" />*!/*/}
+                            {/*<NavItem className="disabled" eventKey={2} href="#">*/}
+                                {/*Training (TBD)*/}
+                            {/*</NavItem>*/}
+                        {/*</Nav>*/}
+                    {/*</Navbar.Collapse>*/}
                 </Navbar>
             </section>
         )

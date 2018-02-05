@@ -11,4 +11,9 @@
     height: 250px;
   }
 
+  @media screen and (max-width: 995px) {
+    #infoSpace {
+      display: none;
+    }
+  }
 }

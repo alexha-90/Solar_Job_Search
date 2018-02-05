@@ -13,6 +13,12 @@
   max-width: 1250px;
 }
 
+@media screen and (max-width: 1300px) {
+  .jobResults {
+    margin: 0 30px;
+  }
+}
+
 // inline bootstrap label method from: https://stackoverflow.com/questions/18404003/label-on-the-left-side-instead-above-an-input-field
 .form-group,
 .form-group label,
