@@ -254,13 +254,13 @@ class Landing extends Component {
                     <h1>Types of solar jobs</h1>
                     <Grid className="jobDescriptionGrid">
                         <Row id='jobDescriptionRow'>
-                            <Col sm={12} lg={4} id="jobImageLeft">
+                            <Col sm={12} md={5} >
                                 <img src="https://images.pexels.com/photos/630839/pexels-photo-630839.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
                             </Col>
-                            <Col sm={12} lg={1} />
-                            <Col sm={12} lg={7} id="jobDescriptionRight">
+                            <Col sm={0} md={0} lg={1} />
+                            <Col sm={12} md={6} id="jobDescription">
                                 <div>
-                                    <h2>Field/Sales</h2>
+                                    <h2>Field / Sales</h2>
                                     <p>
                                         Roles that engage more with customers. Talk with them to sign up for PV.
                                         Go in the field and make sure things are working properly. Being comfortable
@@ -270,9 +270,12 @@ class Landing extends Component {
                             </Col>
                         </Row>
                         <Row id='jobDescriptionRow'>
-                            <Col sm={12} lg={7} id="jobDescriptionLeft">
+                            <Col lg={0} md={5} id="jobImgSmallOnly">
+                                <img src="https://images.pexels.com/photos/313691/pexels-photo-313691.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                            </Col>
+                            <Col sm={12} md={6} id="jobDescription">
                                 <div>
-                                    <h2>Design/Engineering</h2>
+                                    <h2>Design / Engineering</h2>
                                     <p>
                                         Roles that require deeper technical understanding about how PV works. Technical aspects
                                         on where panels should go, their productivity, electrical conduit runs, racking. Roof type
@@ -280,19 +283,19 @@ class Landing extends Component {
                                     </p>
                                 </div>
                             </Col>
-                            <Col sm={12} lg={1} />
-                            <Col sm={12} lg={4} id="jobImageRight">
+                            <Col sm={0} md={0} lg={1} />
+                            <Col sm={12} md={5} id="jobImgLargerOnly">
                                 <img src="https://images.pexels.com/photos/313691/pexels-photo-313691.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
                             </Col>
                         </Row>
                         <Row id='jobDescriptionRow'>
-                            <Col sm={12} lg={4} id="jobImageLeft">
+                            <Col sm={12} md={5}>
                                 <img src="https://cdn.pixabay.com/photo/2015/09/18/15/34/solar-panels-945801_960_720.jpg"/>
                             </Col>
-                            <Col sm={12} lg={1} />
-                            <Col sm={12} lg={7} id="jobDescriptionRight">
+                            <Col sm={0} md={0} lg={1} />
+                            <Col sm={12} md={6} id="jobDescription">
                                 <div>
-                                    <h2>Installation/Technician</h2>
+                                    <h2>Installation / Technician</h2>
                                     <p>
                                         Hands-on roles that focus with the physical solar panels themselves. Go on-site and
                                         use your knowledge to install solar panels and diagnose potential production problems.
@@ -302,9 +305,12 @@ class Landing extends Component {
                             </Col>
                         </Row>
                         <Row id='jobDescriptionRow'>
-                            <Col sm={12} lg={7} id="jobDescriptionLeft">
+                            <Col lg={0} md={5} id="jobImgSmallOnly">
+                                <img src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                            </Col>
+                            <Col sm={12} md={6} id="jobDescription">
                                 <div>
-                                    <h2>Project Management/Analytics</h2>
+                                    <h2>Project Management / Analytics</h2>
                                     <p>
                                         Roles that deal with the logistics, numbers, and business aspects associated with solar. It is
                                         up to you to make sure the panels are installed as scheduled with proper inventory. See why
@@ -312,17 +318,17 @@ class Landing extends Component {
                                     </p>
                                 </div>
                             </Col>
-                            <Col sm={12} lg={1} />
-                            <Col sm={12} lg={4} id="jobImageRight">
+                            <Col sm={0} md={0} lg={1} />
+                            <Col sm={12} md={5} id="jobImgLargerOnly">
                                 <img src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
                             </Col>
                         </Row>
                         <Row id='jobDescriptionRow'>
-                            <Col sm={12} lg={4} id="jobImageLeft">
+                            <Col sm={12} md={5}>
                                 <img src="https://images.pexels.com/photos/6384/woman-hand-desk-office.jpg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
                             </Col>
-                            <Col sm={12} lg={1} />
-                            <Col sm={12} lg={7} id="jobDescriptionRight">
+                            <Col sm={0} md={0} lg={1} />
+                            <Col sm={12} md={6} id="jobDescription">
                                 <div>
                                     <h2>Customer Service</h2>
                                     <p>

@@ -12,8 +12,18 @@
   background: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png") #284700;
   border: none;
   height: 50px; }
+  .header .headerContainer img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
   .header .headerContainer a {
     color: #f2f2f2; }
+    .header .headerContainer a #color2Logo {
+      display: none; }
+  .header .headerContainer a:hover #color1Logo {
+    display: none; }
+  .header .headerContainer a:hover #color2Logo {
+    display: block; }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
   background-color: #003300; }
@@ -143,14 +153,25 @@
       letter-spacing: 0.01em;
       font-weight: 300; }
     .landing .solarJobTypesDescription #jobDescriptionRow img {
-      height: 200px;
+      width: 100%;
       -webkit-box-shadow: 7px 9px 45px -8px #a2b89e;
       -moz-box-shadow: 7px 9px 45px -8px #a2b89e;
       box-shadow: 7px 9px 45px -8px #a2b89e; }
-    .landing .solarJobTypesDescription #jobDescriptionRow #jobDescriptionRight div, .landing .solarJobTypesDescription #jobDescriptionRow #jobDescriptionLeft div {
+    .landing .solarJobTypesDescription #jobDescriptionRow #jobDescription div {
       position: relative;
-      top: 50%;
-      transform: translateY(-50%); }
+      top: 10%;
+      transform: translateY(-10%); }
+    @media screen and (max-width: 10000px) {
+      .landing .solarJobTypesDescription #jobDescriptionRow img {
+        width: 175%;
+        margin-bottom: 30px; } }
+    .landing .solarJobTypesDescription #jobDescriptionRow #jobImgSmallOnly {
+      display: none; }
+    @media screen and (max-width: 991px) {
+      .landing .solarJobTypesDescription #jobDescriptionRow #jobImgSmallOnly {
+        display: block; }
+      .landing .solarJobTypesDescription #jobDescriptionRow #jobImgLargerOnly {
+        display: none; } }
 
 .landing .newsFeedContainer {
   padding: 40px 0; }

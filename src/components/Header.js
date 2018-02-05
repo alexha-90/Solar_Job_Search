@@ -9,7 +9,10 @@ class Header extends Component {
                 <Navbar collapseOnSelect className="headerContainer">
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="/" alt="SolarJobSearch">SolarJobSearch</a>
+                            <a href="/" alt="SolarJobSearch">
+                                <img src="https://i.imgur.com/YoHfE8R.png" alt="SolarJobSearch_Logo" id="color1Logo"/>
+                                <img src="https://i.imgur.com/SgjhNKQ.png" alt="SolarJobSearch_AltLogo" id="color2Logo"/>
+                            </a>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
@@ -19,7 +22,7 @@ class Header extends Component {
                                 Find Jobs
                             </NavItem>
                             {/*<NavItem divider="true" />*/}
-                            <NavItem disabled eventKey={2} href="#">
+                            <NavItem className="disabled" eventKey={2} href="#">
                                 Training (TBD)
                             </NavItem>
                         </Nav>
