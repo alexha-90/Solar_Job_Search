@@ -83,13 +83,13 @@ class Landing extends Component {
 
     onHandleInputSubmit() {
         this.setState({ loadingJobs: true });
-        fetchJobs(this.state.location, this.state.maxDistance, this.props)
-            .then((res) => {
-                if (res === 'error') {
-                    return alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
-                }
-                this.setState({ redirectToJobResults: true });
-            })
+        // fetchJobs(this.state.location, this.state.maxDistance, this.props)
+        //     .then((res) => {
+        //         if (res === 'error') {
+        //             return alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
+        //         }
+        //         this.setState({ redirectToJobResults: true });
+        //     })
     };
 
     loadingJobResultsAnimation() {
@@ -100,6 +100,7 @@ class Landing extends Component {
                         <ChasingDots
                             size = {100}
                             color = {'orange'}
+                            id='myTest'
                         />
                     </div>
                 </div>

@@ -173,13 +173,16 @@ class PopulateJobList extends Component {
         if (Object.keys(this.props.jobList).length) {
             return (
                 <div id="pager">
-                    <Pagination
-                        id="pageObj"
-                        onChange={this.onPagination}
-                        current={this.state.currentPage}
-                        defaultPageSize={this.jobsPerPage}
-                        total={Math.floor(this.props.jobList.length)}
-                    />
+                    <div>
+                        <Pagination
+                            id="pageObj"
+                            onChange={this.onPagination}
+                            current={this.state.currentPage}
+                            defaultPageSize={this.jobsPerPage}
+                            total={Math.floor(this.props.jobList.length)}
+                            showLessItems={true}
+                        />
+                    </div>
                     <div>
                         (NOTE: clicking a page button above will clear your checkbox selections)
                     </div>

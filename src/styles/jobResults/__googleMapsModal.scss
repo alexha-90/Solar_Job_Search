@@ -2,6 +2,13 @@
 #googleMapFrame {
   height: 50vh;
 }
+
+@media screen and (max-width: 500px) {
+  #googleMapFrame {
+    height: 40vh;
+  }
+}
+
 body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div {
   .modal-header {
     background-color: #cccccc;
@@ -23,7 +30,7 @@ body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div {
       margin-left: 15px;
     }
     Button {
-      margin-top: 15px;
+      margin-top: 50px;
       width: 30%;
       border-radius: 8px;
       a {

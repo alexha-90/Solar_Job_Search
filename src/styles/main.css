@@ -271,6 +271,8 @@
       position: relative;
       top: 75%;
       transform: translateY(-75%); }
+      .landing .loadingJobsSpinner div #myTest div {
+        padding-right: 50px; }
   .landing #whySolar {
     width: 100%;
     padding: 40px 0;
@@ -377,17 +379,17 @@
     position: relative;
     width: 100%;
     clear: both; }
-    .jobResults #jobTable #pager ul {
-      position: absolute;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%); }
     .jobResults #jobTable #pager div {
       padding-top: 40px;
       width: 50%;
       margin: 0 auto;
       text-align: center;
       font-size: 0.75em; }
+      .jobResults #jobTable #pager div ul {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%); }
 
 @media screen and (max-width: 1275px) {
   .jobResults #jobTable {
@@ -398,6 +400,13 @@
   .jobResults #jobTable {
     width: 100%;
     max-width: none; } }
+
+@media screen and (max-width: 575px) {
+  .jobResults #pager div {
+    width: 100%; }
+    .jobResults #pager div ul {
+      margin-left: 11%;
+      width: 100%; } }
 
 .jobResults #infoSpace {
   background-color: #d9d9d9;
@@ -467,6 +476,10 @@
 #googleMapFrame {
   height: 50vh; }
 
+@media screen and (max-width: 500px) {
+  #googleMapFrame {
+    height: 40vh; } }
+
 body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-header {
   background-color: #cccccc; }
   body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-header #companyName {
@@ -482,7 +495,7 @@ body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-f
     text-align: left;
     margin-left: 15px; }
   body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-footer Button {
-    margin-top: 15px;
+    margin-top: 50px;
     width: 30%;
     border-radius: 8px; }
     body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-footer Button a {
