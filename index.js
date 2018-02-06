@@ -4,8 +4,8 @@ const path = require('path');
 //===============================================================================================//
 
 //allow cross-origin resource sharing for development
-const cors = require('cors');
-app.use(cors());
+// const cors = require('cors');
+// app.use(cors());
 
 // logs all api requests to the console
 const morgan = require('morgan');
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // handle URL-encoded data
 // import routes
 //===========================================================================
 require('./routes/fetchJobs')(app);
-
+require('./routes/fetchNews')(app);
 
 // test routes
 app.get('/test', (req, res) => {
