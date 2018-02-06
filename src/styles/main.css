@@ -43,7 +43,7 @@
   border-radius: 10px; }
   @media screen and (max-width: 650px) {
     .landing #searchContainer {
-      top: 20vh; }
+      top: 30vh; }
       .landing #searchContainer #headline h2 {
         display: none; } }
   .landing #searchContainer #headline {
@@ -145,7 +145,7 @@
   position: relative; }
   @media screen and (max-width: 650px) {
     .landing .mainJumbotron {
-      height: 40vh; } }
+      height: 60vh; } }
 
 .landing .mainJumbotron::before {
   height: 92vh;
@@ -163,7 +163,7 @@
   content: ''; }
   @media screen and (max-width: 650px) {
     .landing .mainJumbotron::before {
-      height: 40vh; } }
+      height: 60vh; } }
 
 .landing .solarJobTypesDescription {
   padding: 40px 0;
@@ -271,8 +271,12 @@
       position: relative;
       top: 75%;
       transform: translateY(-75%); }
-      .landing .loadingJobsSpinner div #myTest div {
+      .landing .loadingJobsSpinner div #loadingDots div {
         padding-right: 50px; }
+      @media screen and (max-width: 650px) {
+        .landing .loadingJobsSpinner div {
+          top: 60%;
+          transform: translateY(-60%); } }
   .landing #whySolar {
     width: 100%;
     padding: 40px 0;
@@ -365,6 +369,16 @@
       display: inline-block;
       width: 38%; } }
 
+.jobResults #mobileScrollTip {
+  display: none; }
+  @media screen and (max-width: 768px) {
+    .jobResults #mobileScrollTip {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 600;
+      text-align: center;
+      color: #009900; } }
+
 .jobResults #jobTable {
   margin-top: 20px;
   float: left;
@@ -379,17 +393,6 @@
     position: relative;
     width: 100%;
     clear: both; }
-    .jobResults #jobTable #pager div {
-      padding-top: 40px;
-      width: 50%;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 0.75em; }
-      .jobResults #jobTable #pager div ul {
-        position: absolute;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%); }
 
 @media screen and (max-width: 1275px) {
   .jobResults #jobTable {
@@ -400,13 +403,6 @@
   .jobResults #jobTable {
     width: 100%;
     max-width: none; } }
-
-@media screen and (max-width: 575px) {
-  .jobResults #pager div {
-    width: 100%; }
-    .jobResults #pager div ul {
-      margin-left: 11%;
-      width: 100%; } }
 
 .jobResults #infoSpace {
   background-color: #d9d9d9;

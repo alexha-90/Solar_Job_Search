@@ -36,11 +36,15 @@
       position: relative;
       top: 75%;
       transform: translateY(-75%);
-      #myTest {
+      #loadingDots {
         div {
           //background-color: red;
           padding-right: 50px;
         }
+      }
+      @media screen and (max-width: 650px) {
+        top: 60%;
+        transform: translateY(-60%);
       }
     }
   }

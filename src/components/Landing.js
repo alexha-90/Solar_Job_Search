@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Grid, Row, Col, Button, Form, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
 // import ScrollToTop from 'react-scroll-up';
 import { connect } from 'react-redux';
-import fetchNewsFeed from '../helper_functions/fetchNewsFeed'
 import fetchJobs from '../helper_functions/fetchJobs';
 import populateNewsFeed from '../helper_functions/populateNewsFeed';
 import PlacesAutocomplete from 'react-places-autocomplete'
@@ -41,15 +40,19 @@ class Landing extends Component {
     }
 
     componentWillMount() {
-        fetchNewsFeed()
+        axios.get('/api/fetchNews')
             .then(res => {
-                if (!res) {
+                if (res.data === 'error') {
                     return <div>Something went wrong... unable to retrieve solar related news feed.</div>
                 }
-                console.log(res.articles);
-                this.articlesArr = res.articles;
+                // console.log(res.data.articles);
+                this.articlesArr = res.data.articles;
                 return this.setState({ loadingFeed: false });
-        });
+            })
+            .catch(err => {
+                console.log(err);
+                return <div>Something went wrong... unable to retrieve solar related news feed.</div>
+            })
     }
 
     onUpdateLocation(location) {
@@ -83,13 +86,13 @@ class Landing extends Component {
 
     onHandleInputSubmit() {
         this.setState({ loadingJobs: true });
-        // fetchJobs(this.state.location, this.state.maxDistance, this.props)
-        //     .then((res) => {
-        //         if (res === 'error') {
-        //             return alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
-        //         }
-        //         this.setState({ redirectToJobResults: true });
-        //     })
+        fetchJobs(this.state.location, this.state.maxDistance, this.props)
+            .then((res) => {
+                if (res === 'error') {
+                    return alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
+                }
+                this.setState({ redirectToJobResults: true });
+            })
     };
 
     loadingJobResultsAnimation() {
@@ -100,7 +103,7 @@ class Landing extends Component {
                         <ChasingDots
                             size = {100}
                             color = {'orange'}
-                            id='myTest'
+                            id='loadingDots'
                         />
                     </div>
                 </div>
@@ -265,7 +268,7 @@ class Landing extends Component {
                     <Grid className="jobDescriptionGrid">
                         <Row id='jobDescriptionRow'>
                             <Col sm={12} md={5} >
-                                <img src="https://images.pexels.com/photos/630839/pexels-photo-630839.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt="salesImg" src="https://images.pexels.com/photos/630839/pexels-photo-630839.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
                             </Col>
                             <Col sm={0} md={0} lg={1} />
                             <Col sm={12} md={6} id="jobDescription">
@@ -281,7 +284,7 @@ class Landing extends Component {
                         </Row>
                         <Row id='jobDescriptionRow'>
                             <Col lg={0} md={5} id="jobImgSmallOnly">
-                                <img src="https://images.pexels.com/photos/313691/pexels-photo-313691.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt="engineerImg1" src="https://images.pexels.com/photos/313691/pexels-photo-313691.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
                             </Col>
                             <Col sm={12} md={6} id="jobDescription">
                                 <div>
@@ -295,12 +298,12 @@ class Landing extends Component {
                             </Col>
                             <Col sm={0} md={0} lg={1} />
                             <Col sm={12} md={5} id="jobImgLargerOnly">
-                                <img src="https://images.pexels.com/photos/313691/pexels-photo-313691.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt='engineerImg2' src="https://images.pexels.com/photos/313691/pexels-photo-313691.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
                             </Col>
                         </Row>
                         <Row id='jobDescriptionRow'>
                             <Col sm={12} md={5}>
-                                <img src="https://cdn.pixabay.com/photo/2015/09/18/15/34/solar-panels-945801_960_720.jpg"/>
+                                <img alt='technicianImg' src="https://cdn.pixabay.com/photo/2015/09/18/15/34/solar-panels-945801_960_720.jpg"/>
                             </Col>
                             <Col sm={0} md={0} lg={1} />
                             <Col sm={12} md={6} id="jobDescription">
@@ -316,7 +319,7 @@ class Landing extends Component {
                         </Row>
                         <Row id='jobDescriptionRow'>
                             <Col lg={0} md={5} id="jobImgSmallOnly">
-                                <img src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt='pmImg1' src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
                             </Col>
                             <Col sm={12} md={6} id="jobDescription">
                                 <div>
@@ -330,12 +333,12 @@ class Landing extends Component {
                             </Col>
                             <Col sm={0} md={0} lg={1} />
                             <Col sm={12} md={5} id="jobImgLargerOnly">
-                                <img src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt='pmImg2' src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
                             </Col>
                         </Row>
                         <Row id='jobDescriptionRow'>
                             <Col sm={12} md={5}>
-                                <img src="https://images.pexels.com/photos/6384/woman-hand-desk-office.jpg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt='csrImg' src="https://images.pexels.com/photos/6384/woman-hand-desk-office.jpg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
                             </Col>
                             <Col sm={0} md={0} lg={1} />
                             <Col sm={12} md={6} id="jobDescription">

@@ -1,4 +1,15 @@
 .jobResults {
+  #mobileScrollTip {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 600;
+      text-align: center;
+      color: #009900;
+    }
+  }
+
   #jobTable {
     margin-top: 20px;
     float: left;
@@ -18,21 +29,21 @@
       position: relative;
       width: 100%;
       clear: both;
-      div {
-        //background-color: gray;
-        padding-top: 40px;
-        width: 50%;
-        margin: 0 auto;
-        text-align: center;
-        font-size: 0.75em;
-        ul {
-          //background-color: green;
-          position: absolute;
-          left: 50%;
-          -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-        }
-      }
+      //div {
+      //  //background-color: gray;
+      //  padding-top: 40px;
+      //  width: 50%;
+      //  margin: 0 auto;
+      //  text-align: center;
+      //  font-size: 0.75em;
+      //  ul {
+      //    //background-color: green;
+      //    position: absolute;
+      //    left: 50%;
+      //    -webkit-transform: translateX(-50%);
+      //    transform: translateX(-50%);
+      //  }
+      //}
     }
   }
 
@@ -50,15 +61,15 @@
     }
   }
 
-  @media screen and (max-width: 575px) {
-    #pager {
-      div {
-        width: 100%;
-        ul {
-          margin-left: 11%;
-          width: 100%;
-        }
-      }
-    }
-  }
+  //@media screen and (max-width: 575px) {
+  //  #pager {
+  //    div {
+  //      width: 100%;
+  //      ul {
+  //        margin-left: 11%;
+  //        width: 100%;
+  //      }
+  //    }
+  //  }
+  //}
 }

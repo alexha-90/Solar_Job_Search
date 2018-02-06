@@ -173,7 +173,6 @@ class PopulateJobList extends Component {
         if (Object.keys(this.props.jobList).length) {
             return (
                 <div id="pager">
-                    <div>
                         <Pagination
                             id="pageObj"
                             onChange={this.onPagination}
@@ -182,7 +181,6 @@ class PopulateJobList extends Component {
                             total={Math.floor(this.props.jobList.length)}
                             showLessItems={true}
                         />
-                    </div>
                     <div>
                         (NOTE: clicking a page button above will clear your checkbox selections)
                     </div>
@@ -200,6 +198,9 @@ class PopulateJobList extends Component {
                 {jobResultsHeadline(this.props.jobList, this.state.currentPage, this.props.locationParam)}
                 {this.buttonActions()}
                 <div id="jobTable">
+                    <span id='mobileScrollTip'>
+                        &rarr; Scroll to see more of table &rarr;
+                    </span>
                     <Table responsive striped>
                         <thead>
                         <tr>
