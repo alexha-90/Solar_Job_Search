@@ -227,7 +227,7 @@ class Landing extends Component {
                                     </h2>
                                 </Col>
                                 <Col lg={4} xs={12} className="blurb-efficiency">
-                                    <img alt="blurb-efficiency" src="https://i.imgur.com/t7tRlLD.png" />
+                                    <img alt="blurb-efficiency" src="https://s3.amazonaws.com/solarjobsearch/efficiencyGear.png" />
                                     <p>
                                         Job results are posted in table format for easy viewing. You can catalog multiple job
                                         listings and open links for each them at the same time!
@@ -268,7 +268,7 @@ class Landing extends Component {
                     <Grid className="jobDescriptionGrid">
                         <Row id='jobDescriptionRow'>
                             <Col sm={12} md={5} >
-                                <img alt="salesImg" src="https://images.pexels.com/photos/630839/pexels-photo-630839.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt="salesImg" src="https://s3.amazonaws.com/solarjobsearch/salesImg.jpeg"/>
                             </Col>
                             <Col sm={0} md={0} lg={1} />
                             <Col sm={12} md={6} id="jobDescription">
@@ -284,7 +284,7 @@ class Landing extends Component {
                         </Row>
                         <Row id='jobDescriptionRow'>
                             <Col lg={0} md={5} id="jobImgSmallOnly">
-                                <img alt="engineerImg1" src="https://images.pexels.com/photos/313691/pexels-photo-313691.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt="engineerImg1" src="https://s3.amazonaws.com/solarjobsearch/engineerImg.jpeg"/>
                             </Col>
                             <Col sm={12} md={6} id="jobDescription">
                                 <div>
@@ -298,12 +298,12 @@ class Landing extends Component {
                             </Col>
                             <Col sm={0} md={0} lg={1} />
                             <Col sm={12} md={5} id="jobImgLargerOnly">
-                                <img alt='engineerImg2' src="https://images.pexels.com/photos/313691/pexels-photo-313691.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt='engineerImg2' src="https://s3.amazonaws.com/solarjobsearch/engineerImg.jpeg"/>
                             </Col>
                         </Row>
                         <Row id='jobDescriptionRow'>
                             <Col sm={12} md={5}>
-                                <img alt='technicianImg' src="https://cdn.pixabay.com/photo/2015/09/18/15/34/solar-panels-945801_960_720.jpg"/>
+                                <img alt='technicianImg' src="https://s3.amazonaws.com/solarjobsearch/installerImg.jpg"/>
                             </Col>
                             <Col sm={0} md={0} lg={1} />
                             <Col sm={12} md={6} id="jobDescription">
@@ -319,7 +319,7 @@ class Landing extends Component {
                         </Row>
                         <Row id='jobDescriptionRow'>
                             <Col lg={0} md={5} id="jobImgSmallOnly">
-                                <img alt='pmImg1' src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt='pmImg1' src="https://s3.amazonaws.com/solarjobsearch/pmImg.jpeg"/>
                             </Col>
                             <Col sm={12} md={6} id="jobDescription">
                                 <div>
@@ -333,12 +333,12 @@ class Landing extends Component {
                             </Col>
                             <Col sm={0} md={0} lg={1} />
                             <Col sm={12} md={5} id="jobImgLargerOnly">
-                                <img alt='pmImg2' src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt='pmImg2' src="https://s3.amazonaws.com/solarjobsearch/pmImg.jpeg"/>
                             </Col>
                         </Row>
                         <Row id='jobDescriptionRow'>
                             <Col sm={12} md={5}>
-                                <img alt='csrImg' src="https://images.pexels.com/photos/6384/woman-hand-desk-office.jpg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
+                                <img alt='csrImg' src="https://s3.amazonaws.com/solarjobsearch/csrImg.jpg"/>
                             </Col>
                             <Col sm={0} md={0} lg={1} />
                             <Col sm={12} md={6} id="jobDescription">

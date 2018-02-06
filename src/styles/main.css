@@ -9,7 +9,7 @@
     background-color: #003300; }
 
 .header .headerContainer {
-  background: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png") #284700;
+  background: url("https://s3.amazonaws.com/solarjobsearch/textureGreenBG.png") #284700;
   border: none;
   height: 50px; }
   .header .headerContainer img {
@@ -150,7 +150,7 @@
 .landing .mainJumbotron::before {
   height: 92vh;
   position: absolute;
-  background: url("https://cdn.citylab.com/media/img/citylab/2016/04/shutterstock_61884112/facebook.jpg?1494533575") no-repeat center;
+  background: url("https://s3.amazonaws.com/solarjobsearch/mainSplash.jpg") no-repeat center;
   top: 0;
   left: 0;
   bottom: 0;
@@ -250,10 +250,10 @@
 
 .landing {
   text-align: center;
-  background: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png") #284700; }
+  background: url("https://s3.amazonaws.com/solarjobsearch/textureGreenBG.png") #284700; }
   .landing #whySolar, .landing .newsFeedContainer {
     /* Background pattern from Subtle Patterns */
-    background-image: url("https://i.imgur.com/q4MTfbu.png"); }
+    background-image: url("https://s3.amazonaws.com/solarjobsearch/whiteTextureBG.png"); }
   .landing h1 {
     font-size: 3em;
     letter-spacing: 0.1em;
@@ -523,7 +523,7 @@ body > div:nth-child(4) > div.fade.googleMapsModal.in.modal > div > div .modal-f
 
 .footer {
   clear: both;
-  background: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png") #284700;
+  background: url("https://s3.amazonaws.com/solarjobsearch/textureGreenBG.png") #284700;
   text-align: center;
   padding: 20px 0;
   color: #f2f2f2; }
