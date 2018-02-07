@@ -36,7 +36,7 @@ class Terms extends Component {
                 <h3>Contact Us</h3>
 
                 If you have any questions about these Terms, please
-                <a href="#" title="contact">&nbsp;contact us</a>.
+                <a href="/" title="contact">&nbsp;contact us</a>.
             </div>
         );
     }

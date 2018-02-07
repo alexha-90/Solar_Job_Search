@@ -34,9 +34,19 @@ Limitations
 
 
 [x] = addressed, [ ] = work in progress
-## Known bugs and issues
+## Known functional bugs and issues
 - [x] Select all jobs does not work
-- [] Positioning can be improved for header jumbotron
-- [] Header needs work
-- [] Need to translate coordinates to city before running
+- [x] Header needs work
+- [x] Translate coordinates to city before running
 - [] Upperbound text on job results headline not correct for counts % 25 !==0
+- [] Polyfill arr.includes method for IE compatibility. App doesn't work at the moment
+- [] Geolocation feature needs a timeout check and warning for Opera and Safari
+- [] Location does not work on FireFox even with permission
+
+## Known visual bugs and issues
+- [] Safari alignment issues on landing page
+- [] Safari overlapping distance dropdown menu on resize toggle
+- [] Locate 
+- [] MS Edge tooltips move elements up and down on hover
+- [] Opera and MS Edge glyphicons move out of position
+- [] Search inputs don't display right on larger screens

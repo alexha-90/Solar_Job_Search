@@ -13,8 +13,8 @@ class Header extends Component {
                     <Navbar.Header>
                         <Navbar.Brand>
                             <a href="/" alt="SolarJobSearch">
-                                <img src="https://s3.amazonaws.com/solarjobsearch/solarJobSearch_logo1.png" alt="SolarJobSearch_Logo" id="color1Logo"/>
-                                <img src="https://s3.amazonaws.com/solarjobsearch/solarJobSearch_logo2.png" id="color2Logo"/>
+                                <img src="https://s3.amazonaws.com/solarjobsearch/solarJobSearch_logo1.png" alt="SolarJobSearch_Logo1" id="color1Logo"/>
+                                <img src="https://s3.amazonaws.com/solarjobsearch/solarJobSearch_logo2.png" alt="SolarJobSearch_Logo2" id="color2Logo"/>
                             </a>
                         </Navbar.Brand>
                         {/*<Navbar.Toggle />*/}
