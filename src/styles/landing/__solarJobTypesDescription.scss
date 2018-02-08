@@ -7,9 +7,14 @@
     }
     #jobDescriptionRow {
       // flex method: https://stackoverflow.com/questions/19695784/how-can-i-make-bootstrap-columns-all-the-same-height
-      display: flex;
-      display: -webkit-flex;
+      //display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+      display: -webkit-flex; /* Safari 6.1+. iOS 7.1+, BB10 */
+      display: -webkit-box;  /* iOS 6-, Safari 3.1-6, BB7 */
+      display: -moz-box;
+      display: -ms-flexbox;  /* IE 10 */
       flex-wrap: wrap;
+
+
       padding: 35px 0;
       //background-color: green;
       width: 88%;
@@ -33,14 +38,15 @@
         -webkit-box-shadow: 7px 9px 45px -8px rgba(162,184,158,1);
         -moz-box-shadow: 7px 9px 45px -8px rgba(162,184,158,1);
         box-shadow: 7px 9px 45px -8px rgba(162,184,158,1);
+        position: relative;
       }
 
 
       #jobDescription {
         div {
           position: relative;
-          top: 10%;
-          transform: translateY(-10%);
+          top: 30%;
+          transform: translateY(30%);
         }
       }
 

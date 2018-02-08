@@ -42,9 +42,11 @@ Limitations
 - [] Polyfill arr.includes method for IE compatibility. App doesn't work at the moment
 - [] Geolocation feature needs a timeout check and warning for Opera and Safari
 - [] Location does not work on FireFox even with permission
+- [] Dynamic URL generation
+
 
 ## Known visual bugs and issues
-- [] Safari alignment issues on landing page
+- [x] Safari alignment issues on landing page
 - [] Safari overlapping distance dropdown menu on resize toggle
 - [] Locate 
 - [] MS Edge tooltips move elements up and down on hover

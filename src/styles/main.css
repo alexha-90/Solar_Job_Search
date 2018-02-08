@@ -116,8 +116,13 @@
       padding: 0;
       width: 100%; }
       .landing .threeHighlightsContainer #threeHighlights .threeHighlightsGrid #threeHighlightsRow {
-        display: flex;
         display: -webkit-flex;
+        /* Safari 6.1+. iOS 7.1+, BB10 */
+        display: -webkit-box;
+        /* iOS 6-, Safari 3.1-6, BB7 */
+        display: -moz-box;
+        display: -ms-flexbox;
+        /* IE 10 */
         flex-wrap: wrap;
         padding: 0;
         margin: 0; }
@@ -171,8 +176,13 @@
   .landing .solarJobTypesDescription h1 {
     color: #FFA500; }
   .landing .solarJobTypesDescription #jobDescriptionRow {
-    display: flex;
     display: -webkit-flex;
+    /* Safari 6.1+. iOS 7.1+, BB10 */
+    display: -webkit-box;
+    /* iOS 6-, Safari 3.1-6, BB7 */
+    display: -moz-box;
+    display: -ms-flexbox;
+    /* IE 10 */
     flex-wrap: wrap;
     padding: 35px 0;
     width: 88%;
@@ -193,11 +203,12 @@
       width: 100%;
       -webkit-box-shadow: 7px 9px 45px -8px #a2b89e;
       -moz-box-shadow: 7px 9px 45px -8px #a2b89e;
-      box-shadow: 7px 9px 45px -8px #a2b89e; }
+      box-shadow: 7px 9px 45px -8px #a2b89e;
+      position: relative; }
     .landing .solarJobTypesDescription #jobDescriptionRow #jobDescription div {
       position: relative;
-      top: 10%;
-      transform: translateY(-10%); }
+      top: 30%;
+      transform: translateY(30%); }
     @media screen and (max-width: 10000px) {
       .landing .solarJobTypesDescription #jobDescriptionRow img {
         width: 175%;
