@@ -60,24 +60,55 @@ class Landing extends Component {
     }
 
     onGetGeolocation() {
-        if (navigator.geolocation) {
-            this.setState({ location: 'Identifying your location...'});
-            navigator.geolocation.getCurrentPosition(position => {
-                setTimeout(() => {
-                    let latitude = position.coords.latitude.toString().slice(0,7);
-                    let longitude = position.coords.longitude.toString().slice(0,9);
-                    const mapKey = 'AIzaSyCX5D7_oHfZASpq8-cv16MBy5G68yeRe6E';
-                    let decodeURL = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=' + mapKey;
-                    axios.get(decodeURL)
-                        .then(data => {
-                            // console.log(data.data.results[2].formatted_address);
-                            this.setState({ location: data.data.results[2].formatted_address });
-                        })
-                }, 1000);
-            });
-        } else {
-            return alert('You must allow geolocation permission for us to retrieve your location.');
-        }
+        var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+
+        function success(pos) {
+            var crd = pos.coords;
+
+            console.log('Your current position is:');
+            console.log(`Latitude : ${crd.latitude}`);
+            console.log(`Longitude: ${crd.longitude}`);
+            console.log(`More or less ${crd.accuracy} meters.`);
+        };
+
+        function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+        };
+
+        navigator.geolocation.getCurrentPosition(success, error, options);
+
+
+        // if (navigator.geolocation) {
+        //     this.setState({ location: 'Identifying your location...'});
+        //     navigator.geolocation.getCurrentPosition(position => {
+        //
+        //         console.log(position);
+        //         // setInterval(() => {
+        //         //     if (!position) {
+        //         //         alert('something went worng');
+        //         //     }
+        //         // }, 1500);
+        //
+        //
+        //         setTimeout(() => {
+        //             let latitude = position.coords.latitude.toString().slice(0,7);
+        //             let longitude = position.coords.longitude.toString().slice(0,9);
+        //             const mapKey = 'AIzaSyCX5D7_oHfZASpq8-cv16MBy5G68yeRe6E';
+        //             let decodeURL = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=' + mapKey;
+        //             axios.get(decodeURL)
+        //                 .then(data => {
+        //                     // console.log(data.data.results[2].formatted_address);
+        //                     this.setState({ location: data.data.results[2].formatted_address });
+        //                 })
+        //         }, 1000);
+        //     });
+        // } else {
+        //     return alert('You must allow geolocation permission for us to retrieve your location.');
+        // }
     }
 
     onUpdateMaxDistance(event) {

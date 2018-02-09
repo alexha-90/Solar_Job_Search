@@ -33,7 +33,7 @@ Limitations
 * Axios + redux-thunk
 
 
-[x] = addressed, [ ] = work in progress
+- [x] = addressed, [ ] = work in progress
 ## Known functional bugs and issues
 - [x] Select all jobs does not work
 - [x] Header needs work
@@ -51,4 +51,4 @@ Limitations
 - [] Locate 
 - [] MS Edge tooltips move elements up and down on hover
 - [] Opera and MS Edge glyphicons move out of position
-- [] Search inputs don't display right on larger screens
+- [] Search inputs spacing gets strange for very large screen/high resolutions
