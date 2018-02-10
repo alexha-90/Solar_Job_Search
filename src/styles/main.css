@@ -33,11 +33,11 @@
   -webkit-animation-duration: 2s;
   -moz-animation-duration: 2s;
   -ms-transition-animation-duration: 2s;
-  margin: 0 28%;
-  width: 44%;
-  height: 100px;
+  margin: 0 auto;
+  width: 700px;
+  height: 110px;
   background-color: #008000;
-  position: absolute;
+  position: relative;
   top: 46vh;
   transform: translateY(-50%);
   border-radius: 10px; }
@@ -60,42 +60,87 @@
       color: black; }
       .landing #searchContainer #headline h2 span {
         color: #FFA500; }
-  .landing #searchContainer #search {
-    height: 40px;
+  .landing #searchContainer .search {
+    height: 44px;
+    background-color: green;
     position: relative;
-    top: 13%;
-    transform: translateY(-13%);
-    padding-left: 1em; }
-    .landing #searchContainer #search #homeIcon {
+    padding: 10px 15px; }
+    .landing #searchContainer .search #geolocationButton, .landing #searchContainer .search #buttonContainer {
+      position: relative;
+      height: inherit;
+      width: 40px;
+      display: inline-block; }
+      .landing #searchContainer .search #geolocationButton Button, .landing #searchContainer .search #geolocationButton #icon, .landing #searchContainer .search #buttonContainer Button, .landing #searchContainer .search #buttonContainer #icon {
+        position: absolute;
+        width: 100%;
+        height: 100%; }
+      .landing #searchContainer .search #geolocationButton a, .landing #searchContainer .search #buttonContainer a {
+        color: inherit;
+        text-decoration: none; }
+      .landing #searchContainer .search #geolocationButton #icon, .landing #searchContainer .search #buttonContainer #icon {
+        left: 5px;
+        top: 7px;
+        font-size: 2em; }
+    .landing #searchContainer .search #geolocationButton {
+      height: 44px;
+      margin-bottom: 2px; }
+    .landing #searchContainer .search #locationContainer {
+      border: 2px solid #003300;
+      position: relative;
+      height: inherit;
+      width: 410px;
       display: inline-block;
-      height: 40px;
-      margin-right: 10px; }
-    .landing #searchContainer #search #updateLocation {
-      background-color: green;
-      width: 70%;
-      height: 40px; }
-    .landing #searchContainer #search #updateMaxDistance {
-      display: block;
-      right: 0;
-      margin-right: 1em; }
-    .landing #searchContainer #search #submitButton {
-      width: 100%;
-      margin: 10px 0; }
-      .landing #searchContainer #search #submitButton Button {
-        display: block;
-        margin: 0 auto 0 auto;
-        width: 40%; }
-  @media screen and (max-width: 1000px) {
+      margin: 0 10px;
+      background-color: blue; }
+    .landing #searchContainer .search #maxDistanceContainer {
+      border: 2px solid #003300;
+      height: inherit;
+      width: 200px;
+      display: inline-block;
+      background-color: #f2f2f2; }
+      .landing #searchContainer .search #maxDistanceContainer .distanceDropDownMenu {
+        display: inline-block;
+        width: 156px;
+        height: 38px;
+        margin: 0;
+        padding: 0;
+        transform: translateY(-19px);
+        border-radius: 0;
+        border: none;
+        background: none; }
+    .landing #searchContainer .search #submitButton {
+      height: 30px;
+      width: 350px;
+      margin: 5px auto 0 auto;
+      background-color: orange;
+      display: block; }
+      .landing #searchContainer .search #submitButton Button {
+        width: 100%; }
+  @media screen and (max-width: 720px) {
     .landing #searchContainer {
-      margin: 0 15%;
-      width: 70%;
-      height: 120px; }
-      .landing #searchContainer #search #homeIcon {
-        display: none; }
-      .landing #searchContainer #search #submitButton {
-        padding-top: 50px; }
-        .landing #searchContainer #search #submitButton Button {
-          width: 200px; } }
+      width: 380px;
+      height: 160px; }
+      .landing #searchContainer .search #locationContainer {
+        position: relative;
+        height: inherit;
+        width: 300px;
+        display: inline-block;
+        margin: 0 0 0 10px;
+        background-color: blue; }
+      .landing #searchContainer .search #maxDistanceContainer {
+        height: inherit;
+        width: 300px;
+        display: inline-block;
+        background-color: gray;
+        margin-left: 50px; }
+        .landing #searchContainer .search #maxDistanceContainer .distanceDropDownMenu {
+          display: inline-block;
+          width: 256px; }
+      .landing #searchContainer .search #submitButton {
+        height: 30px;
+        width: 300px;
+        margin-left: 50px;
+        background-color: orange; } }
 
 .landing .threeHighlightsContainer {
   color: #ffdf80;
