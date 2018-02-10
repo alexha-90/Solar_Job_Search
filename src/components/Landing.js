@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
+import { Button, FormControl, Glyphicon } from 'react-bootstrap';
 // import ScrollToTop from 'react-scroll-up';
 import { connect } from 'react-redux';
 import fetchJobs from '../helper_functions/fetchJobs';
@@ -180,6 +180,21 @@ class Landing extends Component {
                                     <div id="buttonContainer">
                                         <Glyphicon glyph="search" bsStyle='large' id="icon"/>
                                     </div>
+                                    <PlacesAutocomplete
+                                        inputProps={{
+                                            value: this.state.location,
+                                            onChange: this.onUpdateLocation,
+                                            placeholder: 'Enter city or leave blank to see all results'
+                                        }}
+                                        options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
+                                        classNames={{
+                                            root: 'autoComplete'
+                                        }}
+                                        styles={{ input: {
+                                            height: '39px',
+                                            background: 'none'
+                                        }}}
+                                    />
                                 </div>
 
                                 <div id="maxDistanceContainer">
@@ -210,69 +225,6 @@ class Landing extends Component {
                                         Search for solar jobs!
                                     </Button>
                                 </div>
-
-
-                            {/*<Form>*/}
-                                {/*<Button onClick={this.onGetGeolocation} bsStyle="warning" id="homeIcon">*/}
-                                    {/*<a data-tip="Locate me!">*/}
-                                        {/*<Glyphicon glyph="home" style={{color: '#4d4d4d'}}/>*/}
-                                    {/*</a>*/}
-                                    {/*<ReactTooltip place="top" type="dark" effect="float"/>*/}
-                                {/*</Button>*/}
-
-                                {/*<div id="updateLocation">*/}
-                                    {/*<Glyphicon glyph="search" bsStyle='large' id="searchIcon"/>*/}
-                                    {/*<FormGroup>*/}
-                                        {/*<PlacesAutocomplete*/}
-                                            {/*inputProps={{*/}
-                                                {/*value: this.state.location,*/}
-                                                {/*onChange: this.onUpdateLocation,*/}
-                                                {/*placeholder: 'Enter city or leave blank to see all results'*/}
-                                            {/*}}*/}
-                                            {/*options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}*/}
-                                            {/*classNames={{*/}
-                                                {/*root: 'placeAutoComplete'*/}
-                                            {/*}}*/}
-                                            {/*styles={{ input: {*/}
-                                                {/*border: "2px solid #003300",*/}
-                                                {/*paddingLeft: "3em",*/}
-                                                {/*width: '100%',*/}
-                                                {/*height: '40px'*/}
-                                            {/*}}}*/}
-                                        {/*/>*/}
-                                    {/*</FormGroup>*/}
-                                {/*</div>*/}
-
-                                {/*<div id="updateMaxDistance">*/}
-                                    {/*<a data-tip="Leave blank to view all solar jobs">*/}
-                                        {/*<Glyphicon glyph="map-marker" bsStyle='large' id="radiusIcon"/>*/}
-                                    {/*</a>*/}
-                                    {/*<ReactTooltip place="top" type="dark" effect="float"/>*/}
-                                    {/*<FormGroup>*/}
-                                        {/*<FormControl*/}
-                                            {/*className="distanceDropDownMenu"*/}
-                                            {/*componentClass="select"*/}
-                                            {/*name="maxDistance"*/}
-                                            {/*onChange={this.onUpdateMaxDistance}*/}
-                                            {/*value={this.state.maxDistance}*/}
-                                        {/*>*/}
-                                            {/*<option value="3000">-</option>*/}
-                                            {/*<option value="25">25 miles</option>*/}
-                                            {/*<option value="50">50 miles</option>*/}
-                                            {/*<option value="75">75 miles</option>*/}
-                                            {/*<option value="100">100 miles</option>*/}
-                                            {/*<option value="500">500 miles</option>*/}
-                                            {/*<option value="1000">1000 miles</option>*/}
-                                        {/*</FormControl>*/}
-                                    {/*</FormGroup>*/}
-                                {/*</div>*/}
-                                {/*<div id="submitButton">*/}
-                                    {/*<Button onClick={this.onHandleInputSubmit} bsStyle="success">*/}
-                                        {/*Search for solar jobs!*/}
-                                    {/*</Button>*/}
-                                {/*</div>*/}
-                            {/*</Form>*/}
-
                         </div>
                     </div>
                 </div>

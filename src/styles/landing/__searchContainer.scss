@@ -53,7 +53,7 @@ $mobileHeight: 60vh;
       // to sum 700px width: 15 + 40 + 10 + 410 + 10 + 200 + 15
       // to sum 100px height: 15 + 40 + x + 15
       height: $inputHeight;
-      background-color: green;
+      //background-color: green;
       position: relative;
       padding: 10px 15px;
 
@@ -93,7 +93,14 @@ $mobileHeight: 60vh;
         width: 410px;
         display: inline-block;
         margin: 0 10px;
-        background-color: blue;
+        background-color: #f2f2f2;
+        .autoComplete {
+          display: inline-block;
+          width: 365px;
+          margin: 0;
+          padding: 0;
+          transform: translateY(-19px);
+        }
       }
 
       #maxDistanceContainer {
@@ -113,107 +120,49 @@ $mobileHeight: 60vh;
           border: none;
           background: none;
         }
-
       }
 
       #submitButton {
         height: 30px;
         width: 350px;
         margin: 5px auto 0 auto;
-        background-color: orange;
+        //background-color: orange;
         display: block;
         Button {
           width: 100%;
         }
       }
-
-
-
-      //#homeIcon {
-      //  display: inline-block;
-      //  height: $inputHeight;
-      //  margin-right: 10px;
-      //}
-      //
-      //#updateLocation {
-      //  background-color: green;
-      //  width: 70%;
-      //  height: $inputHeight;
-      //  .placeAutoComplete {
-      //  }
-      //}
-      //
-      //#updateMaxDistance {
-      //  display :block;
-      //  right: 0;
-      //  margin-right: 1em;
-      //}
-      //#submitButton {
-      //  width: 100%;
-      //  margin: 10px 0;
-      //
-      //  Button {
-      //    display: block;
-      //    margin: 0 auto 0 auto;
-      //    width: 40%;
-      //  }
-      //}
-
     }
 
     @media screen and (max-width: 720px) {
-      width: 380px;
+      $adjustedWidth: 220px;
+      width: 300px;
       height: $geoHeight + 50px;
 
 
       .search {
         #locationContainer {
-          position: relative;
-          height: inherit;
-          width: 300px;
-          display: inline-block;
+          width: $adjustedWidth;
           margin: 0 0 0 10px;
-          background-color: blue;
+          .autoComplete {
+            width: $adjustedWidth - 40px - 4px;
+          }
         }
 
         #maxDistanceContainer {
           height: inherit;
-          width: 300px;
-          display: inline-block;
-          background-color: gray;
+          width: $adjustedWidth;
           margin-left: 50px; // 10px padding + 40 icon width
           .distanceDropDownMenu {
-            display: inline-block;
-            width: 300px - 40px - 4px;
+            width: $adjustedWidth - 40px - 4px;
           }
         }
 
         #submitButton {
-          height: 30px;
-          width: 300px;
+          width: $adjustedWidth;
           margin-left: 50px; // 10px padding + 40 icon width
-          background-color: orange;
         }
       }
     }
-
-
-    //@media screen and (max-width: 1000px) {
-    //  margin: 0 15%; // left: 15% + width: 70% + right: 15%
-    //  width: 70%;
-    //  height: $geoHeight + 20px;
-    //
-    //  #search {
-    //    #homeIcon {
-    //      display: none;
-    //    }
-    //    #submitButton {
-    //      padding-top: 50px;
-    //      Button {
-    //        width: 200px;
-    //      }
-    //    }
-    //  }
-    //}
   }
 }

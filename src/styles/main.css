@@ -62,7 +62,6 @@
         color: #FFA500; }
   .landing #searchContainer .search {
     height: 44px;
-    background-color: green;
     position: relative;
     padding: 10px 15px; }
     .landing #searchContainer .search #geolocationButton, .landing #searchContainer .search #buttonContainer {
@@ -91,7 +90,13 @@
       width: 410px;
       display: inline-block;
       margin: 0 10px;
-      background-color: blue; }
+      background-color: #f2f2f2; }
+      .landing #searchContainer .search #locationContainer .autoComplete {
+        display: inline-block;
+        width: 365px;
+        margin: 0;
+        padding: 0;
+        transform: translateY(-19px); }
     .landing #searchContainer .search #maxDistanceContainer {
       border: 2px solid #003300;
       height: inherit;
@@ -112,35 +117,27 @@
       height: 30px;
       width: 350px;
       margin: 5px auto 0 auto;
-      background-color: orange;
       display: block; }
       .landing #searchContainer .search #submitButton Button {
         width: 100%; }
   @media screen and (max-width: 720px) {
     .landing #searchContainer {
-      width: 380px;
+      width: 300px;
       height: 160px; }
       .landing #searchContainer .search #locationContainer {
-        position: relative;
-        height: inherit;
-        width: 300px;
-        display: inline-block;
-        margin: 0 0 0 10px;
-        background-color: blue; }
+        width: 220px;
+        margin: 0 0 0 10px; }
+        .landing #searchContainer .search #locationContainer .autoComplete {
+          width: 176px; }
       .landing #searchContainer .search #maxDistanceContainer {
         height: inherit;
-        width: 300px;
-        display: inline-block;
-        background-color: gray;
+        width: 220px;
         margin-left: 50px; }
         .landing #searchContainer .search #maxDistanceContainer .distanceDropDownMenu {
-          display: inline-block;
-          width: 256px; }
+          width: 176px; }
       .landing #searchContainer .search #submitButton {
-        height: 30px;
-        width: 300px;
-        margin-left: 50px;
-        background-color: orange; } }
+        width: 220px;
+        margin-left: 50px; } }
 
 .landing .threeHighlightsContainer {
   color: #ffdf80;
@@ -209,7 +206,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  opacity: 0.7;
+  opacity: 0.9;
   content: ''; }
   @media screen and (max-width: 650px) {
     .landing .mainJumbotron::before {
