@@ -2,7 +2,7 @@ $animationSpeed: 2s;
 $inputHeight: 44px;
 $geoHeight: 110px;
 $mainHeight: 92vh;
-$mobileHeight: 60vh;
+$mobileHeight: 50vh;
 
 .landing {
   #searchContainer {
@@ -19,8 +19,16 @@ $mobileHeight: 60vh;
     transform: translateY(-50%);
     border-radius: 10px;
 
-    @media screen and (max-width: 650px) {
-      top: $mobileHeight/2;
+
+    @media screen and (max-width: 720px) {
+      top: $mobileHeight;
+      #headline {
+        bottom: 45vh;
+        font-size: 1.0rem;
+      }
+    }
+
+    @media screen and (max-height: 600px) {
       #headline {
         h2 {
           display: none;
@@ -28,11 +36,10 @@ $mobileHeight: 60vh;
       }
     }
 
-
     #headline {
       position: absolute;
       width: 100%;
-      margin-top: -250px;
+      margin-top: -22vh;
 
       h2 {
         margin: 0 auto;
@@ -42,7 +49,8 @@ $mobileHeight: 60vh;
         text-align: center;
         font-size: 4em;
         letter-spacing: 0.05em;
-        color: black;
+        color: #ffffff;
+        text-shadow: 4px 4px #333333;
         span {
           color: #FFA500;
         }

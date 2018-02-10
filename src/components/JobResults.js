@@ -5,7 +5,6 @@ import fetchJobs from '../helper_functions/fetchJobs';
 import PlacesAutocomplete from 'react-places-autocomplete'
 import PopulateJobList from './PopulateJobList';
 import GoogleMapsModal from './GoogleMapsModal';
-import ReactTooltip from 'react-tooltip'
 import infoSpace from '../helper_functions/infoSpace';
 import store from '../index';
 
@@ -127,56 +126,98 @@ class JobResults extends Component {
             return (
             <section className="jobResults">
                 <div className="modifyJobSearch">
-
                     <span id="overflowBG"/>
-
                     <Form>
                         <div className="geoUpdateContainer">
-                            <div id="updateLocation">
-                                <Glyphicon glyph="search" bsStyle='large' id="searchIcon"/>
-
-                                <FormGroup>
-                                    <PlacesAutocomplete
-                                        inputProps={{
-                                            value: this.state.location,
-                                            onChange: this.onUpdateLocation,
-                                            placeholder: 'Enter city or leave blank to see all results'
-                                        }}
-                                        options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
-                                        classNames={{
-                                            root: 'placeAutoComplete'
-                                        }}
-                                        styles={{ input: {
-                                            border: "2px solid #003300",
-                                            paddingLeft: "3em",
-                                            width: '100%',
-                                            height: '40px'
-                                        }}}
-                                    />
-                                </FormGroup>
+                            <div id="updateLoc">
+                                <div id="buttonContainer">
+                                    <Glyphicon glyph="search" bsStyle='large' id="icon"/>
+                                </div>
+                                <PlacesAutocomplete
+                                    inputProps={{
+                                        value: this.state.location,
+                                        onChange: this.onUpdateLocation,
+                                        placeholder: 'Enter city or leave blank to see all'
+                                    }}
+                                    options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
+                                    classNames={{
+                                        root: 'autoComplete'
+                                    }}
+                                    styles={{ input: {
+                                        height: '39px',
+                                        background: 'none',
+                                    }}}
+                                />
                             </div>
 
-                            <div id="updateMaxDistance">
-                                <Glyphicon glyph="map-marker" bsStyle='large' id="radiusIcon"/>
-
-                                <FormGroup>
-                                    <FormControl
-                                        className="distanceDropDownMenu"
-                                        componentClass="select"
-                                        name="maxDistance"
-                                        onChange={this.onUpdateMaxDistance}
-                                        value={this.state.maxDistance}
-                                    >
-                                        <option value="3000">-</option>
-                                        <option value="25">25 miles</option>
-                                        <option value="50">50 miles</option>
-                                        <option value="75">75 miles</option>
-                                        <option value="100">100 miles</option>
-                                        <option value="500">500 miles</option>
-                                        <option value="1000">1000 miles</option>
-                                    </FormControl>
-                                </FormGroup>
+                            <div id="maxDistanceContainer">
+                                <div id="buttonContainer">
+                                    <a data-tip="Leave blank to view all solar jobs">
+                                        <Glyphicon glyph="map-marker" bsStyle='large' id="icon"/>
+                                    </a>
+                                </div>
+                                <FormControl
+                                    className="distanceDropDownMenu"
+                                    componentClass="select"
+                                    name="maxDistance"
+                                    onChange={this.onUpdateMaxDistance}
+                                    value={this.state.maxDistance}
+                                >
+                                    <option value="3000">-</option>
+                                    <option value="25">25 miles</option>
+                                    <option value="50">50 miles</option>
+                                    <option value="75">75 miles</option>
+                                    <option value="100">100 miles</option>
+                                    <option value="500">500 miles</option>
+                                    <option value="1000">1000 miles</option>
+                                </FormControl>
                             </div>
+
+                            {/*<div id="updateLocation">*/}
+                                {/*<Glyphicon glyph="search" bsStyle='large' id="searchIcon"/>*/}
+
+                                {/*<FormGroup>*/}
+                                    {/*<PlacesAutocomplete*/}
+                                        {/*inputProps={{*/}
+                                            {/*value: this.state.location,*/}
+                                            {/*onChange: this.onUpdateLocation,*/}
+                                            {/*placeholder: 'Enter city or leave blank to see all results'*/}
+                                        {/*}}*/}
+                                        {/*options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}*/}
+                                        {/*classNames={{*/}
+                                            {/*root: 'placeAutoComplete'*/}
+                                        {/*}}*/}
+                                        {/*styles={{ input: {*/}
+                                            {/*border: "2px solid #003300",*/}
+                                            {/*paddingLeft: "3em",*/}
+                                            {/*width: '100%',*/}
+                                            {/*height: '40px'*/}
+                                        {/*}}}*/}
+                                    {/*/>*/}
+                                {/*</FormGroup>*/}
+                            {/*</div>*/}
+
+                            {/*<div id="updateMaxDistance">*/}
+                                {/*<Glyphicon glyph="map-marker" bsStyle='large' id="radiusIcon"/>*/}
+
+                                {/*<FormGroup>*/}
+                                    {/*<FormControl*/}
+                                        {/*className="distanceDropDownMenu"*/}
+                                        {/*componentClass="select"*/}
+                                        {/*name="maxDistance"*/}
+                                        {/*onChange={this.onUpdateMaxDistance}*/}
+                                        {/*value={this.state.maxDistance}*/}
+                                    {/*>*/}
+                                        {/*<option value="3000">-</option>*/}
+                                        {/*<option value="25">25 miles</option>*/}
+                                        {/*<option value="50">50 miles</option>*/}
+                                        {/*<option value="75">75 miles</option>*/}
+                                        {/*<option value="100">100 miles</option>*/}
+                                        {/*<option value="500">500 miles</option>*/}
+                                        {/*<option value="1000">1000 miles</option>*/}
+                                    {/*</FormControl>*/}
+                                {/*</FormGroup>*/}
+                            {/*</div>*/}
                         </div>
 
                         <div className='modifyJobRoleAndType'>
@@ -189,7 +230,6 @@ class JobResults extends Component {
                                         <Checkbox inline value="sales" checked={this.state.showSalesJobs} onChange={this.onFilterJobRoles}>
                                             <a data-tip="Roles that focus more on the interconnection and sales side of solar systems">Field / Sales</a>
                                             {/*rule below applies for all tooltips*/}
-                                            <ReactTooltip place="top" type="dark" effect="float"/>
                                         </Checkbox>
                                         <Checkbox inline value="engineer" checked={this.state.showEngineerJobs} onChange={this.onFilterJobRoles}>
                                             <a data-tip="Roles that require deeper technical understanding about how PV works">Design / Engineering</a>

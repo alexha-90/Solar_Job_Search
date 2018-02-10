@@ -49,5 +49,5 @@ Limitations
 - [x] Safari alignment issues on landing page
 - [x] Search inputs spacing gets strange for very large screen/high resolutions
 - [x] Opera and MS Edge glyphicons move out of position
-- [] Safari overlapping distance dropdown menu on resize toggle
+- [x] Safari overlapping distance dropdown menu on resize toggle
 - [] MS Edge tooltips move elements up and down on hover

@@ -28,6 +28,18 @@
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
   background-color: #003300; }
 
+@media screen and (max-width: 766px) {
+  #root > div > div > section.header > nav > div > div > a {
+    margin-left: 8px; } }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1278px; } }
+
+@media screen and (max-width: 1305px) {
+  .container {
+    width: 97%; } }
+
 .landing #searchContainer {
   text-align: left;
   -webkit-animation-duration: 2s;
@@ -41,15 +53,19 @@
   top: 46vh;
   transform: translateY(-50%);
   border-radius: 10px; }
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 720px) {
     .landing #searchContainer {
-      top: 30vh; }
-      .landing #searchContainer #headline h2 {
-        display: none; } }
+      top: 50vh; }
+      .landing #searchContainer #headline {
+        bottom: 45vh;
+        font-size: 1.0rem; } }
+  @media screen and (max-height: 600px) {
+    .landing #searchContainer #headline h2 {
+      display: none; } }
   .landing #searchContainer #headline {
     position: absolute;
     width: 100%;
-    margin-top: -250px; }
+    margin-top: -22vh; }
     .landing #searchContainer #headline h2 {
       margin: 0 auto;
       width: 100%;
@@ -57,7 +73,8 @@
       text-align: center;
       font-size: 4em;
       letter-spacing: 0.05em;
-      color: black; }
+      color: #ffffff;
+      text-shadow: 4px 4px #333333; }
       .landing #searchContainer #headline h2 span {
         color: #FFA500; }
   .landing #searchContainer .search {
@@ -190,9 +207,6 @@
 .landing .mainJumbotron {
   height: 92vh;
   position: relative; }
-  @media screen and (max-width: 650px) {
-    .landing .mainJumbotron {
-      height: 60vh; } }
 
 .landing .mainJumbotron::before {
   height: 92vh;
@@ -208,9 +222,6 @@
   background-size: cover;
   opacity: 0.9;
   content: ''; }
-  @media screen and (max-width: 650px) {
-    .landing .mainJumbotron::before {
-      height: 60vh; } }
 
 .landing .solarJobTypesDescription {
   padding: 40px 0;
@@ -350,7 +361,6 @@
     height: 155px;
     width: 100%;
     background-color: #FFA500;
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     left: 0;
     -webkit-box-shadow: -6px 32px 32px -17px #969366;
     -moz-box-shadow: -6px 32px 32px -17px #969366;
@@ -360,20 +370,71 @@
         height: 180px; } }
     @media screen and (max-width: 565px) {
       .jobResults .modifyJobSearch #overflowBG {
-        height: 230px; } }
+        height: 280px; } }
+  .jobResults .modifyJobSearch #buttonContainer {
+    position: relative;
+    height: inherit;
+    width: 40px;
+    display: inline-block; }
+    .jobResults .modifyJobSearch #buttonContainer Button, .jobResults .modifyJobSearch #buttonContainer #icon {
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+    .jobResults .modifyJobSearch #buttonContainer a {
+      color: inherit;
+      text-decoration: none; }
+    .jobResults .modifyJobSearch #buttonContainer #icon {
+      left: 5px;
+      top: 7px;
+      font-size: 2em; }
   .jobResults .modifyJobSearch .geoUpdateContainer {
     display: block;
     margin-top: 5px;
     z-index: 100;
     position: relative;
-    max-width: 875px;
-    width: 70%; }
-    .jobResults .modifyJobSearch .geoUpdateContainer #updateLocation {
+    width: 800px; }
+    .jobResults .modifyJobSearch .geoUpdateContainer #updateLoc {
+      border: 2px solid #003300;
+      height: 44px;
+      display: inline-block;
+      background-color: #f2f2f2;
+      width: 275px;
+      margin-right: 10px; }
+      .jobResults .modifyJobSearch .geoUpdateContainer #updateLoc .autoComplete {
+        display: inline-block;
+        width: 230px;
+        margin: 0;
+        padding: 0;
+        transform: translateY(-20px); }
+    .jobResults .modifyJobSearch .geoUpdateContainer #maxDistanceContainer {
       position: relative;
-      height: 48px; }
-    @media screen and (max-width: 1000px) {
-      .jobResults .modifyJobSearch .geoUpdateContainer #updateMaxDistance {
-        margin-left: 5px; } }
+      border: 2px solid #003300;
+      height: 44px;
+      width: 200px;
+      display: inline-block;
+      background-color: #f2f2f2; }
+      .jobResults .modifyJobSearch .geoUpdateContainer #maxDistanceContainer .distanceDropDownMenu {
+        position: relative;
+        display: inline-block;
+        width: 156px;
+        height: 38px;
+        margin: 0;
+        padding: 0;
+        transform: translateY(-19px);
+        border-radius: 0;
+        border: none;
+        background: none; }
+    @media screen and (max-width: 565px) {
+      .jobResults .modifyJobSearch .geoUpdateContainer #updateLoc {
+        width: 260px;
+        margin-right: 0; }
+        .jobResults .modifyJobSearch .geoUpdateContainer #updateLoc .autoComplete {
+          width: 216px; }
+      .jobResults .modifyJobSearch .geoUpdateContainer #maxDistanceContainer {
+        z-index: -1 !important;
+        width: 260px; }
+        .jobResults .modifyJobSearch .geoUpdateContainer #maxDistanceContainer .distanceDropDownMenu {
+          width: 216px; } }
 
 .jobResults #modifyJobRole {
   z-index: 1;
@@ -404,6 +465,7 @@
 
 @media screen and (max-width: 565px) {
   .jobResults .modifyJobRoleAndType {
+    margin-top: 5px;
     clear: both;
     display: flex;
     display: -webkit-flex;

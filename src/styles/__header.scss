@@ -44,3 +44,21 @@
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
   background-color: #003300;
 }
+
+@media screen and (max-width: 766px) {
+  #root > div > div > section.header > nav > div > div > a {
+    margin-left: 8px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1278px;
+  }
+}
+
+@media screen and (max-width: 1305px) {
+  .container {
+    width: 97%;
+  }
+}
