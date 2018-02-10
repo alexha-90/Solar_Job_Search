@@ -38,6 +38,7 @@ Limitations
 - [x] Select all jobs does not work
 - [x] Header needs work
 - [x] Translate coordinates to city before running
+- [x] Unnecessary and laggy auto fetch on location update. Add button
 - [] Upperbound text on job results headline not correct for counts % 25 !==0
 - [] Polyfill arr.includes method for IE compatibility. App doesn't work at the moment
 - [] Geolocation feature needs a timeout check and warning for Opera and Safari

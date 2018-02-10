@@ -199,7 +199,7 @@ class PopulateJobList extends Component {
                 {this.buttonActions()}
                 <div id="jobTable">
                     <span id='mobileScrollTip'>
-                        &rarr; Scroll to see more of table &rarr;
+                        &rarr; Scroll to show more of table &rarr;
                     </span>
                     <Table responsive striped>
                         <thead>

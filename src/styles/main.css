@@ -369,7 +369,7 @@
   .jobResults .modifyJobSearch #overflowBG {
     position: absolute;
     margin-top: -20px;
-    height: 155px;
+    height: 165px;
     width: 100%;
     background-color: #FFA500;
     left: 0;
@@ -379,7 +379,7 @@
     @media screen and (max-width: 900px) {
       .jobResults .modifyJobSearch #overflowBG {
         height: 180px; } }
-    @media screen and (max-width: 565px) {
+    @media screen and (max-width: 600px) {
       .jobResults .modifyJobSearch #overflowBG {
         height: 280px; } }
   .jobResults .modifyJobSearch #buttonContainer {
@@ -417,6 +417,8 @@
         margin: 0;
         padding: 0;
         transform: translateY(-20px); }
+    .jobResults .modifyJobSearch .geoUpdateContainer #mobileDeviceBreak {
+      display: none; }
     .jobResults .modifyJobSearch .geoUpdateContainer #maxDistanceContainer {
       position: relative;
       border: 2px solid #003300;
@@ -436,22 +438,39 @@
         border: none;
         background: none;
         outline: none; }
-    @media screen and (max-width: 565px) {
-      .jobResults .modifyJobSearch .geoUpdateContainer #updateLoc {
-        width: 260px;
-        margin-right: 0; }
-        .jobResults .modifyJobSearch .geoUpdateContainer #updateLoc .autoComplete {
-          width: 196px; }
-      .jobResults .modifyJobSearch .geoUpdateContainer #maxDistanceContainer {
-        z-index: -1 !important;
-        width: 260px; }
-        .jobResults .modifyJobSearch .geoUpdateContainer #maxDistanceContainer .distanceDropDownMenu {
-          width: 196px; } }
+    .jobResults .modifyJobSearch .geoUpdateContainer #updateResultsButton {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 44px;
+      transform: translateY(-21px); }
+      .jobResults .modifyJobSearch .geoUpdateContainer #updateResultsButton Button {
+        width: 100%;
+        margin: 0 0 0 10px;
+        padding: 0 5px;
+        height: 44px; }
+    @media screen and (max-width: 600px) {
+      .jobResults .modifyJobSearch .geoUpdateContainer {
+        height: 106px; }
+        .jobResults .modifyJobSearch .geoUpdateContainer #updateLoc {
+          width: 260px;
+          margin-right: 0; }
+          .jobResults .modifyJobSearch .geoUpdateContainer #updateLoc .autoComplete {
+            width: 198px; }
+        .jobResults .modifyJobSearch .geoUpdateContainer #mobileDeviceBreak {
+          display: block; }
+        .jobResults .modifyJobSearch .geoUpdateContainer #maxDistanceContainer {
+          z-index: -1 !important;
+          width: 210px; }
+          .jobResults .modifyJobSearch .geoUpdateContainer #maxDistanceContainer .distanceDropDownMenu {
+            width: 148px; }
+        .jobResults .modifyJobSearch .geoUpdateContainer #updateResultsButton {
+          z-index: -1 !important;
+          transform: translateY(-21px); } }
 
 .jobResults #modifyJobRole {
   z-index: 1;
   position: relative;
-  margin-top: 10px;
   margin-bottom: 0; }
   .jobResults #modifyJobRole #jobRoleLabel {
     width: 105px; }
@@ -464,7 +483,7 @@
       margin-right: 0; }
     .jobResults #modifyJobRole #smallSeparator {
       display: block; } }
-  @media screen and (max-width: 565px) {
+  @media screen and (max-width: 600px) {
     .jobResults #modifyJobRole #smallSeparator {
       display: none; } }
 
@@ -475,9 +494,8 @@
   .jobResults #modifyJobType #jobTypeLabel {
     width: 105px; }
 
-@media screen and (max-width: 565px) {
+@media screen and (max-width: 600px) {
   .jobResults .modifyJobRoleAndType {
-    margin-top: 5px;
     clear: both;
     display: flex;
     display: -webkit-flex;
@@ -545,56 +563,6 @@
 @media screen and (max-width: 995px) {
   .jobResults #infoSpace {
     display: none; } }
-
-#updateMaxDistance {
-  top: 0;
-  position: absolute;
-  background-color: white;
-  border: 2px solid #003300;
-  display: inline-block;
-  margin-left: 3em;
-  width: 150px;
-  height: 40px;
-  padding-right: 40px; }
-  #updateMaxDistance #radiusIcon {
-    color: #4d4d4d;
-    z-index: 999;
-    position: absolute;
-    font-size: 1.75em;
-    margin: 8px 0 10px 5px; }
-  #updateMaxDistance .distanceDropDownMenu {
-    height: 36px;
-    margin-left: 3em;
-    width: 100%;
-    border-radius: 0;
-    border: none;
-    background: none; }
-  #updateMaxDistance select:not([multiple]) {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-position: right 50%;
-    background-repeat: no-repeat;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=);
-    padding: .5em;
-    padding-right: 1.5em; }
-
-#updateLocation {
-  display: inline-block;
-  position: absolute;
-  width: 50%; }
-  #updateLocation #searchIcon {
-    color: #4d4d4d;
-    z-index: 999;
-    position: absolute;
-    font-size: 1.75em;
-    margin: 8px 0 0 5px; }
-  #updateLocation .placeAutoComplete {
-    height: 40px;
-    width: 600px; }
-  @media screen and (max-width: 1000px) {
-    #updateLocation {
-      display: block;
-      width: 70%; } }
 
 #googleMapFrame {
   height: 50vh; }

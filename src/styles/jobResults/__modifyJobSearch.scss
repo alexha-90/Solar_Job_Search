@@ -7,7 +7,7 @@ $geoHeight: 44px;
     #overflowBG {
       position: absolute;
       margin-top: -20px;
-      height: 155px;
+      height: 165px;
       width: 100%;
       background-color: #FFA500;
 
@@ -21,7 +21,7 @@ $geoHeight: 44px;
         height: 180px;
       }
 
-      @media screen and (max-width: 565px) {
+      @media screen and (max-width: 600px) {
         height: 280px;
       }
     }
@@ -73,6 +73,10 @@ $geoHeight: 44px;
         }
       }
 
+      #mobileDeviceBreak {
+        display: none;
+      }
+
       #maxDistanceContainer {
         position: relative;
         border: 2px solid #003300;
@@ -94,20 +98,49 @@ $geoHeight: 44px;
           outline: none;
         }
       }
-      @media screen and (max-width: 565px) {
+
+      #updateResultsButton {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: $geoHeight;
+        transform: translateY(-21px);
+
+        Button {
+          width: 100%;
+          margin: 0 0 0 10px;
+          padding: 0 5px;
+          height: $geoHeight;
+        }
+      }
+
+
+      @media screen and (max-width: 600px) {
+        height: 106px;
+
         #updateLoc {
           width: 260px;
           margin-right: 0;
           .autoComplete {
-            width: 260px - 40px - 4px - 20px; // last 20px required for iphone. Or else overflow next line
+            width: 260px - 40px - 4px - 18px; // last 18px required for iphone. Or else overflow next line
           }
         }
+
+        #mobileDeviceBreak {
+          display: block;
+        }
+
         #maxDistanceContainer {
           z-index: -1 !important;
-          width: 260px;
+          width: 210px;
           .distanceDropDownMenu {
-            width: 260px - 40px - 4px - 20px; // last 20px required for iphone. Or else overflow next line
+            width: 210px - 40px - 4px - 18px; // last 18px required for iphone. Or else overflow next line
           }
+        }
+
+        #updateResultsButton {
+          z-index: -1 !important;
+          transform: translateY(-21px);
         }
       }
     }

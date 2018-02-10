@@ -34,9 +34,9 @@ class Landing extends Component {
             maxDistance: '',
         };
         this.articlesArr = null;
-        this.onUpdateLocation = this.onUpdateLocation.bind(this);
+        this.onUpdateLocation = (location) => this.setState({ location: location });
         this.onGetGeolocation = this.onGetGeolocation.bind(this);
-        this.onUpdateMaxDistance = this.onUpdateMaxDistance.bind(this);
+        this.onUpdateMaxDistance = (event) => this.setState({ maxDistance: event.target.value });
         this.onHandleInputSubmit = this.onHandleInputSubmit.bind(this);
         this.loadingJobResultsAnimation = this.loadingJobResultsAnimation.bind(this);
     }
@@ -55,10 +55,6 @@ class Landing extends Component {
                 console.log(err);
                 return <div>Something went wrong... unable to retrieve solar related news feed.</div>
             })
-    }
-
-    onUpdateLocation(location) {
-        this.setState({ location: location });
     }
 
     onGetGeolocation() {
@@ -89,10 +85,6 @@ class Landing extends Component {
         // } else {
         //     return alert('You must allow geolocation permission for us to retrieve your location.');
         // }
-    }
-
-    onUpdateMaxDistance(event) {
-        this.setState({ maxDistance: event.target.value });
     }
 
     onHandleInputSubmit() {

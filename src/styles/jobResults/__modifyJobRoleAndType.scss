@@ -4,7 +4,6 @@ $buttonSpacing: 10px;
   #modifyJobRole {
     z-index: 1;
     position: relative;
-    margin-top: $buttonSpacing;
     margin-bottom: 0;
 
     #jobRoleLabel {
@@ -28,7 +27,7 @@ $buttonSpacing: 10px;
       }
     }
 
-    @media screen and (max-width: 565px) {
+    @media screen and (max-width: 600px) {
       #smallSeparator {
         display: none;
       }
@@ -44,9 +43,8 @@ $buttonSpacing: 10px;
     }
   }
 
-  @media screen and (max-width: 565px) {
+  @media screen and (max-width: 600px) {
     .modifyJobRoleAndType {
-      margin-top: 5px;
       clear: both;
       display: flex;
       display: -webkit-flex;

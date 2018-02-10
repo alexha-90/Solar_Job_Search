@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Form, Checkbox, Radio, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
+import { Form, Checkbox, Button, Radio, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
 import fetchJobs from '../helper_functions/fetchJobs';
 import PlacesAutocomplete from 'react-places-autocomplete'
 import PopulateJobList from './PopulateJobList';
@@ -21,6 +21,7 @@ class JobResults extends Component {
         super();
         this.state = {
             location: '',
+            newLocation: false,
             maxDistance: '',
             queryBuilder: queryArr,
             jobType: '',
@@ -31,7 +32,9 @@ class JobResults extends Component {
             showPMJobs: false,
             showCSRJobs: false
         };
-        this.onUpdateLocation = this.onUpdateLocation.bind(this);
+        this.onUpdateLocation = (location) => this.setState({ location: location, newLocation: true });
+        this.showFetchNewResultsButton = this.showFetchNewResultsButton.bind(this);
+        this.onNewLocationResults = this.onNewLocationResults.bind(this);
         this.onUpdateMaxDistance = this.onUpdateMaxDistance.bind(this);
         this.onFilterJobRoles = this.onFilterJobRoles.bind(this);
         this.onFilterJobType = this.onFilterJobType.bind(this);
@@ -56,13 +59,22 @@ class JobResults extends Component {
         }
     }
 
-    onUpdateLocation(location) {
-        this.setState({ location: location });
+    showFetchNewResultsButton() {
+        if (this.state.newLocation) {
+            return (
+                <Button onClick={this.onNewLocationResults} bsStyle='success'>
+                    Go!
+                </Button>
+            )
+        }
+    }
+
+    onNewLocationResults() {
         loadingNewResults(true);
         let query = (this.state.queryBuilder.length ? this.state.queryBuilder: 'solar');
-        fetchJobs(location, this.state.maxDistance, this.props, query, this.state.jobType)
+        fetchJobs(this.state.location, this.state.maxDistance, this.props, query, this.state.jobType)
             .then(() => {
-                console.log('done');
+                this.setState({ newLocation: false });
                 loadingNewResults(false)
             })
     }
@@ -127,7 +139,8 @@ class JobResults extends Component {
 
     render() {
         console.log(this.state);
-            return (
+
+        return (
             <section className="jobResults">
                 <div className="modifyJobSearch">
                     <span id="overflowBG"/>
@@ -155,6 +168,8 @@ class JobResults extends Component {
                                 />
                             </div>
 
+                            <br id='mobileDeviceBreak'/>
+
                             <div id="maxDistanceContainer">
                                 <div id="buttonContainer">
                                     <a data-tip="Leave blank to view all solar jobs">
@@ -178,51 +193,9 @@ class JobResults extends Component {
                                 </FormControl>
                             </div>
 
-                            {/*<div id="updateLocation">*/}
-                                {/*<Glyphicon glyph="search" bsStyle='large' id="searchIcon"/>*/}
-
-                                {/*<FormGroup>*/}
-                                    {/*<PlacesAutocomplete*/}
-                                        {/*inputProps={{*/}
-                                            {/*value: this.state.location,*/}
-                                            {/*onChange: this.onUpdateLocation,*/}
-                                            {/*placeholder: 'Enter city or leave blank to see all results'*/}
-                                        {/*}}*/}
-                                        {/*options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}*/}
-                                        {/*classNames={{*/}
-                                            {/*root: 'placeAutoComplete'*/}
-                                        {/*}}*/}
-                                        {/*styles={{ input: {*/}
-                                            {/*border: "2px solid #003300",*/}
-                                            {/*paddingLeft: "3em",*/}
-                                            {/*width: '100%',*/}
-                                            {/*height: '40px'*/}
-                                        {/*}}}*/}
-                                    {/*/>*/}
-                                {/*</FormGroup>*/}
-                            {/*</div>*/}
-
-                            {/*<div id="updateMaxDistance">*/}
-                                {/*<Glyphicon glyph="map-marker" bsStyle='large' id="radiusIcon"/>*/}
-
-                                {/*<FormGroup>*/}
-                                    {/*<FormControl*/}
-                                        {/*className="distanceDropDownMenu"*/}
-                                        {/*componentClass="select"*/}
-                                        {/*name="maxDistance"*/}
-                                        {/*onChange={this.onUpdateMaxDistance}*/}
-                                        {/*value={this.state.maxDistance}*/}
-                                    {/*>*/}
-                                        {/*<option value="3000">-</option>*/}
-                                        {/*<option value="25">25 miles</option>*/}
-                                        {/*<option value="50">50 miles</option>*/}
-                                        {/*<option value="75">75 miles</option>*/}
-                                        {/*<option value="100">100 miles</option>*/}
-                                        {/*<option value="500">500 miles</option>*/}
-                                        {/*<option value="1000">1000 miles</option>*/}
-                                    {/*</FormControl>*/}
-                                {/*</FormGroup>*/}
-                            {/*</div>*/}
+                            <div id='updateResultsButton'>
+                                {this.showFetchNewResultsButton()}
+                            </div>
                         </div>
 
                         <div className='modifyJobRoleAndType'>
@@ -291,7 +264,7 @@ class JobResults extends Component {
                 {infoSpace}
 
             </section>
-        )
+        );
     }
 }
 
