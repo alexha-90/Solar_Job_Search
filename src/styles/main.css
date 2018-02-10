@@ -55,11 +55,11 @@
   border-radius: 10px; }
   @media screen and (max-width: 720px) {
     .landing #searchContainer {
-      top: 50vh; }
+      top: 44vh; }
       .landing #searchContainer #headline {
         bottom: 45vh;
-        font-size: 1.0rem; } }
-  @media screen and (max-height: 600px) {
+        font-size: 0.9rem; } }
+  @media screen and (max-height: 500px) {
     .landing #searchContainer #headline h2 {
       display: none; } }
   .landing #searchContainer #headline {
@@ -74,7 +74,7 @@
       font-size: 4em;
       letter-spacing: 0.05em;
       color: #ffffff;
-      text-shadow: 4px 4px #333333; }
+      text-shadow: 2px 4px #333333; }
       .landing #searchContainer #headline h2 span {
         color: #FFA500; }
   .landing #searchContainer .search {
@@ -101,6 +101,7 @@
       height: 44px;
       margin-bottom: 2px; }
     .landing #searchContainer .search #locationContainer {
+      z-index: 100;
       border: 2px solid #003300;
       position: relative;
       height: inherit;
@@ -129,7 +130,8 @@
         transform: translateY(-19px);
         border-radius: 0;
         border: none;
-        background: none; }
+        background: none;
+        outline: none; }
     .landing #searchContainer .search #submitButton {
       height: 30px;
       width: 350px;
@@ -207,6 +209,9 @@
 .landing .mainJumbotron {
   height: 92vh;
   position: relative; }
+  @media screen and (max-width: 650px) {
+    .landing .mainJumbotron {
+      height: 88vh; } }
 
 .landing .mainJumbotron::before {
   height: 92vh;
@@ -222,6 +227,9 @@
   background-size: cover;
   opacity: 0.9;
   content: ''; }
+  @media screen and (max-width: 650px) {
+    .landing .mainJumbotron::before {
+      height: 88vh; } }
 
 .landing .solarJobTypesDescription {
   padding: 40px 0;
@@ -269,6 +277,9 @@
     .landing .solarJobTypesDescription #jobDescriptionRow #jobImgSmallOnly {
       display: none; }
     @media screen and (max-width: 991px) {
+      .landing .solarJobTypesDescription #jobDescriptionRow #jobDescription div {
+        top: auto;
+        transform: none; }
       .landing .solarJobTypesDescription #jobDescriptionRow #jobImgSmallOnly {
         display: block; }
       .landing .solarJobTypesDescription #jobDescriptionRow #jobImgLargerOnly {
@@ -339,8 +350,8 @@
         padding-right: 50px; }
       @media screen and (max-width: 650px) {
         .landing .loadingJobsSpinner div {
-          top: 60%;
-          transform: translateY(-60%); } }
+          top: 85%;
+          transform: translateY(-85%); } }
   .landing #whySolar {
     width: 100%;
     padding: 40px 0;
@@ -423,18 +434,19 @@
         transform: translateY(-19px);
         border-radius: 0;
         border: none;
-        background: none; }
+        background: none;
+        outline: none; }
     @media screen and (max-width: 565px) {
       .jobResults .modifyJobSearch .geoUpdateContainer #updateLoc {
         width: 260px;
         margin-right: 0; }
         .jobResults .modifyJobSearch .geoUpdateContainer #updateLoc .autoComplete {
-          width: 216px; }
+          width: 196px; }
       .jobResults .modifyJobSearch .geoUpdateContainer #maxDistanceContainer {
         z-index: -1 !important;
         width: 260px; }
         .jobResults .modifyJobSearch .geoUpdateContainer #maxDistanceContainer .distanceDropDownMenu {
-          width: 216px; } }
+          width: 196px; } }
 
 .jobResults #modifyJobRole {
   z-index: 1;

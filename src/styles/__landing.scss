@@ -7,7 +7,7 @@
 .landing {
   text-align: center;
 
-  // for .threeHighlightsContainer, , and any potential overflow
+  // for .threeHighlightsContainer and any potential overflow
   background: url("https://s3.amazonaws.com/solarjobsearch/textureGreenBG.png") #284700;
 
   #whySolar, .newsFeedContainer {
@@ -42,8 +42,8 @@
         }
       }
       @media screen and (max-width: 650px) {
-        top: 60%;
-        transform: translateY(-60%);
+        top: 85%;
+        transform: translateY(-85%);
       }
     }
   }

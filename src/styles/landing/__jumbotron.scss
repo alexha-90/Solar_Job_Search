@@ -1,13 +1,13 @@
 $mainHeight: 92vh;
-$mobileHeight: 60vh;
+$mobileHeight: 88vh;
 
 .landing {
   .mainJumbotron {
     height: $mainHeight;
     position: relative;
-    //@media screen and (max-width: 650px) {
-    //  height: $mobileHeight;
-    //}
+    @media screen and (max-width: 650px) {
+      height: $mobileHeight;
+    }
   }
 
   .mainJumbotron::before {
@@ -24,8 +24,8 @@ $mobileHeight: 60vh;
     background-size: cover;
     opacity: 0.9;
     content: '';
-    //@media screen and (max-width: 650px) {
-    //  height: $mobileHeight;
-    //}
+    @media screen and (max-width: 650px) {
+      height: $mobileHeight;
+    }
   }
 }

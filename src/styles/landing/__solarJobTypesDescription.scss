@@ -63,6 +63,13 @@
       }
 
       @media screen and (max-width: 991px) {
+        #jobDescription {
+          div {
+            top: auto;
+            transform: none;
+          }
+        }
+
         #jobImgSmallOnly {
           display: block;
         }

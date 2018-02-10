@@ -62,28 +62,6 @@ class Landing extends Component {
     }
 
     onGetGeolocation() {
-        var options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0
-        };
-
-        function success(pos) {
-            var crd = pos.coords;
-
-            console.log('Your current position is:');
-            console.log(`Latitude : ${crd.latitude}`);
-            console.log(`Longitude: ${crd.longitude}`);
-            console.log(`More or less ${crd.accuracy} meters.`);
-        };
-
-        function error(err) {
-            console.warn(`ERROR(${err.code}): ${err.message}`);
-        };
-
-        navigator.geolocation.getCurrentPosition(success, error, options);
-
-
         // if (navigator.geolocation) {
         //     this.setState({ location: 'Identifying your location...'});
         //     navigator.geolocation.getCurrentPosition(position => {
@@ -163,13 +141,13 @@ class Landing extends Component {
                     <div id="searchContainer" className="animated fadeIn">
                         <div id="headline">
                             <h2>
-                                Power your life with sunshine <span>&#9788;</span>
+                                Power your life with sunshine
                             </h2>
                         </div>
                         <div className="search">
                                 <div id="geolocationButton">
                                     <Button onClick={this.onGetGeolocation} bsStyle="warning">
-                                        <a data-tip="Locate me!">
+                                        <a data-tip="Locate me! (Feature coming soon)">
                                             <Glyphicon glyph="home" style={{color: '#4d4d4d'}}/>
                                         </a>
                                         <ReactTooltip place="top" type="dark" effect="float"/>
@@ -184,7 +162,7 @@ class Landing extends Component {
                                         inputProps={{
                                             value: this.state.location,
                                             onChange: this.onUpdateLocation,
-                                            placeholder: 'Enter city or leave blank to see all results'
+                                            placeholder: 'City (Leave blank to see all)'
                                         }}
                                         options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
                                         classNames={{
@@ -192,7 +170,8 @@ class Landing extends Component {
                                         }}
                                         styles={{ input: {
                                             height: '39px',
-                                            background: 'none'
+                                            background: 'none',
+                                            outline: 'none'
                                         }}}
                                     />
                                 </div>

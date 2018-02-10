@@ -195,7 +195,7 @@ class PopulateJobList extends Component {
 
         return (
             <div>
-                {jobResultsHeadline(this.props.jobList, this.state.currentPage, this.props.locationParam)}
+                {jobResultsHeadline(this.props.jobList, this.state.currentPage, this.props.locationParam, this.props.loadingNewResults)}
                 {this.buttonActions()}
                 <div id="jobTable">
                     <span id='mobileScrollTip'>

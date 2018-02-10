@@ -57,11 +57,14 @@ class JobResults extends Component {
     }
 
     onUpdateLocation(location) {
+        this.setState({ location: location });
         loadingNewResults(true);
         let query = (this.state.queryBuilder.length ? this.state.queryBuilder: 'solar');
-        this.setState({ location: location });
         fetchJobs(location, this.state.maxDistance, this.props, query, this.state.jobType)
-            .then(() => { loadingNewResults(false) })
+            .then(() => {
+                console.log('done');
+                loadingNewResults(false)
+            })
     }
 
     onUpdateMaxDistance(event) {
@@ -123,6 +126,7 @@ class JobResults extends Component {
 
 
     render() {
+        console.log(this.state);
             return (
             <section className="jobResults">
                 <div className="modifyJobSearch">
@@ -137,7 +141,7 @@ class JobResults extends Component {
                                     inputProps={{
                                         value: this.state.location,
                                         onChange: this.onUpdateLocation,
-                                        placeholder: 'Enter city or leave blank to see all'
+                                        placeholder: 'City (Leave blank to see all)'
                                     }}
                                     options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
                                     classNames={{
@@ -146,6 +150,7 @@ class JobResults extends Component {
                                     styles={{ input: {
                                         height: '39px',
                                         background: 'none',
+                                        outline: 'none'
                                     }}}
                                 />
                             </div>

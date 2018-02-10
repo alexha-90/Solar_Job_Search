@@ -2,12 +2,13 @@ import React from 'react';
 //================================================================================================//
 
 
-export default function jobResultsHeadline (jobList, currentPage, location) {
-    // function does not run if results have not loaded yet
+export default function jobResultsHeadline (jobList, currentPage, location, loading) {
+
+    if (loading) {
+        return <h2>Loading...</h2>
+    }
 
     console.log(jobList);
-
-
     let jobsPerPg = 25;
 
     // if (jobList.length !== jobsPerPg) {

@@ -91,6 +91,7 @@ $geoHeight: 44px;
           border-radius: 0;
           border: none;
           background: none;
+          outline: none;
         }
       }
       @media screen and (max-width: 565px) {
@@ -98,14 +99,14 @@ $geoHeight: 44px;
           width: 260px;
           margin-right: 0;
           .autoComplete {
-            width: 260px - 40px - 4px;
+            width: 260px - 40px - 4px - 20px; // last 20px required for iphone. Or else overflow next line
           }
         }
         #maxDistanceContainer {
           z-index: -1 !important;
           width: 260px;
           .distanceDropDownMenu {
-            width: 260px - 40px - 4px;
+            width: 260px - 40px - 4px - 20px; // last 20px required for iphone. Or else overflow next line
           }
         }
       }

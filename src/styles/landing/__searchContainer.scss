@@ -2,7 +2,7 @@ $animationSpeed: 2s;
 $inputHeight: 44px;
 $geoHeight: 110px;
 $mainHeight: 92vh;
-$mobileHeight: 50vh;
+$mobileHeight: 88vh;
 
 .landing {
   #searchContainer {
@@ -10,7 +10,7 @@ $mobileHeight: 50vh;
     -webkit-animation-duration: $animationSpeed;
     -moz-animation-duration: $animationSpeed;
     -ms-transition-animation-duration: $animationSpeed;
-    margin: 0 auto; // left: 28% + width: 44% + right: 28%
+    margin: 0 auto;
     width: 700px;
     height: $geoHeight;
     background-color: #008000;
@@ -21,14 +21,14 @@ $mobileHeight: 50vh;
 
 
     @media screen and (max-width: 720px) {
-      top: $mobileHeight;
+      top: $mobileHeight/2;
       #headline {
-        bottom: 45vh;
-        font-size: 1.0rem;
+         bottom: 45vh;
+        font-size: 0.9rem;
       }
     }
 
-    @media screen and (max-height: 600px) {
+    @media screen and (max-height: 500px) {   // adjust this. for testing
       #headline {
         h2 {
           display: none;
@@ -50,7 +50,7 @@ $mobileHeight: 50vh;
         font-size: 4em;
         letter-spacing: 0.05em;
         color: #ffffff;
-        text-shadow: 4px 4px #333333;
+        text-shadow: 2px 4px #333333;
         span {
           color: #FFA500;
         }
@@ -64,7 +64,6 @@ $mobileHeight: 50vh;
       //background-color: green;
       position: relative;
       padding: 10px 15px;
-
 
       #geolocationButton, #buttonContainer {
         position: relative;
@@ -95,6 +94,7 @@ $mobileHeight: 50vh;
       }
 
       #locationContainer {
+        z-index: 100;
         border: 2px solid #003300;
         position: relative;
         height: inherit;
@@ -127,6 +127,7 @@ $mobileHeight: 50vh;
           border-radius: 0;
           border: none;
           background: none;
+          outline: none;
         }
       }
 
