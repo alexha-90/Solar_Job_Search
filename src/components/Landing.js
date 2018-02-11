@@ -155,7 +155,7 @@ class Landing extends Component {
                                         inputProps={{
                                             value: this.state.location,
                                             onChange: this.onUpdateLocation,
-                                            placeholder: 'City (Leave blank to see all)'
+                                            placeholder: 'Input a city name...'
                                         }}
                                         options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
                                         classNames={{

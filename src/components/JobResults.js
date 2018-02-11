@@ -22,7 +22,7 @@ class JobResults extends Component {
         this.state = {
             location: '',
             newLocation: false,
-            maxDistance: 3000,
+            maxDistance: '',
             queryBuilder: queryArr,
             jobType: '',
             showAllJobs: true,
@@ -42,21 +42,28 @@ class JobResults extends Component {
 
 
     componentWillMount() {
-        // NOTE: no perceived harm if user manipulates URL
+        // reload page on browser back button press. Method from https://stackoverflow.com/questions/31337274/refresh-browser-on-click-of-back-button-js
+        window.onpopstate = () => {
+            window.location.reload();
+        };
 
-        // handle custom URL parameters
-        if (this.props.location.pathname.length > 5) {
+        // NOTE: no perceived problems if user manipulates URL
+        // handle routing to result page from URL. Not landing page
+        if (this.props.location.pathname.length > 28 && (!this.props.locationParam || !this.props.maxDistance)) {
             console.log('retrieving');
             // slice to remove extra data and maxDistanceParam. Extract input location from URL
             const locationStr = this.props.location.pathname.slice(18);
             const locationFromURL = locationStr.substr(locationStr.indexOf('=') + 1);
-            const maxDistanceParam = this.props.location.pathname.match(/\d+/)[0];
+
             if (locationFromURL) {
                 this.setState({ location: locationFromURL})
             }
-            if (maxDistanceParam) {
+
+            if (this.props.location.pathname.match(/\d+/)) {
+                const maxDistanceParam = this.props.location.pathname.match(/\d+/);
                 this.setState({ maxDistance: maxDistanceParam})
             }
+
             return setTimeout(() => {
                 fetchJobs(this.state.location, this.state.maxDistance, this.props)
                     .then((res) => {
@@ -64,23 +71,23 @@ class JobResults extends Component {
                             alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
                         }
                     })
-            }, 500);
+            }, 1000);
         }
 
         // user did not provide any parameters. Populate national job results
         if (!this.props.jobList.length) {
+            console.log('defaulting...');
             fetchJobs(null, null, this.props)
                 .then((res) => {
+                    this.setState({ location: 'USA'});
                     if (res === 'error') {
                         alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
                     }
+                    window.history.pushState('newLoc', 'location', '/jobs/maxDistance=' + this.state.maxDistance + '_location=' + this.state.location);
                 })
         }
 
-
-        // 5:20pm. i think below is run regardless. a pointless, expensive proecss.
-        // handle drop down maxDistance selection for custom input
-        // default case where user submitted inputs on landing page. Results already processed
+        // default case where user submitted inputs on landing page. Job list already fetched
         if (this.props.locationParam) {
             this.setState({ location: this.props.locationParam})
         }
@@ -105,6 +112,7 @@ class JobResults extends Component {
         fetchJobs(this.state.location, this.state.maxDistance, this.props, query, this.state.jobType)
             .then(() => {
                 this.setState({ newLocation: false });
+                window.history.pushState('newLoc', 'location', '/jobs/maxDistance=' + this.state.maxDistance + '_location=' + this.state.location);
                 loadingNewResults(false)
             })
     }
@@ -114,7 +122,12 @@ class JobResults extends Component {
         let query = (this.state.queryBuilder.length ? this.state.queryBuilder: 'solar');
         this.setState({ maxDistance: event.target.value });
         fetchJobs(this.state.location, this.state.maxDistance, this.props, query, this.state.jobType)
-            .then(() => { loadingNewResults(false) })
+            .then(() => {
+                this.setState({ newLocation: false });
+                let maxDist = this.state.maxDistance == 3000 ? '' : this.state.maxDistance;
+                window.history.pushState('newLoc', 'location', '/jobs/maxDistance=' + maxDist + '_location=' + this.state.location);
+                loadingNewResults(false)
+            })
     }
 
     onFilterJobRoles(event) {
@@ -184,7 +197,7 @@ class JobResults extends Component {
                                     inputProps={{
                                         value: this.state.location,
                                         onChange: this.onUpdateLocation,
-                                        placeholder: 'City (Leave blank to see all)'
+                                        placeholder: 'Input a city name...'
                                     }}
                                     options={{types: ['(cities)'], componentRestrictions: {country: 'us'}}}
                                     classNames={{
@@ -213,9 +226,7 @@ class JobResults extends Component {
                                     onChange={this.onUpdateMaxDistance}
                                     value={this.state.maxDistance}
                                 >
-                                    <option value={this.state.maxDistance}>
-                                        {this.state.maxDistance === 3000 ? '-' : this.state.maxDistance + ' miles'}
-                                    </option>
+                                    <option value="3000">-</option>
                                     <option value="25">25 miles</option>
                                     <option value="50">50 miles</option>
                                     <option value="75">75 miles</option>

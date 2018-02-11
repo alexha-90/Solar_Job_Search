@@ -7,6 +7,8 @@ export default function fetchJobs(location, maxDistance, props, query='solar', j
 
     let submittedQuery;
 
+    console.log('Fetching jobs...');
+
     const salesKeywords = 'consultant, sales, canvasser, lead, close';
     const engineerKeywords = 'designer, engineer, specialist, developer, research';
     const installerKeywords = 'installer, electrician, journeyman, roof, construction, laborer, foreman';
