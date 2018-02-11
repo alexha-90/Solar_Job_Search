@@ -8,13 +8,8 @@ import jobResultsHeadline from '../helper_functions/jobResultsHeadline';
 import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
 import { FadingCircle } from 'better-react-spinkit';
+import includes from 'array-includes';
 
-// import populateTable from '../helper_functions/populateTable';
-
-/*
-TO:DO:
-paginate onclick update url
- */
 //================================================================================================//
 let openListArr = [];
 let currentPageJobURLs = [];
@@ -41,11 +36,11 @@ class PopulateJobList extends Component {
             return (
                 <div style={{ marginTop: '15px' }}>
                     <Button onClick={this.onOpenMultipleURLs} bsSize="small">
-                        <a data-tip="Open multiple job links at one time. For this to work, you must select at least one checkbox and
-                         disable ad blocker on your browser AND addons.">
+                        <a data-tip='Open multiple job links at one time. You must select at least one checkbox and
+                         disable ad blocker on your browser AND addons.'>
                             View selected jobs
                         </a>
-                        <ReactTooltip place="top" type="dark" effect="float"/>
+                        <ReactTooltip place="right" type="dark" effect="float" multiline/>
                     </Button>
                     &nbsp;&nbsp;
                     <Button bsSize="small" onClick={() => {
@@ -103,7 +98,7 @@ class PopulateJobList extends Component {
                     <tr key={job[0] + ' - ' + job[6]}>
                         <td>
                             <input
-                                checked={this.state.openListArr.includes(job[6])}
+                                checked={includes(this.state.openListArr,(job[6]))}
                                 onChange={this.gatherOpenList}
                                 id="checkBox"
                                 type="checkbox"
@@ -143,7 +138,7 @@ class PopulateJobList extends Component {
             const index = openListArr.indexOf(event.target.value);
             openListArr.splice(index, 1);
         }
-        console.log(openListArr);
+        // console.log(openListArr);
         this.setState({ openListArr: openListArr });
     }
 

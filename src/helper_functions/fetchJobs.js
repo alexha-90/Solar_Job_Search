@@ -1,5 +1,6 @@
 import axios from 'axios';
 import store from '../index';
+import includes from 'array-includes';
 //===============================================================================================//
 
 // Note: query manipulation logic not triggered from landing page route. Default 'solar'
@@ -21,23 +22,24 @@ export default function fetchJobs(location, maxDistance, props, query='solar', j
 
     } else {
         const paramsBuilder = [];
-        if (query.includes('sales')) {
+        // NOTE: used polyfill for includes method to make compatible for IE
+        if (includes(query, 'sales')) {
             paramsBuilder.push(salesKeywords.replace(/,/g, ' or'));
         }
 
-        if (query.includes('engineer')) {
+        if (includes(query, 'engineer')) {
             paramsBuilder.push(engineerKeywords.replace(/,/g, ' or'));
         }
 
-        if (query.includes('installer')) {
+        if (includes(query, 'installer')) {
             paramsBuilder.push(installerKeywords.replace(/,/g, ' or'));
         }
 
-        if (query.includes('pm')) {
+        if (includes(query, 'pm')) {
             paramsBuilder.push(pmKeywords.replace(/,/g, ' or'));
         }
 
-        if (query.includes('csr')) {
+        if (includes(query, 'csr')) {
             paramsBuilder.push(csrKeywords.replace(/,/g, ' or'));
         }
 

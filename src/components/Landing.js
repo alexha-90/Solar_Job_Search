@@ -11,14 +11,14 @@ import { Redirect } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip'
 import { ChasingDots } from 'better-react-spinkit';
 import axios from 'axios';
+import includes from 'array-includes';
+
 
 //TO-DO:
-// maybe not load newsfeed for mobiel devices
 // can't get getNewsFeed catch statement to trigger properly
 // remove duplicate articles if present
 // error handling for location
 // create new and mask api keys
-
 //loader can get stuck in a loop if no results
 
 //===============================================================================================//
@@ -117,8 +117,7 @@ class Landing extends Component {
 
 
     render() {
-        let submittedLocation = this.state.location.includes('United States') ? this.state.location.replace(/United States/i, 'USA') : this.state.location;
-
+        let submittedLocation = includes(this.state.location, 'United States') ? this.state.location.replace(/United States/i, 'USA') : this.state.location;
         if (this.state.redirectToJobResults) {
             return <Redirect push to={'/jobs/maxDistance=' + this.state.maxDistance + '_location=' + submittedLocation}/>;
         }
