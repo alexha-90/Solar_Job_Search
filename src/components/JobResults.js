@@ -22,7 +22,7 @@ class JobResults extends Component {
         this.state = {
             location: '',
             newLocation: false,
-            maxDistance: '',
+            maxDistance: 3000,
             queryBuilder: queryArr,
             jobType: '',
             showAllJobs: true,
@@ -42,15 +42,45 @@ class JobResults extends Component {
 
 
     componentWillMount() {
-        // user did not arrive at this page from landing. Populate national job results.
+        // NOTE: no perceived harm if user manipulates URL
+
+        // handle custom URL parameters
+        if (this.props.location.pathname.length > 5) {
+            console.log('retrieving');
+            // slice to remove extra data and maxDistanceParam. Extract input location from URL
+            const locationStr = this.props.location.pathname.slice(18);
+            const locationFromURL = locationStr.substr(locationStr.indexOf('=') + 1);
+            const maxDistanceParam = this.props.location.pathname.match(/\d+/)[0];
+            if (locationFromURL) {
+                this.setState({ location: locationFromURL})
+            }
+            if (maxDistanceParam) {
+                this.setState({ maxDistance: maxDistanceParam})
+            }
+            return setTimeout(() => {
+                fetchJobs(this.state.location, this.state.maxDistance, this.props)
+                    .then((res) => {
+                        if (res === 'error') {
+                            alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
+                        }
+                    })
+            }, 500);
+        }
+
+        // user did not provide any parameters. Populate national job results
         if (!this.props.jobList.length) {
             fetchJobs(null, null, this.props)
                 .then((res) => {
                     if (res === 'error') {
-                        return alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
+                        alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
                     }
                 })
         }
+
+
+        // 5:20pm. i think below is run regardless. a pointless, expensive proecss.
+        // handle drop down maxDistance selection for custom input
+        // default case where user submitted inputs on landing page. Results already processed
         if (this.props.locationParam) {
             this.setState({ location: this.props.locationParam})
         }
@@ -138,7 +168,7 @@ class JobResults extends Component {
 
 
     render() {
-        console.log(this.state);
+        // console.log(this.state);
 
         return (
             <section className="jobResults">
@@ -183,7 +213,9 @@ class JobResults extends Component {
                                     onChange={this.onUpdateMaxDistance}
                                     value={this.state.maxDistance}
                                 >
-                                    <option value="3000">-</option>
+                                    <option value={this.state.maxDistance}>
+                                        {this.state.maxDistance === 3000 ? '-' : this.state.maxDistance + ' miles'}
+                                    </option>
                                     <option value="25">25 miles</option>
                                     <option value="50">50 miles</option>
                                     <option value="75">75 miles</option>

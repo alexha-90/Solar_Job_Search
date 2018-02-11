@@ -8,7 +8,7 @@ export default function jobResultsHeadline (jobList, currentPage, location, load
         return <h2>Loading...</h2>
     }
 
-    console.log(jobList);
+    // console.log(jobList);
     let jobsPerPg = 25;
 
     // if (jobList.length !== jobsPerPg) {

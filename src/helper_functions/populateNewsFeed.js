@@ -5,7 +5,7 @@ export default function populateNewsFeed(data, loading) {
         return 'Loading...';
     }
 
-    console.log(data);
+    // console.log(data);
 
     for (let i = 0; i < data.length; i++) {
         if (!data[i].urlToImage) {

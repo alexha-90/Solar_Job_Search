@@ -39,7 +39,7 @@ class PopulateJobList extends Component {
     buttonActions() {
         if (this.props.jobList.length) {
             return (
-                <div style={{marginTop: '15px'}}>
+                <div style={{ marginTop: '15px' }}>
                     <Button onClick={this.onOpenMultipleURLs} bsSize="small">
                         <a data-tip="Open multiple job links at one time. For this to work, you must select at least one checkbox and
                          disable ad blocker on your browser AND addons.">
@@ -191,7 +191,7 @@ class PopulateJobList extends Component {
 
     render() {
         // console.log(this.state);
-        console.log(this.props);
+        // console.log(this.props);
 
         return (
             <div>

@@ -92,7 +92,8 @@ class Landing extends Component {
         fetchJobs(this.state.location, this.state.maxDistance, this.props)
             .then((res) => {
                 if (res === 'error') {
-                    return alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
+                    alert('Something went wrong :( We were unable to retrieve job results. Please try again later or let us know if this issue persists.');
+                    return this.setState({ loadingJobs: false });
                 }
                 this.setState({ redirectToJobResults: true });
             })
