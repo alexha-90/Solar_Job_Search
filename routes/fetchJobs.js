@@ -40,7 +40,7 @@ function fetchJobs(location, radius, query, jobType) {
         jobType: jobType,
         maxAge: '30',
         sort: 'date',
-        limit: '300'
+        limit: '250'
     };
 
     return indeed.query(queryOptions)

@@ -8,10 +8,10 @@ module.exports = app => {
             const newsAPI = new NewsAPI('54951ead39004d56aedc7ad8fd43affa'); //temporary key. not for production
 
             return newsAPI.v2.everything({
+                //
                 // q: 'solar AND (energy or industry or panel or technology or cost or price or company or rebate)',
                 q: 'solar energy',
-                sources: 'the-new-york-times, abc-news',
-                domains: 'http://www.nytimes.com, http://abcnews.go.com',
+                sources: 'the-new-york-times, usa-today',
                 language: 'en',
                 sortBy: 'publishedAt',
                 pageSize: 10,
