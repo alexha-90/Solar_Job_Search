@@ -36,10 +36,11 @@ class PopulateJobList extends Component {
             return (
                 <div style={{ marginTop: '15px' }}>
                     <Button onClick={this.onOpenMultipleURLs} bsSize="small">
-                        <a data-tip='Open multiple job links at one time. You must select at least one checkbox and
-                         disable ad blocker on your browser AND addons.'>
+                        <a data-tip='Open multiple job links at one time. You must <br> select at least one checkbox and
+                         disable <br> ad blocker on your browser AND addons.'>
                             View selected jobs
                         </a>
+                        {/*rule below applies for all tooltips on jobs page*/}
                         <ReactTooltip place="right" type="dark" effect="float" multiline/>
                     </Button>
                     &nbsp;&nbsp;

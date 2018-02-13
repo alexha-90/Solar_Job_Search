@@ -250,7 +250,6 @@ class JobResults extends Component {
                                         </Checkbox>
                                         <Checkbox inline value="sales" checked={this.state.showSalesJobs} onChange={this.onFilterJobRoles}>
                                             <a data-tip="Roles that focus more on the interconnection and sales side of solar systems">Field / Sales</a>
-                                            {/*rule below applies for all tooltips*/}
                                         </Checkbox>
                                         <Checkbox inline value="engineer" checked={this.state.showEngineerJobs} onChange={this.onFilterJobRoles}>
                                             <a data-tip="Roles that require deeper technical understanding about how PV works">Design / Engineering</a>

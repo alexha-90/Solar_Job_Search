@@ -41,6 +41,7 @@ Limitations
 - [x] Unnecessary and laggy auto fetch on location update. Add button
 - [x] Dynamic URL generation with history
 - [x] Polyfill arr.includes method for IE compatibility. App doesn't work at the moment
+- [x] HTTPS redirect from www.solarjobsearch.com. (note: OK without www)
 - [] Upperbound text on job results headline not correct for counts % 25 !==0
 - [] Geolocation feature needs a timeout check and warning for Opera and Safari
 - [] Location does not work on FireFox even with permission

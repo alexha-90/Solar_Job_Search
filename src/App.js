@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import HttpsRedirect from 'react-https-redirect';
 
 
 // Page imports
@@ -13,18 +14,18 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
-    return (
-      <div className="">
-          <BrowserRouter>
-              <div>
-                  <Header />
-                  <Route exact path='/' component={Landing} />
-                  <Route path='/jobs' component={JobResults} />
-                  <Route exact path='/terms' component={Terms} />
-                  <Footer />
-              </div>
-          </BrowserRouter>
-      </div>
+      return (
+          <div className="">
+              <BrowserRouter>
+                  <div>
+                      <Header />
+                      <Route exact path='/' component={Landing} />
+                      <Route path='/jobs' component={JobResults} />
+                      <Route exact path='/terms' component={Terms} />
+                      <Footer />
+                  </div>
+              </BrowserRouter>
+          </div>
     );
   }
 }

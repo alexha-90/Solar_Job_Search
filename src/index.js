@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/main.css';
 import App from './App';
+import HttpsRedirect from 'react-https-redirect';
 import allReducers from './reducers/index';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -16,7 +17,9 @@ const store = createStore(
 ReactDOM.render(
     <Provider
         store={ store }>
-        <App />
+        <HttpsRedirect>
+            <App />
+        </HttpsRedirect>
     </Provider>,
     document.getElementById('root')
 );
