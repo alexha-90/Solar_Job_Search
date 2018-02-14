@@ -224,7 +224,7 @@ class JobResults extends Component {
                                     componentClass="select"
                                     name="maxDistance"
                                     onChange={this.onUpdateMaxDistance}
-                                    // value={this.state.maxDistance}
+                                    value={this.state.maxDistance}
                                 >
                                     <option value="3000">-</option>
                                     <option value="25">25 miles</option>
