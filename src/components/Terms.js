@@ -3,40 +3,45 @@ import React, { Component } from 'react';
 class Terms extends Component {
     render() {
         return (
-            <div className="container">
-                <h1>Terms and Conditions ("Terms")</h1>
-                Last updated: November 06, 2017
+            <div className="container" style={{ marginTop: '60px', marginBottom: '60px' }}>
+                <h3 style={{ textDecoration: 'underline' }}>www.solarjobsearch.com Terms of Service</h3>
                 <br/>
-                Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the http://hotel-noma.herokuapp.com website (the "Service") operated by SolarJobSearch.com ("us", "we", or "our").
+                <h2>Terms</h2>
+                <p>By accessing the website at http://www.solarjobsearch.com, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.</p>
 
-                Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.
+                <h2>Use License</h2>
+                <ol type="a" style={{ marginLeft: '30px'}}>
+                    <li>Permission is granted to temporarily download one copy of the materials (information or software) on www.solarjobsearch.com's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+                        <ol type="i" style={{ marginLeft: '20px'}}>
+                            <li>modify or copy the materials;</li>
+                            <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
+                            <li>attempt to decompile or reverse engineer any software contained on www.solarjobsearch.com's website;</li>
+                            <li>remove any copyright or other proprietary notations from the materials; or</li>
+                            <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
+                        </ol>
+                    </li>
+                    <li>This license shall automatically terminate if you violate any of these restrictions and may be terminated by www.solarjobsearch.com at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.</li>
+                </ol>
 
-                By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service. Terms & Conditions created by TermsFeed for SolarJobSearch.com.
 
-                <h3>Links To Other Web Sites</h3>
+                <h2>Disclaimer</h2>
+                <ol type="a" style={{ marginLeft: '30px'}}>
+                    <li>The materials on www.solarjobsearch.com's website are provided on an 'as is' basis. www.solarjobsearch.com makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</li>
+                    <li>Further, www.solarjobsearch.com does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.</li>
+                </ol>
 
-                Our Service may contain links to third-party web sites or services that are not owned or controlled by SolarJobSearch.com.
+                <h2>Accuracy of materials</h2>
+                <p>The materials appearing on www.solarjobsearch.com website could include technical, typographical, or photographic errors. www.solarjobsearch.com does not warrant that any of the materials on its website are accurate, complete or current. www.solarjobsearch.com may make changes to the materials contained on its website at any time without notice. However www.solarjobsearch.com does not make any commitment to update the materials.</p>
 
-                SolarJobSearch.com has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that SolarJobSearch.com shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.
+                <h2>Links</h2>
+                <p>www.solarjobsearch.com has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by www.solarjobsearch.com of the site. Use of any such linked website is at the user's own risk.</p>
 
-                We strongly advise you to read the terms and conditions and privacy policies of any third-party web sites or services that you visit.
+                <h2>Modifications</h2>
+                <p>www.solarjobsearch.com may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.</p>
 
-                <h3>Governing Law</h3>
+                <h2>Governing Law</h2>
+                <p>These terms and conditions are governed by and construed in accordance with the laws of California and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
 
-                These Terms shall be governed and construed in accordance with the laws of California, United States, without regard to its conflict of law provisions.
-
-                Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.
-
-                <h3>Changes</h3>
-
-                We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
-
-                By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-
-                <h3>Contact Us</h3>
-
-                If you have any questions about these Terms, please
-                <a href="/" title="contact">&nbsp;contact us</a>.
             </div>
         );
     }

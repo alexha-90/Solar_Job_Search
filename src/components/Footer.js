@@ -12,7 +12,13 @@ class Footer extends Component {
                 &nbsp;&nbsp;|&nbsp;&nbsp;
 
                 <a href="/terms">
-                    Terms of Use
+                    Terms
+                </a>
+
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+
+                <a href="/privacy">
+                    Privacy
                 </a>
 
                 <br />
