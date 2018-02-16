@@ -4,9 +4,8 @@ class Terms extends Component {
     render() {
         return (
             <div className="container" style={{ marginTop: '60px', marginBottom: '60px' }}>
-                <h3 style={{ textDecoration: 'underline' }}>www.solarjobsearch.com Terms of Service</h3>
+                <h1>Terms and Conditions</h1>
                 <br/>
-                <h2>Terms</h2>
                 <p>By accessing the website at http://www.solarjobsearch.com, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.</p>
 
                 <h2>Use License</h2>

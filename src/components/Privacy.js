@@ -4,7 +4,8 @@ class Privacy extends Component {
     render() {
         return (
             <div className="container" style={{ marginTop: '60px', marginBottom: '60px' }}>
-                <h3 style={{ textDecoration: 'underline' }}>www.solarjobsearch.com Privacy Policy</h3>
+                <h1>Privacy Policy</h1>
+                <br/>
                 <h3>Your privacy is critically important to us.</h3>
                 <br/>
                 <p>It is www.solarjobsearch.com’s policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to <a href="http://www.solarjobsearch.com">www.solarjobsearch.com</a> (hereinafter, "us", "we", or "www.solarjobsearch.com"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy ("Privacy Policy") to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources.</p>
