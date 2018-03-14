@@ -10,7 +10,7 @@ module.exports = app => {
             return newsAPI.v2.everything({
                 //
                 // q: 'solar AND (energy or industry or panel or technology or cost or price or company or rebate)',
-                q: 'solar energy',
+                q: 'solar',
                 sources: 'the-new-york-times, usa-today',
                 language: 'en',
                 sortBy: 'publishedAt',
